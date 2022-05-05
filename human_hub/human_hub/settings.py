@@ -1,5 +1,8 @@
 from pathlib import Path
 import environ
+import os
+from django.utils.translation import gettext_lazy as _
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -14,9 +17,9 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'human-hub.net',
-    'www.human-hub.net',
+ALLOWED_HOSTS = [ '*'
+    # 'human-hub.net',
+    # 'www.human-hub.net',
 ]
 
 
@@ -29,10 +32,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.administration',
-    'django.contrib.orders',
-    'django.contrib.showcase',
-
+    'administration.apps.AdministrationConfig',
+    'orders.apps.OrdersConfig',
+    'showcase.apps.ShowcaseConfig',
+    'info.apps.InfoConfig',
 ]
 
 MIDDLEWARE = [
@@ -50,7 +53,7 @@ ROOT_URLCONF = 'human_hub.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -58,6 +61,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -111,9 +116,19 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# LANGUAGES = (
+#     ("ru", _("Russian")),
+#     ("uk", _("Ukrainian")),
+# )
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "assets"),
+]

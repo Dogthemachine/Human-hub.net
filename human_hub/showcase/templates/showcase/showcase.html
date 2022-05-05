@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+MAIN PAGE HERE
+
+<ul class="btn">
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'showcase:category_page' %}"> category</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'showcase:item_page' %}"> item</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:about' %}"> about</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:contacts' %}"> contacts</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:discounts' %}"> discounts</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:refund' %}"> refund</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:shipping' %}"> shipping</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:sizing' %}"> sizing</a>
+    </li>
+    <li class="nav-item visible-xs">
+        <a class="btn btn-outline-dark mb-3" href="{% url 'info:terms' %}"> terms</a>
+    </li>
+</ul>
+
+
+{% endblock %}
