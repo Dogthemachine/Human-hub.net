@@ -1,4 +1,6 @@
 /humanvenv
+/static
+/media
 .*.sw[a-z]
 *.un~
 *.log
