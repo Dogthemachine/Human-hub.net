@@ -1,125 +1,127 @@
 {% load i18n %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div class="container-fluid hu-navbar-dropdown">
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <a class="navbar-brand mx-auto fixed-top position-relative" href="{% url 'showcase:showcase' %}" >
-        <img class="cc-gallery" src="{{ STATIC_URL }}img/Hu_logo_for_navbar.png">
-    </a>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="p-3 navbar-nav me-auto mb-2 mb-lg-0 hu-navbar-dropdown">
+<div class="collapse" id="navbarToggleExternalContent">
+  <div class="bg-dark p-4">
 
         <form class="d-flex">
             <input class="form-control me-2 bg-transparent rounded-0" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-secondary rounded-0" type="submit">Search</button>
         </form>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li><hr class="dropdown-divider"></li>
+
+        <div class="dropdown mt-3 ms-0">
+          <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Currency
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">UAH</a></li>
             <li><a class="dropdown-item" href="#">USD</a></li>
             <li><a class="dropdown-item" href="#">UER</a></li>
           </ul>
-        </li>
+        </div>
 
-        <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown mt-1 ms-0">
+          <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Language
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">English</a></li>
             <li><a class="dropdown-item" href="#">Ukrainian</a></li>
             <li><a class="dropdown-item" href="#">Russian</a></li>
           </ul>
-        </li>
+        </div>
+
+        <li><hr class="dropdown-divider"></li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:about' %}" title="{% trans 'About project' %}">
+                {% trans 'About project' %}
+              </a>
+            </li>
+          </ul>
+
+         <li><hr class="dropdown-divider"></li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_1' %}">
+                {% trans 'Category_1' %}
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_2' %}">
+                {% trans 'Category_2' %}
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_3' %}">
+                {% trans 'Category_3' %}
+              </a>
+            </li>
+          </ul>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:discounts' %}" title="{% trans 'Discounts' %}">
+                {% trans 'Discounts' %}
+            </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:sizing' %}" title="{% trans 'Sizing' %}">
+                {% trans 'Sizing' %}
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:shipping' %}" title="{% trans 'Shipping' %}">
+                {% trans 'Shipping' %}
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:refund' %}#payment" title="{% trans 'Purchase returns' %}">
+                {% trans 'Purchase returns' %}
+            </a>
+            </li>
+          </ul>
+
+          <li><hr class="dropdown-divider"></li>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item visible-xs">
+              <a class="nav-link cc-main-menu-color" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">
+                {% trans 'Contacts' %}
+            </a>
+            </li>
+          </ul>
+
+         <li><hr class="dropdown-divider"></li>
+
+  </div>
+</div>
+
+<nav class="navbar navbar-dark bg-dark py-4">
+  <div class="container-fluid">
 
 
-        <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:about' %}" title="{% trans 'About project' %}">
-            {% trans 'About project' %}
-          </a>
-        </li>
-      </ul>
+    <button class="navbar-toggler navbar-toggler-icon:focus" style="box-shadow:none; border-color:none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand mx-auto fixed-top position-relative" href="{% url 'showcase:showcase' %}" >
+        <img class="cc-gallery" style="height:100px;" src="{{ STATIC_URL }}img/HumanHub_navbar.png"></a>
 
 
-
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_1' %}">
-            {% trans 'Category_1' %}
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_2' %}">
-            {% trans 'Category_2' %}
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_3' %}">
-            {% trans 'Category_3' %}
-          </a>
-        </li>
-      </ul>
-
-
-
-
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:discounts' %}" title="{% trans 'Discounts' %}">
-            {% trans 'Discounts' %}
-        </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:sizing' %}" title="{% trans 'Sizing' %}">
-            {% trans 'Sizing' %}
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:shipping' %}" title="{% trans 'Shipping' %}">
-            {% trans 'Shipping' %}
-          </a>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:refund' %}#payment" title="{% trans 'Purchase returns' %}">
-            {% trans 'Purchase returns' %}
-        </a>
-        </li>
-      </ul>
-
-
-
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item visible-xs">
-          <a class="nav-link cc-main-menu-color" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">
-            {% trans 'Contacts' %}
-        </a>
-        </li>
-      </ul>
-
-
-
-
-      </ul>
-    </div>
   </div>
 </nav>
