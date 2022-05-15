@@ -12,7 +12,7 @@ body {
 */
 
 .hb-main-menu-color {
-    color: rgb(255, 255, 255) !important;
+    color: #FFFFFF !important;
 }
 
 .hb-main-menu-color:hover,
@@ -38,6 +38,7 @@ body {
     font-size: 1.6em;
     margin-top: 10px;
     margin-left: 15px;
+    height: 20px;
 }
 
 
