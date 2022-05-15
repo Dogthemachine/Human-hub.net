@@ -72,7 +72,22 @@ $(document).ajaxSend(function(event, xhr, settings) {
 
 
 $(document).ready(function() {
-    //---?---
+
+    $('.hb-cart-link').on('click', function() {
+
+        $('#hb-cart-content').html('-----cart-----');
+
+//        var loc_lang = get_loc_lang();
+//        $.ajax({
+//            url: '/' + loc_lang + '/cart/',
+//            type: 'get',
+//            success: function(data) {
+//                $('#hb-cart-content').html(data.html);
+//                $('#hb-cart-cancel').show();
+//            }
+        });
+
+    //---?--------------------------------------------------------------------------------------------------------------
     $('#cs-contact-form-submit').on('click', function(e) {
         e.preventDefault();
         if ($('#cs-contact-form').is_valid()) {$('#cs-contact-form').submit();}

@@ -1,5 +1,5 @@
 {% load i18n %}
-<div class="collapse mb-0 h1 fs-4" id="navbarToggleExternalContent">
+<div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-dark p-4">
 
         <form class="d-flex">
@@ -9,22 +9,22 @@
 
         <li><hr class="dropdown-divider"></li>
 
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-dark mb-0 h1 fs-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle btn-dark mb-0 h1 fs-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Currency
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-4" aria-labelledby="dropdownMenuButton1">
+          <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">UAH</a></li>
             <li><a class="dropdown-item" href="#">USD</a></li>
             <li><a class="dropdown-item" href="#">UER</a></li>
           </ul>
         </div>
 
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle btn-dark mb-0 h1 fs-4" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="dropdown mt-1">
+          <button class="btn btn-secondary dropdown-toggle btn-dark mb-0 h1 fs-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             Language
           </button>
-          <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-4" aria-labelledby="dropdownMenuButton1">
+          <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">English</a></li>
             <li><a class="dropdown-item" href="#">Ukrainian</a></li>
             <li><a class="dropdown-item" href="#">Russian</a></li>
@@ -33,7 +33,7 @@
 
         <li><hr class="dropdown-divider"></li>
 
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:about' %}" title="{% trans 'About project' %}">
                 {% trans 'About project' %}
@@ -43,7 +43,7 @@
 
          <li><hr class="dropdown-divider"></li>
 
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_1' %}">
                 {% trans 'Category' %}
@@ -51,30 +51,30 @@
             </li>
           </ul>
 
-          <li><hr class="dropdown-divider"></li>
+          <li><hr class="dropdown-divider "></li>
 
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:discounts' %}" title="{% trans 'Discounts' %}">
                 {% trans 'Discounts' %}
             </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:sizing' %}" title="{% trans 'Sizing' %}">
                 {% trans 'Sizing' %}
               </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:shipping' %}" title="{% trans 'Shipping' %}">
                 {% trans 'Shipping' %}
               </a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:refund' %}#payment" title="{% trans 'Purchase returns' %}">
                 {% trans 'Purchase returns' %}
@@ -84,7 +84,7 @@
 
           <li><hr class="dropdown-divider"></li>
 
-          <ul class="nav navbar-nav navbar-right ms-3">
+          <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">
                 {% trans 'Contacts' %}
@@ -100,18 +100,18 @@
 <nav class="navbar navbar-dark bg-dark py-4">
   <div class="container-fluid">
 
-    <button class="navbar-toggler navbar-toggler-icon:focus " style="border: 0px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon" style=" height: 30px"></span>
+    <button class="navbar-toggler navbar-toggler-icon:focus" style="box-shadow:none; border: 0px !important;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <a class="navbar-brand mx-auto fixed-top position-relative" href="{% url 'showcase:showcase' %}" >
-        <img class="hb-gallery ms-3" style="height:60px;" src="{{ STATIC_URL }}img/HumanHub_navbar.png"></a>
+        <img class="hb-gallery" style="height:60px;" src="{{ STATIC_URL }}img/HumanHub_navbar.png"></a>
 
     <div class="mx-3" style="float:right;">
-        <a class="hb-cart-link visible-xs-inline-block hb-main-menu-color hb-mobile-cart hb-main-menu-color" href="#" data-toggle="modal" data-target="#hb-cart-modal">
+        <a class="hb-cart-link visible-xs-inline-block hb-main-menu-color hb-mobile-cart" href="#" data-bs-toggle="modal" data-bs-target="#hb-cart-modal">
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-             </svg> | <span id="hb-cart-total">1</span>
+             </svg> | <span id="hb-cart-total">0</span>
         </a>
     </div>
 
