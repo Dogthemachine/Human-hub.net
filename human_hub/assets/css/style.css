@@ -57,12 +57,19 @@ body {
 }
 
 .hb-mobile-cart {
-    font-size: 1.2em;
+    font-size: 1em;
     margin-top: 10px;
     margin-left: 15px;
     height: 20px;
 }
 
+.footer-border-color-grey {
+    border-color: #BEBEBE !important;
+}
+
+.footer-border-color-black {
+    border-color: #202020 !important;
+}
 
 #footer {
     height: 170px;

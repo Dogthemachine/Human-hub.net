@@ -45,7 +45,7 @@
 
           <ul class="nav navbar-nav navbar-right ms-3 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
-              <a class="nav-link hb-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category_1' %}">
+              <a class="nav-link hb-main-menu-color" href="{% url 'showcase:category_page' %}" title="{% trans 'Category' %}">
                 {% trans 'Category' %}
               </a>
             </li>
@@ -88,7 +88,7 @@
             <li class="nav-item visible-xs">
               <a class="nav-link hb-main-menu-color" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">
                 {% trans 'Contacts' %}
-            </a>
+              </a>
             </li>
           </ul>
 
@@ -105,11 +105,11 @@
     </button>
 
     <a class="navbar-brand mx-auto fixed-top position-relative" href="{% url 'showcase:showcase' %}" >
-        <img class="hb-gallery ms-5" style="height:55px;" src="{{ STATIC_URL }}img/HumanHub_navbar.png"></a>
+        <img class="hb-gallery ms-4" style="height:55px;" src="{{ STATIC_URL }}img/HumanHub_navbar.png"></a>
 
     <div class="mx-2" style="float:right;">
         <a class="hb-cart-link visible-xs-inline-block hb-main-menu-color hb-mobile-cart" href="#" data-bs-toggle="modal" data-bs-target="#hb-cart-modal">
-          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
              </svg> | <span id="hb-cart-total">0</span>
         </a>
