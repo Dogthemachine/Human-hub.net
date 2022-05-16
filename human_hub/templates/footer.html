@@ -1,7 +1,7 @@
 {% load i18n %}
 <footer class="text-center text-lg-start bg-light text-muted mt-5">
   <!-- Section: Info  -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-2 border-top footer-border-color-black">
+  <section class="d-flex justify-content-center p-2 border-top footer-border-color-black">
           <a href="{% url 'info:discounts' %}" title="{% trans 'Discounts' %}">
             <button type="button" class="btn btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Discounts' %}</button></a>
           <a href="{% url 'info:sizing' %}" title="{% trans 'Sizing' %}">
@@ -13,22 +13,10 @@
   </section>
   <!-- Section: Info  -->
   <!-- Section: About project  -->
-  <section class="col-10 d-flex mx-auto p-1 border-top footer-border-color-grey">
-      <p>
-        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:refund' %}#payment" title="{% trans 'Refund' %}">
-          {% trans 'Refund' %}
-        </a>
-      </p>
-      <p>
-        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">
-          {% trans 'Contacts' %}
-        </a>
-      </p>
-      <p>
-        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:terms' %}" title="{% trans 'Terms' %}">
-          {% trans 'Terms' %}
-        </a>
-      </p>
+  <section class="col-10 d-flex justify-content-center mx-auto p-1 border-top footer-border-color-grey">
+        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:refund' %}#payment" title="{% trans 'Refund' %}">{% trans 'Refund' %}</a>
+        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">{% trans 'Contacts' %}</a>
+        <a class="nav-link hb-main-menu-color mx-2" href="{% url 'info:terms' %}" title="{% trans 'Terms' %}">{% trans 'Terms' %}</a>
   </section>
   <!-- Section: About project-->
   <!-- Section: Social  -->
