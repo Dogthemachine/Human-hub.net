@@ -20,15 +20,24 @@
             <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
     </head>
 
+    <style type="text/css">
+        @font-face {
+            font-family: "IBM Plex Mono";
+            src: url(https://fonts.googleapis.com/css?family=IBM Plex Mono) format("truetype");
+        }
+        p.customfont {
+            font-family: "IBM Plex Mono", Verdana, Tahoma;
+        }
+    </style>
+
+
     <body>
         <div id="wrap">
 
             {% include 'navbar.html' %}
-
-            <div class="container">
+<!--            <div class="container">-->
                 {% block content %}{% endblock %}
-            </div> <!--- container --->
-
+<!--            </div> &lt;!&ndash;- container -&ndash;&gt;-->
         </div>
 
         {% include 'footer.html' %}
