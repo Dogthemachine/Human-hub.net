@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    console.log('START');
+
     $('#pop').on('click', function() {
         $.ajax({
             url: '/orders/cart/',
@@ -20,14 +22,16 @@ $(document).ready(function() {
         });
     });
 
-    $('#ordr-deliv-worldwide').change(function(){
+    $('#ordr-deliv-worldwide').on('switch-change', function (event) {
         console.log('TEST');
-        $('#collapseDeliveryByUkraine').hide();
-        $('#collapseDeliveryWorldWide').show();
     });
 
+    $(‘input[name=”DelivUkraine”]’).on(‘switchChange.bootstrapSwitch’, function (event, state) {
+        console.log('TEST');
+    });
+  
 
-    $('#ordr-deliv-byukraine').change(function(){
+    $('#ordr-deliv-byukraine').change(function(event){
         console.log('TEST222');
         $('#collapseDeliveryByUkraine').show();
         $('#collapseDeliveryWorldWide').hide();
