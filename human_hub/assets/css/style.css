@@ -2,32 +2,22 @@ html, body {
     height: 100%;
     overflow-x: hidden;
 }
-/*
-body {
-    background-image: url("/static/img/background-image.JPG");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-}
-*/
 
+/*  FONTS  */
 
 @font-face {
     font-family: "IBM Plex Mono";
     src: url(https://fonts.googleapis.com/css?family=IBM Plex Mono) format("truetype");
 }
-p.customfont {
+
+.customfont {
     font-family: "IBM Plex Mono", Verdana, Tahoma;
 }
 
+/*  NAVBAR  */
 
 .hb-navbar-font {
     font-family: 'IBM Plex Mono';
-
-.bg-cart-modal-color {
-      background-color: #BEBEBE !important;
-    }
-
 }
 
 .hb-main-menu-color {
@@ -69,6 +59,7 @@ p.customfont {
     color:  #D3D3D3 !important;
 
 }
+/*  FOOTER  */
 
 .footer-border-color-grey {
     border-color: #BEBEBE !important;
@@ -78,203 +69,106 @@ p.customfont {
     border-color: #202020 !important;
 }
 
-#footer {
-    height: 170px;
+/*  CART  */
+
+.bg-cart-modal-color {
+      background-color: #F5F5F5 !important;
 }
 
-#footer .first {
-    margin-top: 15px;
+.product-details {
+  padding: 10px;
 }
 
-#footer .footer-spacing-first {
-    margin-top: 12px;
+body {
+  background: #eee;
 }
 
-#footer .footer-spacing-second {
-    margin-top: 15px;
+.cart {
+  background: #fff;
 }
 
-#footer .footer-spacing-third {
-    margin-top: 17px;
+.p-about {
+  font-size: 12px;
 }
 
-#footer a {
-    font-size: 16px;
-    line-height: 24px;
+.table-shadow {
+  -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
+  box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
 }
 
-/* Icon 1 */
-
-.animated-icon1,
-.animated-icon2,
-.animated-icon3 {
-width: 30px;
-height: 20px;
-position: relative;
-margin: 0px;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-cursor: pointer;
+.type {
+  font-weight: 400;
+  font-size: 10px;
 }
 
-.animated-icon1 span,
-.animated-icon2 span,
-.animated-icon3 span {
-display: block;
-position: absolute;
-height: 3px;
-width: 100%;
-border-radius: 9px;
-opacity: 1;
-left: 0;
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .25s ease-in-out;
--moz-transition: .25s ease-in-out;
--o-transition: .25s ease-in-out;
-transition: .25s ease-in-out;
+label.radio {
+  cursor: pointer;
 }
 
-.animated-icon1 span {
-background: #2d7ef7;
+label.radio input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
-.animated-icon2 span {
-background: #e3f2fd;
+.line {
+  border-bottom: 1px solid rgb(102,102,221);
 }
 
-.animated-icon3 span {
-background: #f3e5f5;
+.information span {
+  font-size: 12px;
+  font-weight: 500;
 }
 
-.animated-icon1 span:nth-child(1) {
-top: 0px;
+.information {
+  margin-bottom: 5px;
 }
 
-.animated-icon1 span:nth-child(2) {
-top: 10px;
+.items {
+  -webkit-box-shadow: 5px 5px 4px -1px rgba(0,0,0,0.25);
+  box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
 }
 
-.animated-icon1 span:nth-child(3) {
-top: 20px;
+.spec {
+  font-size: 11px;
 }
 
-.animated-icon1.open span:nth-child(1) {
-top: 11px;
--webkit-transform: rotate(135deg);
--moz-transform: rotate(135deg);
--o-transform: rotate(135deg);
-transform: rotate(135deg);
+
+[type="radio"] {
+  background-color: #BEBEBE !important;
+  border: 2px solid #BEBEBE !important;
+  border-radius: 0% !important!;
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0.0rem rgba(255, 255, 255, 0) !important;
 }
 
-.animated-icon1.open span:nth-child(2) {
-opacity: 0;
-left: -60px;
+[type="checkbox"] {
+  background-color: #BEBEBE !important;
+  border: 2px solid #BEBEBE !important;
+  border-radius: 0% !important!;
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0.0rem rgba(255, 255, 255, 0) !important;
+  cursor-color: black !important;
 }
 
-.animated-icon1.open span:nth-child(3) {
-top: 11px;
--webkit-transform: rotate(-135deg);
--moz-transform: rotate(-135deg);
--o-transform: rotate(-135deg);
-transform: rotate(-135deg);
+/*  ITEM  */
+
+#carouselHumanControls .carousel-item img {
+object-fit: cover;
+object-position: center;
+height: auto;
+overflow: hidden;
 }
 
-/* Icon 3*/
-
-.animated-icon2 span:nth-child(1) {
-top: 0px;
+.form-check-input:checked {
+    background-color: #181818;
+    border-color: #BEBEBE;
 }
 
-.animated-icon2 span:nth-child(2),
-.animated-icon2 span:nth-child(3) {
-top: 10px;
+.form-switch .form-check-input {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='black'/%3e%3c/svg%3e");
 }
-
-.animated-icon2 span:nth-child(4) {
-top: 20px;
-}
-
-.animated-icon2.open span:nth-child(1) {
-top: 11px;
-width: 0%;
-left: 50%;
-}
-
-.animated-icon2.open span:nth-child(2) {
--webkit-transform: rotate(45deg);
--moz-transform: rotate(45deg);
--o-transform: rotate(45deg);
-transform: rotate(45deg);
-}
-
-.animated-icon2.open span:nth-child(3) {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
--o-transform: rotate(-45deg);
-transform: rotate(-45deg);
-}
-
-.animated-icon2.open span:nth-child(4) {
-top: 11px;
-width: 0%;
-left: 50%;
-}
-
-/* Icon 4 */
-
-.animated-icon3 span:nth-child(1) {
-top: 0px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
-}
-
-.animated-icon3 span:nth-child(2) {
-top: 10px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
-}
-
-.animated-icon3 span:nth-child(3) {
-top: 20px;
--webkit-transform-origin: left center;
--moz-transform-origin: left center;
--o-transform-origin: left center;
-transform-origin: left center;
-}
-
-.animated-icon3.open span:nth-child(1) {
--webkit-transform: rotate(45deg);
--moz-transform: rotate(45deg);
--o-transform: rotate(45deg);
-transform: rotate(45deg);
-top: 0px;
-left: 8px;
-}
-
-.animated-icon3.open span:nth-child(2) {
-width: 0%;
-opacity: 0;
-}
-
-.animated-icon3.open span:nth-child(3) {
--webkit-transform: rotate(-45deg);
--moz-transform: rotate(-45deg);
--o-transform: rotate(-45deg);
-transform: rotate(-45deg);
-top: 21px;
-left: 8px;
+.form-switch .form-check-input:focus {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='gray'/%3e%3c/svg%3e");
 }
 

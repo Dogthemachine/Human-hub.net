@@ -26,6 +26,15 @@ def cart(request):
     # c = {'cart': cart, 'cart_items': cart_items}
 
     html = t.render({}, request)
-    print("TEST")
 
     return {'html': html}
+
+
+@json_view
+def order(request):
+    t = loader.get_template('orders/make-order.html')
+    html = t.render({}, request)
+
+    return {'html': html}
+
+

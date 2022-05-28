@@ -1,15 +1,56 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="row">
+    <div class="col-xs-8 col-sm-6 col-md-8 col-lg-8 text-center mx-auto mt-1">
 
-    <div class="container mt-5">
         <div class="row">
-            <div class="col d-flex justify-content-center">
-                <div class="text-center w-5">
-                    <div class="col-5 mt-5 mb-5 mx-auto position-relative">ITEM PAGE HERE</div>
-                    <img class="w-50 p-3 mt-5" src="{{ STATIC_URL }}img/HumanHub_logo_2-01inv.png">
-                </div>
+            <div itemprop="name" class="col-12 text-left py-2 ms-3 mt-1">
+              <div class="visible-xs" style="font-family: IBM Plex Mono; float:left !important;">
+                <h4><a class="link-dark" href="{% url 'showcase:showcase' %}">MAIN</a> > <a class="link-dark" href="{% url 'showcase:category_page' %}">CATEGORY</a> > ITEM</h4>
+              </div>
             </div>
         </div>
+
+        <div id="carouselHumanControls" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{{ STATIC_URL }}img/ProductImage.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ STATIC_URL }}img/ProductImage.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="{{ STATIC_URL }}img/ProductImage.jpg" class="d-block w-100" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselHumanControls" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselHumanControls" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row ms-1 mt-3 mb-2" style="float:left;">
+                <h1 style="font-family: IBM Plex Mono; color: black !important;">Product name</h1>
+            </div>
+
+            <div class="row ms-1 mt-4 mb-2 me-1" style="float:right;">
+                <p class="fs-4" style="font-family: IBM Plex Mono; color: black !important;">123 &euro;</p>
+            </div>
+        </div>
+
+        <div class="row" style="height:80px;"></div>
+
+            <div class="container-fluid">
+                <div itemprop="description">
+                    <p class="text-break" style="text-align: left; word-wrap: break-word;">Text description some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text some text.</p>
+                </div>
+            </div>
     </div>
+</div>
 {% endblock %}
