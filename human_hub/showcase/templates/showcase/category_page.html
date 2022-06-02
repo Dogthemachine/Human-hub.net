@@ -1,19 +1,123 @@
 {% extends "base.html" %}
-
+{% load i18n %}
+{% load static %}
 {% block content %}
 
-    <div class="row">
-        <img class='img-fluid w-100' src="{{ STATIC_URL }}img/HumanBanner.png" alt="" />
-    </div>
+<div class="row">
+    <div class="col-xs-8 col-sm-6 col-md-8 col-lg-8 text-center mx-auto">
 
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <div class="text-center w-5">
-                    <div class="col-5 mt-5 mb-5 mx-auto position-relative">ITEM PAGE HERE</div>
-                    <img class="w-50 p-3 mt-5" src="{{ STATIC_URL }}img/HumanHub_logo_2-01inv.png">
+        <div class="col-xs-8 col-sm-6 col-md-8 col-lg-8 text-center mx-auto">
+            <img class='img-fluid w-80' src="{{ STATIC_URL }}img/SomeBanner.png" alt="" />
+        </div>
+
+
+        <div class="container mt-1 footer-border-color-black border-bottom col-10">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <div class="text-center w-5">
+                        <label class="toggle">
+                            <span class="onoff"></span>
+                                <input type="checkbox"/>
+                                    <img class="w-5 p-3 mt-1" id="icontoggler" onclick="changeImage()" style="height:50px;" src="{{ STATIC_URL }}img/category_toggle.png">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="container--wide">
+            <div class="row mt-4 collection-template--column-view collection-template__products" id="category-style">
+
+                <div class="product-card has-hover-image mb-3">
+                    <a class="product-card__link-overlay" href="{% url 'showcase:item_page' %}"  aria-label="">
+                        <img class='img-fluid' style="height:auto; width:auto;" src="{{ STATIC_URL }}img/ProductImage.jpg"/>
+                    </a>
+                    <div class="container--wide" style="padding-right: 0px !important; margin-right: 0px; !important">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="row-full item-name-in-category-page" style="grid-auto-rows: inherit;">
+                                    <span style="float:left !important; margin-right: 10%; font-size: 4vw;">Product name</span>
+                                </h3>
+                                <div class="row item-price-category-page">
+                                    <span style="float:left !important; margin-left: 0rem !important;">123 &euro;</span>
+                                </div>
+                            </div>
+                            <div class="col-4" style="padding-left: 0px !important;">
+                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;"><i class="bi bi-cart text-light"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card has-hover-image mb-3">
+                    <a class="product-card__link-overlay" href="{% url 'showcase:item_page' %}"  aria-label="">
+                        <img class='img-fluid' style="height:auto; width:auto;" src="{{ STATIC_URL }}img/ProductImage.jpg"/>
+                    </a>
+                    <div class="container--wide" style="padding-right: 0px !important; margin-right: 0px; !important">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="row-full item-name-in-category-page" style="grid-auto-rows: inherit;">
+                                    <span style="float:left !important; margin-right: 10%; font-size: 4vw;">Product name</span>
+                                </h3>
+                                <div class="row item-price-category-page">
+                                    <span style="float:left !important; margin-left: 0rem !important;">123 &euro;</span>
+                                </div>
+                            </div>
+                            <div class="col-4" style="padding-left: 0px !important;">
+                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;"><i class="bi bi-cart text-light"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card has-hover-image mb-3">
+                    <a class="product-card__link-overlay" href="{% url 'showcase:item_page' %}"  aria-label="">
+                        <img class='img-fluid' style="height:auto; width:auto;" src="{{ STATIC_URL }}img/ProductImage.jpg"/>
+                    </a>
+                    <div class="container--wide" style="padding-right: 0px !important; margin-right: 0px; !important">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="row-full item-name-in-category-page" style="grid-auto-rows: inherit;">
+                                    <span style="float:left !important; margin-right: 10%; font-size: 4vw;">Product name</span>
+                                </h3>
+                                <div class="row item-price-category-page">
+                                    <span style="float:left !important; margin-left: 0rem !important;">123 &euro;</span>
+                                </div>
+                            </div>
+                            <div class="col-4" style="padding-left: 0px !important;">
+                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;"><i class="bi bi-cart text-light"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card has-hover-image mb-3">
+                    <a class="product-card__link-overlay" href="{% url 'showcase:item_page' %}"  aria-label="">
+                        <img class='img-fluid' style="height:auto; width:auto;" src="{{ STATIC_URL }}img/ProductImage.jpg"/>
+                    </a>
+                    <div class="container--wide" style="padding-right: 0px !important; margin-right: 0px; !important">
+                        <div class="row">
+                            <div class="col-8">
+                                <h3 class="row-full item-name-in-category-page" style="grid-auto-rows: inherit;">
+                                    <span style="float:left !important; margin-right: 10%; font-size: 4vw;">Product name</span>
+                                </h3>
+                                <div class="row item-price-category-page">
+                                    <span style="float:left !important; margin-left: 0rem !important;">123 &euro;</span>
+                                </div>
+                            </div>
+                            <div class="col-4" style="padding-left: 0px !important;">
+                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;"><i class="bi bi-cart text-light"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
     </div>
+</div>
 {% endblock %}
+

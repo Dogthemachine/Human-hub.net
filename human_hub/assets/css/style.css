@@ -166,9 +166,106 @@ overflow: hidden;
 }
 
 .form-switch .form-check-input {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='black'/%3e%3c/svg%3e");
+  background-color: #BEBEBE;
+
 }
 .form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='gray'/%3e%3c/svg%3e");
+  background-color: #BEBEBE;
+}
+/*  CATEGORY  */
+
+/* toggler*/
+.toggle {
+  position: relative;
 }
 
+.toggle input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle .onoff {
+  text-align: center;
+  display: block;
+}
+
+.slider {
+  position: relative;
+  display: block;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+}
+/* toggler*/
+
+
+.collection-template__products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.collection-template--column-view .collection-template__products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container--wide {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product-card__image {
+    position: relative;
+    overflow-x: hidden;
+    margin-bottom: 20px;
+    padding-bottom: 2rem !important;
+
+}
+
+.product-card__title {
+    font-size: calc(3vw + 3vh);
+    float:left;
+    margin-top: 0;
+    margin-bottom: 0rem !important;
+    text-align: center;
+}
+
+.item-price-category-page {
+    float:left;
+    text-transform: uppercase;
+    font-size: 15px;
+    color: #181818;
+    line-height: 1.6;
+}
+
+.feefo-product-stars-widget {
+    margin-top: 7px;
+}
+
+.add-to-cart-button {
+    font-family: IBM Plex Mono;
+    height: 70%;
+    width: auto;
+    font-size: auto;
+    float:right
+}
+
+.item-name-in-category-page {
+    white-space: nowrap ;
+    font-size: 4vw;
+    text-align: center;
+    font-family: IBM Plex Mono !important;
+    float: left !important;
+    padding-bottom: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
+.row-full{
+ width: 100%;
+}
