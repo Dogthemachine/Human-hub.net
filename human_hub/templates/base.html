@@ -6,7 +6,7 @@
 
     <head>
         <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
             <link rel="icon" href="{{ STATIC_URL }}img/cc-logo-mini.png">
             <title>{% block title %}{% endblock %} human-hub.net</title>
             <link href='https://fonts.googleapis.com/css?family=IBM Plex Mono' rel='stylesheet'>
@@ -80,6 +80,31 @@
           </div>
         </div>
         <!-- Order modal -->
+
+        <!-- Choose size modal -->
+        <div class="modal fade" id="hb-choose-size" tabindex="-1" aria-labelledby="hb-order-modal-Label" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content bg-cart-modal-color">
+              <div class="modal-header">
+                <h5 class="modal-title" id="hb-choose-size-Label">{% trans 'Choose size' %}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+            <div class="row col-12 ms-5 mt-2 mb-1" style="float:left;">
+                <div style="float:left;">
+                    <button type="button" class="btn me-4 btn-dark rounded-0" style="font-family: IBM Plex Mono; height:45px; width:45px; float:left;" id="pop" data-bs-toggle="modal" data-bs-target="#hb-cart-modal">XS</button>
+                    <button type="button" class="btn me-4 btn-dark rounded-0" style="font-family: IBM Plex Mono; height:45px; width:45px; float:left;" id="pop" data-bs-toggle="modal" data-bs-target="#hb-cart-modal">S</button>
+                    <button type="button" class="btn me-4 btn-dark rounded-0" style="font-family: IBM Plex Mono; height:45px; width:45px; float:left;" id="pop" data-bs-toggle="modal" data-bs-target="#hb-cart-modal">M</button>
+                    <button type="button" class="btn me-4 btn-secondary rounded-0" style="font-family: IBM Plex Mono; height:45px; width:45px; float:left;">L</button>
+                    <button type="button" class="btn me-4 btn-secondary rounded-0" style="font-family: IBM Plex Mono; height:45px; width:45px; float:left;">XL</button>
+                </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Choose size modal -->
+
 
     </body>
 

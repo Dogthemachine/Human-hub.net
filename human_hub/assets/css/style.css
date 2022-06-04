@@ -79,10 +79,6 @@ html, body {
   padding: 10px;
 }
 
-body {
-  background: #eee;
-}
-
 .cart {
   background: #fff;
 }
@@ -167,8 +163,8 @@ overflow: hidden;
 
 .form-switch .form-check-input {
   background-color: #BEBEBE;
-
 }
+
 .form-switch .form-check-input:focus {
   background-color: #BEBEBE;
 }
@@ -239,7 +235,7 @@ overflow: hidden;
 .item-price-category-page {
     float:left;
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 12px;
     color: #181818;
     line-height: 1.6;
 }
@@ -257,15 +253,59 @@ overflow: hidden;
 }
 
 .item-name-in-category-page {
+    grid-auto-rows: inherit;
+    float:left !important;
+    margin-right: 10%;
     white-space: nowrap ;
-    font-size: 4vw;
+    font-size: 15px;
     text-align: center;
-    font-family: IBM Plex Mono !important;
+    font-family: IBM Plex Mono;
     float: left !important;
     padding-bottom: 0rem !important;
-    margin-bottom: 0rem !important;
+    margin-bottom: 0rem;
+    margin-top: 2px;
 }
 
 .row-full{
  width: 100%;
 }
+
+@media screen and (max-width: 870px) {
+.item-name-in-category-page {
+    font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+.item-name-in-category-page {
+    font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+.item-name-in-category-page {
+    font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 870px) {
+.item-price-category-page {
+    font-size: 11px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+.item-price-category-page {
+    font-size: 9px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+.item-price-category-page {
+    font-size: 7px;
+    }
+}
+
+
+
+

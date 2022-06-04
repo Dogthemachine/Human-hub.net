@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-    console.log('START');
 
-    $('#pop').on('click', function() {
+    const cart = document.getElementById("pop")
+    cart.addEventListener('click', function(event) {
         $.ajax({
             url: '/orders/cart/',
             type: 'get',
@@ -12,7 +12,9 @@ $(document).ready(function() {
         });
     });
 
-    $('#pop-order').on('click', function() {
+
+    const makeorder = document.getElementById("pop-order")
+    makeorder.addEventListener('click', function(event) {
         $.ajax({
             url: '/orders/order',
             type: 'get',
@@ -23,17 +25,16 @@ $(document).ready(function() {
     });
 
 
-//-------------------------------------------------------------------------------------
-
-
     const toggle = document.querySelector('.toggle input')
-
     toggle.addEventListener('click', () => {
         const onOff = toggle.parentNode.querySelector('.onoff');
         document.getElementById('icontoggler').src = toggle.checked ? "/static/img/category_toggle.png" : "/static/img/category_toggle_checked.png";
         if (document.getElementById("category-style").classList.contains('collection-template__products')) {
             document.getElementById("category-style").classList.remove('collection-template__products');
-        } else {document.getElementById("category-style").classList.add('collection-template__products')}
+            document.getElementById("category-style").classList.add('collection-template--column-view')
+        } else {document.getElementById("category-style").classList.remove('collection-template--column-view')
+            document.getElementById("category-style").classList.add('collection-template__products')
+            }
     })
 
 });
