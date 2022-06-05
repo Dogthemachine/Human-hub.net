@@ -1,10 +1,25 @@
 $(document).ready(function() {
 
 
-    const cart = document.getElementById("show-cart-modal")
+    const cart = document.getElementById("show-cart-modal");
     cart.addEventListener('click', showCarModal);
 
+    const choose_size = document.getElementsByClassName("size_button");
+    for (var i = 0; i< choose_size.length; i++) {
+        choose_size[i].onclick = addSizeToCart
+    };
+
     function showCarModal() {
+        $.ajax({
+            url: '/orders/cart/',
+            type: 'get',
+            success: function(data) {
+                $('#hb-cart-content').html(data.html);
+            }
+        });
+    };
+
+    function addSizeToCart() {
         $.ajax({
             url: '/orders/cart/',
             type: 'get',
