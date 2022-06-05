@@ -3,8 +3,34 @@
 {% load static %}
 {% block content %}
 
+<!-- Choose size modal -->
+<div class="modal fade" id="hb-choose-size" tabindex="-1" aria-labelledby="hb-order-modal-Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content bg-cart-modal-color">
+      <div class="modal-header">
+        <h5 class="modal-title" id="hb-choose-size-Label">{% trans 'Choose size' %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mt-5 mb-5 d-flex justify-content-center" style="white-space: nowrap;">
+            <div style="float:left;">
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_xxl_activ.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_xl_activ.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_l_activ.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_m_activ.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_s_activ.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_xs_disable.png"></button>
+                <button type="button" class="size_button" id="show-cart-modal" data-bs-toggle="modal" data-bs-target="#hb-cart-modal"><img class="size_button" src="{{ STATIC_URL }}img/size_button_xxs_disable.png"></button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Choose size modal -->
+
 <div class="row">
-    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 text-center mx-auto">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-center mx-auto">
 
         <div class="col-xs-8 col-sm-6 col-md-8 col-lg-8 text-center mx-auto">
             <img class='img-fluid w-80' src="{{ STATIC_URL }}img/SomeBanner.png" alt="" />

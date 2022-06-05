@@ -1,8 +1,10 @@
 $(document).ready(function() {
 
 
-    const cart = document.getElementById("pop")
-    cart.addEventListener('click', function(event) {
+    const cart = document.getElementById("show-cart-modal")
+    cart.addEventListener('click', showCarModal);
+
+    function showCarModal() {
         $.ajax({
             url: '/orders/cart/',
             type: 'get',
@@ -10,10 +12,10 @@ $(document).ready(function() {
                 $('#hb-cart-content').html(data.html);
             }
         });
-    });
+    };
 
 
-    const makeorder = document.getElementById("pop-order");
+    const makeorder = document.getElementById("show-order-modal");
     makeorder.addEventListener('click', showOrderModal);
 
     function showOrderModal() {
@@ -26,12 +28,15 @@ $(document).ready(function() {
 
     function makeorderSuccess(data) {
         $('#hb-order-content').html(data.html);
+
         const worldwide = document.getElementById("ordr-deliv-worldwide");
         const novpostobranch = document.getElementById("ordr-deliv-novpostobranch");
         const novpostodoor = document.getElementById("ordr-deliv-novpostodoor");
         const urkpostobranch = document.getElementById("ordr-deliv-urkpostobranch");
         const urkpostodoor = document.getElementById("ordr-deliv-urkpostodoor");
         const justintobranch = document.getElementById("ordr-deliv-justintobranch");
+
+        const collapsing = document.getElementById("collapseDeliveryInfo");
 
         worldwide.addEventListener('click', () => {
             if (worldwide.checked) {
@@ -100,6 +105,9 @@ $(document).ready(function() {
         } else {document.getElementById("category-style").classList.remove('collection-template--column-view')
             document.getElementById("category-style").classList.add('collection-template__products')
             }
-    })
+    });
+
+
+
 
 });

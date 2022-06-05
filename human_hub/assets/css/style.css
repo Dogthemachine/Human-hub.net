@@ -39,7 +39,7 @@ html, body {
 }
 
 .hb-gallery {
-     height: 35px;
+     height: 55px;
      margin-top: -5px;
 }
 
@@ -59,8 +59,9 @@ html, body {
     color:  #D3D3D3 !important;
 
 }
-/*  FOOTER  */
+/*  NAVBAR  */
 
+/*  FOOTER  */
 .footer-border-color-grey {
     border-color: #BEBEBE !important;
 }
@@ -68,9 +69,9 @@ html, body {
 .footer-border-color-black {
     border-color: #202020 !important;
 }
+/*  FOOTER  */
 
 /*  CART  */
-
 .bg-cart-modal-color {
       background-color: #F5F5F5 !important;
 }
@@ -146,9 +147,9 @@ label.radio input {
   box-shadow: 0 0 0 0px #fff, 0 0 0 0.0rem rgba(255, 255, 255, 0) !important;
   cursor-color: black !important;
 }
+/*  CART  */
 
 /*  ITEM  */
-
 #carouselHumanControls .carousel-item img {
 object-fit: cover;
 object-position: center;
@@ -156,6 +157,35 @@ height: auto;
 overflow: hidden;
 }
 
+.other-item-image {
+    height: 150px;
+    margin: 0.5em;
+
+}
+
+.carousel-indicators{
+    list-style: none;
+}
+
+.carousel-indicators li, .carousel-indicators li.active{
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    position: relative;
+    margin: 10px;
+}
+
+.carousel-indicators img{
+    position: absolute;
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+/*  ITEM  */
+
+/*  CATEGORY  */
 .form-check-input:checked {
     background-color: #181818;
     border-color: #BEBEBE;
@@ -170,7 +200,7 @@ overflow: hidden;
 }
 /*  CATEGORY  */
 
-/* toggler*/
+/* CATEGORY toggler */
 .toggle {
   position: relative;
 }
@@ -196,7 +226,7 @@ overflow: hidden;
   content: "";
   position: absolute;
 }
-/* toggler*/
+/* CATEGORY toggler */
 
 
 .collection-template__products {
@@ -256,7 +286,7 @@ overflow: hidden;
     grid-auto-rows: inherit;
     float:left !important;
     margin-right: 10%;
-    white-space: nowrap ;
+    white-space: nowrap;
     font-size: 15px;
     text-align: center;
     font-family: IBM Plex Mono;
@@ -270,6 +300,17 @@ overflow: hidden;
  width: 100%;
 }
 
+.size_button {
+    border: 0px;
+    height:30px;
+}
+
+@media screen and (min-width: 870px) {
+.item-name-in-category-page {
+    font-size: 20px;
+    }
+}
+
 @media screen and (max-width: 870px) {
 .item-name-in-category-page {
     font-size: 15px;
@@ -278,13 +319,13 @@ overflow: hidden;
 
 @media screen and (max-width: 550px) {
 .item-name-in-category-page {
-    font-size: 10px;
+    font-size: 13px;
     }
 }
 
 @media screen and (max-width: 300px) {
 .item-name-in-category-page {
-    font-size: 7px;
+    font-size: 10px;
     }
 }
 
@@ -306,6 +347,47 @@ overflow: hidden;
     }
 }
 
+@media screen and (max-width: 370px) {
+.size_button {
+    border: 0px;
+    height:25px;
+    }
+}
 
+@media screen and (max-width: 325px) {
+.size_button {
+    border: 0px;
+    height:20px;
+    }
+}
 
+@media screen and (max-width: 330px) {
+.hb-gallery {
+     height: 35px;
+     margin-top: -5px;
+}
 
+@media screen and (max-width: 330px) {
+.other-item-image {
+    height: 30px;
+}
+
+@media screen and (max-width: 500px) {
+.other-item-image {
+    height: 60px;
+}
+
+@media screen and (max-width: 700px) {
+.other-item-image {
+    height: 100px;
+}
+
+@media screen and (max-width: 900px) {
+.other-item-image {
+    height: 120px;
+}
+
+@media screen and (max-width: 1080px) {
+.other-item-image {
+    height: 140px;
+}
