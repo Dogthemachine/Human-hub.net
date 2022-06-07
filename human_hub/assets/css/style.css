@@ -162,28 +162,73 @@ overflow: hidden;
     margin: 0.5em;
 
 }
-
-.carousel-indicators{
-    list-style: none;
-}
-
-.carousel-indicators li, .carousel-indicators li.active{
-    width: 70px;
-    height: 70px;
-    background-color: #fff;
-    position: relative;
-    margin: 10px;
-}
-
-.carousel-indicators img{
-    position: absolute;
-    width: 100%;
-    border-radius: 50%;
-    height: 100%;
-    top: 0;
-    left: 0;
-}
 /*  ITEM  */
+
+/*  CAROUSEL SHOWCASE PAGE */
+.carousel-item-showcase {
+    margin-right: 10px;
+    flex: 0 0 33.333333%;
+    display: block;
+}
+
+.carousel-inner-showcase {
+    display: flex;
+    padding: 1em;
+}
+
+.carousel-inner-showcase {
+    padding: 1em;
+}
+
+.card-carousel-showcase {
+    margin: 0 .5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+}
+
+.carousel-control-prev, .carousel-control-next{
+    background-color: #e1e1e1;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card-carousel-showcase .img-wrapper {
+    max-width: 100%;
+    height: 13em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-carousel-showcase img {
+    max-height: 100%;
+}
+
+@media screen and (min-width: 768px) {
+.carousel-inner-showcase {
+    display: flex;
+    padding: 1em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+.carousel-item-showcase {
+    margin-right: 10px;
+    flex: 0 0 33.333333%;
+    display: block;
+    }
+}
+
+@media (max-width: 767px) {
+  .card-carousel-showcase .img-wrapper {
+    height: 17em;
+  }
+}
+
+/*  CAROUSEL SHOWCASE PAGE */
 
 /*  CATEGORY  */
 .form-check-input:checked {
@@ -301,6 +346,7 @@ overflow: hidden;
 }
 
 .size_button {
+    background-color: white;
     border: 0px;
     height:30px;
 }
@@ -365,15 +411,19 @@ overflow: hidden;
 }
 
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 250px) {
 .size_button {
+    margin-left: 10px;
+    margin-right: 10px;
     border: 0px;
     height:25px;
     }
 }
 
-@media screen and (max-width: 325px) {
+@media screen and (max-width: 250px) {
 .size_button_img {
+    margin-left: 10px;
+    margin-right: 10px;
     height:25px;
     }
 }
@@ -408,3 +458,4 @@ overflow: hidden;
 .other-item-image {
     height: 140px;
 }
+

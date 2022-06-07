@@ -2,10 +2,8 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
-
-
 <div class="row">
-    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 text-center mx-auto">
+    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7 text-center mx-auto">
 
         <div class="col-xs-8 col-sm-6 col-md-8 col-lg-8 text-center mx-auto">
             <img class='img-fluid w-80' src="{{ STATIC_URL }}img/SomeBanner.png" alt="" />
@@ -122,4 +120,6 @@
     </div>
 </div>
 {% endblock %}
-
+{% block js %}
+<script src="{{ STATIC_URL }}js/category_page.js"></script>
+{% endblock %}

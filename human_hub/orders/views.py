@@ -32,7 +32,7 @@ def cart(request):
 
 @json_view
 def order(request):
-    t = loader.get_template('orders/make-order.html')
+    t = loader.get_template('orders/make_order.html')
     html = t.render({}, request)
 
     return {'html': html}

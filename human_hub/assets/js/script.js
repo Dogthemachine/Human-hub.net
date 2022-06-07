@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+//-----------   MAKE ORDER BUTTONS     -----------
     const cart = document.getElementById("show-cart-modal");
     cart.addEventListener('click', showCarModal);
 
@@ -28,10 +28,9 @@ $(document).ready(function() {
             }
         });
     };
-
+//-----------   MAKE ORDER BUTTONS     -----------
 
 //-----------   MAKE ORDER MODAL WINDOW     -----------
-
     const makeorder = document.getElementById("show-order-modal");
     makeorder.addEventListener('click', showOrderModal);
 
@@ -176,66 +175,5 @@ $(document).ready(function() {
             };
         });
    };
-
-    const checkout = document.getElementById("pop-order-checkout");
-    checkout.addEventListener('click', () => {
-        if (worldwide.checked) {
-            NovaPoshtaToBranch.parentElement.removeChild(NovaPoshtaToBranch);
-            NovaPoshtaToDoor.parentElement.removeChild(NovaPoshtaToDoor);
-            UkrposhtaToBranch.parentElement.removeChild(UkrposhtaToBranch);
-            UkrposhtaToDoor.parentElement.removeChild(UkrposhtaToDoor);
-            JustinToBranch.parentElement.removeChild(JustinToBranch);
-        };
-        if (novpostobranch.checked) {
-            WorldWide.parentElement.removeChild(WorldWide);
-            NovaPoshtaToDoor.parentElement.removeChild(NovaPoshtaToDoor);
-            UkrposhtaToBranch.parentElement.removeChild(UkrposhtaToBranch);
-            UkrposhtaToDoor.parentElement.removeChild(UkrposhtaToDoor);
-            JustinToBranch.parentElement.removeChild(JustinToBranch);
-        };
-        if (novpostodoor.checked) {
-            WorldWide.parentElement.removeChild(WorldWide);
-            NovaPoshtaToBranch.parentElement.removeChild(NovaPoshtaToBranch);
-            UkrposhtaToBranch.parentElement.removeChild(UkrposhtaToBranch);
-            UkrposhtaToDoor.parentElement.removeChild(UkrposhtaToDoor);
-            JustinToBranch.parentElement.removeChild(JustinToBranch);
-        };
-        if (urkpostobranch.checked) {
-            WorldWide.parentElement.removeChild(WorldWide);
-            NovaPoshtaToBranch.parentElement.removeChild(NovaPoshtaToBranch);
-            NovaPoshtaToDoor.parentElement.removeChild(NovaPoshtaToDoor);
-            UkrposhtaToDoor.parentElement.removeChild(UkrposhtaToDoor);
-            JustinToBranch.parentElement.removeChild(JustinToBranch);
-        };
-        if (urkpostodoor.checked) {
-            WorldWide.parentElement.removeChild(WorldWide);
-            NovaPoshtaToBranch.parentElement.removeChild(NovaPoshtaToBranch);
-            NovaPoshtaToDoor.parentElement.removeChild(NovaPoshtaToDoor);
-            UkrposhtaToBranch.parentElement.removeChild(UkrposhtaToBranch);
-            JustinToBranch.parentElement.removeChild(JustinToBranch);
-        };
-        if (justintobranch.checked) {
-            WorldWide.parentElement.removeChild(WorldWide);
-            NovaPoshtaToBranch.parentElement.removeChild(NovaPoshtaToBranch);
-            NovaPoshtaToDoor.parentElement.removeChild(NovaPoshtaToDoor);
-            UkrposhtaToBranch.parentElement.removeChild(UkrposhtaToBranch);
-            UkrposhtaToDoor.parentElement.removeChild(UkrposhtaToDoor);
-        };
-    });
 //-----------   MAKE ORDER MODAL WINDOW     -----------
-
-
-    const toggle = document.querySelector('.toggle input');
-    toggle.addEventListener('click', () => {
-        const onOff = toggle.parentNode.querySelector('.onoff');
-        document.getElementById('icontoggler').src = toggle.checked ? "/static/img/category_toggle.png" : "/static/img/category_toggle_checked.png";
-        if (document.getElementById("category-style").classList.contains('collection-template__products')) {
-            document.getElementById("category-style").classList.remove('collection-template__products');
-            document.getElementById("category-style").classList.add('collection-template--column-view')
-        } else {document.getElementById("category-style").classList.remove('collection-template--column-view')
-            document.getElementById("category-style").classList.add('collection-template__products')
-            }
-    });
-
-
 });
