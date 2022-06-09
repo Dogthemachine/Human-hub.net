@@ -20,7 +20,7 @@ $(document).ready(function() {
                     { scrollLeft: scrollPosition },
                     600
                 );
-            }
+            } else {console.log('if (scrollPosition < carouselWidth - cardWidth * 4 /// else)')}
             });
 
         $("#carouselShowcasePage .carousel-control-prev").on("click", function () {
