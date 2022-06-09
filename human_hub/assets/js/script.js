@@ -1,5 +1,17 @@
 $(document).ready(function() {
 
+//-----------   FOOTER BUTTONS     -----------
+    if (window.matchMedia("(max-width: 450px)").matches) {
+        $('.btn-footer').removeClass('btn-sm');
+        $('.btn-footer').removeClass('mx-3');
+        $('.btn-footer').addClass('btn-footer-xs');
+        $('.btn-footer').addClass('mx-2');
+        $('.btn-footer').addClass('btn-xs');
+        $('.btn-footer').addClass('btn-xs');
+        $('.btn-footer-xs').removeClass('btn-footer');
+    };
+//-----------   FOOTER BUTTONS     -----------
+
 //-----------   MAKE ORDER BUTTONS     -----------
     const cart = document.getElementById("show-cart-modal");
     cart.addEventListener('click', showCarModal);

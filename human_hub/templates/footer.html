@@ -3,21 +3,25 @@
   <!-- Section: Info  -->
   <section class="d-flex justify-content-center p-2 border-top footer-border-color-black">
           <a href="{% url 'info:discounts' %}" title="{% trans 'Discounts' %}">
-            <button type="button" class="btn btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Discounts' %}</button></a>
+            <button type="button" style="width: auto;" class="btn-footer btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Discounts' %}</button></a>
           <a href="{% url 'info:sizing' %}" title="{% trans 'Sizing' %}">
-            <button type="button" class="btn btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Sizing' %}</button></a>
+            <button type="button" style="width: auto;" class="btn-footer btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Sizing' %}</button></a>
           <a href="{% url 'info:shipping' %}" title="{% trans 'SHipping' %}">
-            <button type="button" class="btn btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Shipping' %}</button></a>
+            <button type="button" style="width: auto;" class="btn-footer btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Shipping' %}</button></a>
           <a href="{% url 'info:refund' %}" title="{% trans 'Refund' %}">
-            <button type="button" class="btn btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Refund' %}</button></a>
+            <button type="button" style="width: auto;" class="btn-footer btn-outline-dark rounded-0 mb-3 mt-3 btn-sm mx-3">{% trans 'Refund' %}</button></a>
   </section>
   <!-- Section: Info  -->
   <!-- Section: About project  -->
-  <section class="col-10 d-flex justify-content-center mx-auto p-1 border-top footer-border-color-black">
-        <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:refund' %}" title="{% trans 'Refund' %}">{% trans 'Refund' %}</a>
-        <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">{% trans 'Contacts' %}</a>
-        <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:terms' %}" title="{% trans 'Terms' %}">{% trans 'Terms' %}</a>
-  </section>
+  <div class="row">
+    <div class="col-xs-8 col-sm-7 col-md-8 col-lg-7 text-center mx-auto mt-1">
+      <section class="col-10 d-flex justify-content-center mx-auto p-1 border-top footer-border-color-black">
+            <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:refund' %}" title="{% trans 'Refund' %}">{% trans 'Refund' %}</a>
+            <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:contacts' %}" title="{% trans 'Contacts' %}">{% trans 'Contacts' %}</a>
+            <a class="nav-link hb-main-menu-color mt-2 mx-2" href="{% url 'info:terms' %}" title="{% trans 'Terms' %}">{% trans 'Terms' %}</a>
+      </section>
+    </div>
+  </div>
   <!-- Section: About project-->
   <!-- Section: Social  -->
   <section class="d-flex justify-content-center p-2">
