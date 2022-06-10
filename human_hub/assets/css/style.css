@@ -485,10 +485,9 @@ overflow: hidden;
 }
 
 .size_button {
+    padding: 1, 1, 1, 1;
     background-opacity: 0;
     padding: 0, 0, 0, 0;
-    margin-left: 8px;
-    margin-right: 8px;
     border: 0px;
     height:30px;
 }
