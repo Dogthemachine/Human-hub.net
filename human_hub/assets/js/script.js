@@ -10,6 +10,12 @@ $(document).ready(function() {
         $('.btn-footer').addClass('btn-xs');
         $('.btn-footer-xs').removeClass('btn-footer');
     };
+
+    if (window.matchMedia("(min-width: 980px)").matches) {
+        $('.btn-footer').removeClass('mx-3');
+        $('.btn-footer').addClass('mx-5');
+    };
+
 //-----------   FOOTER BUTTONS     -----------
 
 //-----------   MAKE ORDER BUTTONS     -----------

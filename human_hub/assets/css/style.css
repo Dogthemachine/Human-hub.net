@@ -158,6 +158,74 @@ label.radio input {
 /*  CART  */
 
 /*  ITEM  */
+/*  ITEM CAROUSEL  */
+.outer {
+    margin:0 auto;
+    max-width:800px;
+}
+
+#big .item {
+    padding: 12px 0px;
+    margin:2px;
+    border-radius: 0px;
+    text-align: center;
+}
+
+#thumbs .item {
+    padding: 0px;
+    margin:2px;
+    border-radius: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#thumbs .item h1 {
+    font-size: 18px;
+}
+
+#thumbs .current .item {
+    background:#FF5722;
+}
+
+.owl-theme .owl-nav [class*='owl-'] {
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.owl-theme .owl-nav [class*='owl-'].disabled:hover {
+    background-color: #D6D6D6;
+}
+
+#big.owl-theme {
+    position: relative;
+}
+
+#big.owl-theme .owl-next, #big.owl-theme .owl-prev {
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e);
+    opacity: 50%;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    margin-top: -20px;
+    position: absolute;
+    text-align:center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#big.owl-theme .owl-prev {
+    left: 10px;
+}
+
+#big.owl-theme .owl-next {
+    right: 10px;
+}
+
+#thumbs.owl-theme .owl-next, #thumbs.owl-theme .owl-prev {
+    background:#333;
+}
+/*  ITEM CAROUSEL  */
+
 #carouselHumanControls .carousel-item img {
 object-fit: cover;
 object-position: center;
