@@ -492,7 +492,8 @@ overflow: hidden;
 }
 
 .size_button_font {
-    font-size: 12px;
+    text-align: center !important;
+    font-size: 11px;
     background-opacity: 0;
     padding: 0, 0, 0, 0;
     border: 0px;
@@ -507,9 +508,10 @@ overflow: hidden;
 
 @media screen and (max-width: 370px) {
 .size_button_font {
+    text-align: center !important;
     height:30px;
     width: 30px;
-    font-size: 10px;
+    font-size: 9px;
     }
 }
 
@@ -522,12 +524,12 @@ overflow: hidden;
 
 @media screen and (max-width: 250px) {
 .size_button_font {
+    text-align: center !important;
     height:25px;
     width: 25px;
     margin-left: 10px;
     margin-right: 10px;
-    font-size: 8px;
-
+    font-size: 7px;
     }
 }
 
