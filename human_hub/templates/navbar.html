@@ -1,4 +1,5 @@
 {% load i18n %}
+{% load showcase_tags %}
 
   <nav class="navbar navbar-dark bg-dark py-4">
     <div class="container-fluid">
@@ -58,13 +59,15 @@
             </li>
           </ul>
 
+      {% for category in get_categories %}
           <ul class="nav navbar-nav navbar-right ms-2 mt-4 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">
-                <a class="nav-link hb-main-menu-color" style="font-family: IBM Plex Mono;" href="{% url 'showcase:category_page' %}" title="{% trans 'Category' %}">
-                  {% trans 'Category' %}
+                <a class="nav-link hb-main-menu-color" style="font-family: IBM Plex Mono;" href="" title="{% trans 'Category' %}">
+                  {% trans category.name %}
                 </a>
             </li>
           </ul>
+      {% endfor %}
 
           <ul class="nav navbar-nav navbar-right ms-2 mt-4 mb-0 h1 fs-5">
             <li class="nav-item visible-xs">

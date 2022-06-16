@@ -227,10 +227,10 @@ label.radio input {
 /*  ITEM CAROUSEL  */
 
 #carouselHumanControls .carousel-item img {
-object-fit: cover;
-object-position: center;
-height: auto;
-overflow: hidden;
+    object-fit: cover;
+    object-position: center;
+    height: auto;
+    overflow: hidden;
 }
 
 .other-item-image {
@@ -238,6 +238,32 @@ overflow: hidden;
     margin: 0.5em;
 
 }
+
+.font-navigation {
+    font-family: IBM Plex Mono !important;
+    float:left !important;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+.font-navigation {
+    font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+.font-navigation {
+    font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+.font-navigation {
+    font-size: 10px;
+    }
+}
+
+
 /*  ITEM  */
 
 /*  SHOWCASE  */

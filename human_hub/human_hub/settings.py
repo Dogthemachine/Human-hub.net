@@ -1,6 +1,8 @@
 from pathlib import Path
 import environ
 import os
+
+gettext = lambda s: s
 from django.utils.translation import gettext_lazy as _
 
 
@@ -22,10 +24,12 @@ ALLOWED_HOSTS = [ '*'
     # 'www.human-hub.net',
 ]
 
+USE_I18N = True
 
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -101,6 +105,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
+LANGUAGES = (
+    ('ru', gettext('Russian')),
+    ('uk', gettext('Ukrainian')),
+    ('en', gettext('English')),
+)
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -133,3 +143,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
 ]
+
+STOCKS_TYPES = (
+    (0, 'Unconditional'),
+    (1, 'Order items count'),
+    (2, 'Conditional')
+)
+
+TRANSLATABLE_MODEL_MODULES = ["showcase.Categories", "showcase.Items", "showcase.Sizes",]
