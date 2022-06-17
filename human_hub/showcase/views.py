@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.utils.translation import gettext_lazy as _
 from datetime import datetime, timedelta
 from django.utils import timezone
-from .models import (Photo, Categories, Items, Sizes, Balance)
+from showcase.models import Photo, Categories, Items, Sizes, Balance
 
 
 class ShowcaseView(View):
