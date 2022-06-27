@@ -1,47 +1,32 @@
-
-    <div class="col">
-        <div class="product-details mr-2">
-            <div class="d-flex justify-content-between align-items-center mt-3 p-2 items bg-cart-modal-color">
-                <div class="d-flex flex-row"><img class="rounded-0" src="{{ STATIC_URL }}img/ProductImage.jpg" height="100">
-                    <div class="d-grid ms-4 gap-2" style="font-family: IBM Plex Mono;">
-                        <div class="row">Product name</div>
-                        <div class="row text-muted">Size</div>
-                        <div class="row text-muted">Color</div>
-                    </div>
+{% load i18n %}
+{% for item in cart_items %}
+    <div class="product-details mr-2">
+        <div class="d-flex justify-content-between align-items-center mt-3 p-2 items bg-cart-modal-color">
+            <div class="d-flex flex-row"><img class="rounded-0" src="{{ MEDIA_URL }}{{ item.item.image }}" height="100">
+                <div class="d-grid ms-4 gap-2" style="font-family: IBM Plex Mono;">
+                    <div class="row">{{ item.item.name }}</div>
+                    <div class="row text-muted">{{ item.size.name }}</div>
+                    <div class="row text-muted">{{ item.item.description }}</div>
                 </div>
-                <div class="d-flex flex-row align-items-center">
-                    <span class="d-block me-5">1 x</span>
-                    <span class="d-block ml-5 font-weight-bold">123 &euro;</span>
-                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <span class="d-block ml-5 font-weight-bold">{{ item.item.price }} {{ item.item.price_description }}</span>
+                <button data-dismiss="alert" data-target="#closeablecard" type="button" data-id="{{ item.id }}" class="close close-cart-item ms-2" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
         </div>
     </div>
-
-    <div class="col">
-        <div class="product-details mr-2">
-            <div class="d-flex justify-content-between align-items-center mt-3 p-2 items bg-cart-modal-color">
-                <div class="d-flex flex-row"><img class="rounded-0" src="{{ STATIC_URL }}img/ProductImage.jpg" height="100">
-                    <div class="d-grid ms-4 gap-2" style="font-family: IBM Plex Mono;">
-                        <div class="row">Product name</div>
-                        <div class="row text-muted">Size</div>
-                        <div class="row text-muted">Color</div>
-                    </div>
-                </div>
-                <div class="d-flex flex-row align-items-center">
-                    <span class="d-block me-5">1 x</span>
-                    <span class="d-block ml-5 font-weight-bold">123 &euro;</span>
-                </div>
-            </div>
-        </div>
-    </div>
+{% endfor %}
 
     <div class="row" style="height:20px;"></div>
 
     <div class="col-10 d-flex justify-content-center mx-auto p-4 border-top footer-border-color-black">
         <div class="mx-3" style="float:left;">TOTAL PRICE</div>
-        <div class="mx-3" style="float:right;">246.00 &euro;</div>
+        <div class="mx-3" id="cart_total_price" style="float:right;">{{ total_price }} {{ item.item.price_description }}</div>
     </div>
 
+{% block js %}
+<script src="{{ STATIC_URL }}js/cart.js"></script>
+{% endblock %}
 
 
 

@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 from datetime import datetime, timedelta
 from django.utils import timezone
 from showcase.models import Photo, Categories, Items, Sizes, Balance
-
+from orders.models import Cart, CartItem
 
 class ShowcaseView(View):
 
@@ -56,13 +56,15 @@ class CategoryPageView(View):
 class ItemPageView(View):
 
     def get(self, request, item_id):
+
         item = get_object_or_404(Items, id=item_id)
 
         photos = Photo.objects.all().filter(item=item)
 
         sizes = Sizes.objects.all().filter(categories=item.category)
+        for size in sizes:
+            size.amount = Balance.objects.get(item=item, size=size).amount
 
-        print(photos.count())
         return render(
             request,
             'showcase/item_page.html',

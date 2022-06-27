@@ -1,12 +1,15 @@
 from django_resized import ResizedImageField
+from solo.models import SingletonModel
+
 
 from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import Sum
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
+from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
-from django.core.exceptions import ValidationError
+
 
 
 class Categories(models.Model):
@@ -165,6 +168,33 @@ class Banner(models.Model):
         super().save(*args, **kwargs)
         if Banner.objects.count() != 1:
             self.delete()
+
+
+class Config(SingletonModel):
+    dollar_rate = models.DecimalField(
+        _("dollar rate"), max_digits=5, decimal_places=2, default=1
+    )
+    euro_rate = models.DecimalField(
+        _("euro rate"), max_digits=5, decimal_places=2, default=1
+    )
+    price_description = models.CharField(
+        _("price_description"), max_length=250, default=gettext("Grn.")
+    )
+    price_description_usd = models.CharField(
+        _("price_description"), max_length=250, default=gettext("Usd.")
+    )
+    price_description_eur = models.CharField(
+        _("price_description"), max_length=250, default=gettext("Eur.")
+    )
+
+    class Meta:
+        ordering = ("dollar_rate",)
+        verbose_name = _("Config")
+        verbose_name_plural = _("Config")
+
+    def __str__(self):
+        return u"%s" % self.dollar_rate
+
 
 
 @receiver(post_save, sender=Items)

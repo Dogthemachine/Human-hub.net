@@ -48,8 +48,12 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'middleware.session_middleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'middleware.session_middleware',
+    'orders.middleware.info_middleware',
+
 ]
 
 ROOT_URLCONF = 'human_hub.urls'
@@ -151,3 +155,4 @@ STOCKS_TYPES = (
 )
 
 TRANSLATABLE_MODEL_MODULES = ["showcase.Categories", "showcase.Items", "showcase.Sizes",]
+
