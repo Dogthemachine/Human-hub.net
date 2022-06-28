@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from jsonview.decorators import json_view
+from django.views.decorators.csrf import csrf_exempt
 from django.views import View
+from django.template import loader
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib import messages
 from django.conf import settings
@@ -9,6 +12,7 @@ from datetime import datetime, timedelta
 from django.utils import timezone
 from showcase.models import Photo, Categories, Items, Sizes, Balance
 from orders.models import Cart, CartItem
+
 
 class ShowcaseView(View):
 
@@ -74,3 +78,19 @@ class ItemPageView(View):
                 'sizes': sizes,
             }
         )
+
+@csrf_exempt
+@json_view
+def ChooseSizes(request, item_id):
+    item = get_object_or_404(Items, id=item_id)
+    sizes = Sizes.objects.all().filter(categories=item.category)
+    for size in sizes:
+        size.amount = Balance.objects.get(item=item, size=size).amount
+
+    t = loader.get_template('showcase/choose_sizes.html')
+    c = {'sizes': sizes, 'item': item}
+    html = t.render(c, request)
+
+    return {'success': True, 'html': html}
+
+

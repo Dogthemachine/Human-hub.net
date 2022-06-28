@@ -472,6 +472,47 @@ background: 0;
     float:right
 }
 
+
+.item-name-in-category-page-two-columns{
+    font-weight: bold;
+    grid-auto-rows: inherit;
+    float:left !important;
+    margin-right: 10%;
+    white-space: nowrap;
+    font-size: 15px;
+    text-align: center;
+    font-family: IBM Plex Mono;
+    float: left !important;
+    padding-bottom: 0rem !important;
+    margin-bottom: 0rem;
+    margin-top: 3px;
+}
+
+@media screen and (max-width: 750px) {
+.item-name-in-category-page-two-columns {
+    font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+.item-name-in-category-page-two-columns {
+    font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+.item-name-in-category-page-two-columns {
+    font-size: 7px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+.item-name-in-category-page-two-columns {
+    font-size: 5px;
+    }
+}
+
+
 .item-name-in-category-page {
     font-weight: bold;
     grid-auto-rows: inherit;

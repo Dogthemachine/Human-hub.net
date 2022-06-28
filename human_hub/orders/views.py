@@ -135,28 +135,29 @@ def cart_checkout(request):
     for i in data:
         form[i['name']] = i['value']
 
-    if form['customer_name']:
+    if 'customer_name' in form:
         if len(form['customer_name']) >= 1:
             this_order.name = form['customer_name']
-    else:
-        errors += "Print your name <br>"
+        else:
+            errors += "Print your name <br>"
+
     if 'customer_surname' in form:
         if len(form['customer_surname']) >= 1:
             this_order.last_name = form['customer_surname']
-    else:
-        errors += "Print your surname <br>"
+        else:
+            errors += "Print your surname <br>"
     if 'customer_phone' in form:
         if len(form['customer_phone']) >= 1:
             this_order.phone = form['customer_phone']
-    else:
-        errors += "Print your phone <br>"
+        else:
+            errors += "Print your phone <br>"
     if 'customer_email' in form:
-        if not re.match(r'[^@]+@[^@]+\.[^@]+', form['customer_email']):
-            errors += "Print correct email <br>"
         if len(form['customer_email']) >= 1:
+            if not re.match(r'[^@]+@[^@]+\.[^@]+', form['customer_email']):
+                errors += "Print correct email <br>"
             this_order.email = form['customer_email']
-    else:
-        errors += "Print your email <br>"
+        else:
+            errors += "Print your email <br>"
 
     if 'ordr-deliv-worldwide' in form:
         if form['ordr-deliv-worldwide'] == 'on':

@@ -112,6 +112,7 @@ for (i = 0; i < all_sizes.length; i++) {
             if (data.success) {
             $("#hb-cart-total").html(data.cart_amount);
             size_item_id = 0;
+            location.reload();
             } else {document.getElementById("must-choose").hidden = false}
             },
         });
