@@ -26,13 +26,13 @@
   <div class="bg-light p-4 hb-main-menu-background-color">
 
         <form class="d-flex">
-          <button class="btn ms-2 btn-outline-secondary rounded-0 hb-main-menu-color" type="submit" style="font-family: IBM Plex Mono;">Search</button>
+          <button class="btn ms-2 btn-outline-secondary rounded-0 hb-main-menu-color" type="submit" style="font-family: IBM Plex Mono;">{% trans 'Search' %}</button>
             <input class="form-control mx-2 bg-transparent rounded-0 hb-main-menu-color" style="font-family: IBM Plex Mono;" type="search" placeholder="Type what to search" aria-label="Search">
         </form>
 
         <div class="dropdown mt-3">
           <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            Currency
+            {% trans 'Currency' %}
           </button>
           <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
             <li><a class="dropdown-item" href="#">UAH</a></li>
@@ -42,12 +42,12 @@
         </div>
         <div class="dropdown mt-1">
             <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Language
+              {% trans 'Language' %}
             </button>
             <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">English</a></li>
-              <li><a class="dropdown-item" href="#">Ukrainian</a></li>
-              <li><a class="dropdown-item" href="#">Russian</a></li>
+              <li><a class="dropdown-item" href="#">{% trans 'English' %}</a></li>
+              <li><a class="dropdown-item" href="#">{% trans 'Ukrainian' %}</a></li>
+              <li><a class="dropdown-item" href="#">{% trans 'Russian' %}</a></li>
             </ul>
         </div>
 

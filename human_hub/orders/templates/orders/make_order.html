@@ -2,7 +2,7 @@
 {% load static %}
 
 <div class="col-10 d-flex justify-content-center mx-auto p-4 footer-border-color-black">
-    <div class="mx-3" style="float:left;">TOTAL PRICE</div>
+    <div class="mx-3" style="float:left;">{% trans 'Total price' %}</div>
     <div class="mx-3" id="cart_total_price" style="float:right;">{{ total_price }} {{ item.item.price_description }}</div>
 </div>
 
@@ -13,72 +13,60 @@
 
             <!--Customer information block -->
                 <div class="row d-flex justify-content-between align-items-center mb-4">
-                    <input type="text" class="form-control rounded-0" id="order-name" name="customer_name" placeholder="Type your first name" value="">
-                        <div class="invalid-feedback">
-                            Valid first name is required.
-                        </div>
+                    <input type="text" class="form-control rounded-0" id="order-name" name="customer_name" placeholder="{% trans 'Type your first name' %}" value="">
                 </div>
                 <div class="row d-flex justify-content-between align-items-center mb-4">
-                    <input type="text" class="form-control rounded-0" id="order-surname" name="customer_surname" placeholder="Type your surname" value="">
-                        <div class="invalid-feedback">
-                            Valid surname is required.
-                        </div>
+                    <input type="text" class="form-control rounded-0" id="order-surname" name="customer_surname" placeholder="{% trans 'Type your surname' %}" value="">
                 </div>
                 <div class="row d-flex justify-content-between align-items-center mb-4">
-                    <input type="text" class="form-control rounded-0" id="order-phone" name="customer_phone" placeholder="Type your phone" value="">
-                        <div class="invalid-feedback">
-                            Valid phone is required.
-                        </div>
+                    <input type="text" class="form-control rounded-0" id="order-phone" name="customer_phone" placeholder="{% trans 'Type your phone' %}" value="">
                 </div>
                 <div class="row d-flex justify-content-between align-items-center mb-4">
-                    <input type="text" class="form-control rounded-0" id="order-email" name="customer_email" placeholder="Type your email" value="">
-                        <div class="invalid-feedback">
-                            Valid email is required.
-                        </div>
+                    <input type="text" class="form-control rounded-0" id="order-email" name="customer_email" placeholder="{% trans 'Type your email' %}" value="">
                 </div>
             <!--Customer information block -->
 
             <!--Delivery type block -->
                 <span class="row mt-3 hb-main-menu-background-color" style="height:35px;">
-                    <h4 class="mx-auto mt-1 align-middle" style="color:white;">Delivery type</h4>
+                    <h4 class="mx-auto mt-1 align-middle" style="color:white;">{% trans 'Delivery type' %}</h4>
                 </span>
 
                 <div class="container mt-3 mb-3" style="float:left;">
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-worldwide" name="ordr-deliv-worldwide" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-worldwide">World wide</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-worldwide">{% trans 'World wide' %}</label>
                     </div>
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-novpostobranch" name="ordr-deliv-novpostobranch" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-novpostodoor">NovaPoshta to branch</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-novpostodoor">{% trans 'NovaPoshta to branch' %}</label>
                     </div>
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-novpostodoor" name="ordr-deliv-novpostodoor" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-novpostodoor">NovaPoshta to the door</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-novpostodoor">{% trans 'NovaPoshta to the door' %}</label>
                     </div>
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-urkpostobranch" name="ordr-deliv-urkpostobranch" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostobranch">Ukrposhta to the branch</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostobranch">{% trans 'Ukrposhta to the branch' %}</label>
                     </div>
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-urkpostodoor" name="ordr-deliv-urkpostodoor" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostodoor">Ukrposhta to the door</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostodoor">{% trans 'Ukrposhta to the door' %}</label>
                     </div>
 
                     <div class="form-check form-switch mt-2">
                       <input id="ordr-deliv-justintobranch" name="ordr-deliv-justintobranch" type="checkbox" class="form-check-input" aria-expanded="false">
-                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostodoor">Justin to the branch</label>
+                      <label class="form-check-label" style="float:left;" for="ordr-deliv-urkpostodoor">{% trans 'Justin to the branch' %}</label>
                     </div>
 
                 </div>
 
                 <span class="row mt-4 hb-main-menu-background-color" style="height:35px;">
-                  <h4 class="mx-auto mt-1 align-middle" style="color:white;">Delivery data</h4>
+                  <h4 class="mx-auto mt-1 align-middle" style="color:white;">{% trans 'Delivery data' %}</h4>
                 </span>
             <!--Delivery type block -->
 
@@ -87,46 +75,25 @@
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
 
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-country-world-wide" id="order-delivery-country-world-wide" placeholder="Enter country" value="">
-                            <div class="invalid-feedback">
-                                Valid country is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-country-world-wide" id="order-delivery-country-world-wide" placeholder="{% trans 'Enter country' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-world-wide" id="order-delivery-region-world-wide" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-world-wide" id="order-delivery-region-world-wide" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-world-wide" id="order-delivery-city-world-wide" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-world-wide" id="order-delivery-city-world-wide" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-street-world-wide" id="order-delivery-street-world-wide" placeholder="Enter street" value="">
-                            <div class="invalid-feedback">
-                                Valid street is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-street-world-wide" id="order-delivery-street-world-wide" placeholder="{% trans 'Enter street' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-building-world-wide" id="order-delivery-building-world-wide" placeholder="Enter building №" value="">
-                            <div class="invalid-feedback">
-                                Valid building number is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-building-world-wide" id="order-delivery-building-world-wide" placeholder="{% trans 'Enter building №' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-world-wide" id="order-delivery-apartment-world-wide" placeholder="Enter ap №" value="">
-                            <div class="invalid-feedback">
-                                Valid apartment number is required.
-                        </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-world-wide" id="order-delivery-apartment-world-wide" placeholder="{% trans 'Enter ap №' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-zipcode-world-wide" id="order-delivery-zipcode-world-wide" placeholder="Enter zip code №" value="">
-                            <div class="invalid-feedback">
-                                Valid zip code № is required.
-                        </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-zipcode-world-wide" id="order-delivery-zipcode-world-wide" placeholder="{% trans 'Enter zip code №' %}" value="">
                         </div>
                     </div>
                 </div>
@@ -136,22 +103,13 @@
                 <div id="collapseDeliveryNovaPoshtaToBranch">
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-np-to-branch" id="order-delivery-region-np-to-branch" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-np-to-branch" id="order-delivery-region-np-to-branch" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-np-to-branch" id="order-delivery-city-np-to-branch" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-np-to-branch" id="order-delivery-city-np-to-branch" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-office-np-to-branch" id="order-delivery-office-np-to-branch" placeholder="Enter post office №" value="">
-                            <div class="invalid-feedback">
-                                Valid post office № is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-office-np-to-branch" id="order-delivery-office-np-to-branch" placeholder="{% trans 'Enter post office №' %}" value="">
                         </div>
                     </div>
                 </div>
@@ -162,34 +120,19 @@
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
 
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-np-to-door" id="order-delivery-region-np-to-door" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-np-to-door" id="order-delivery-region-np-to-door" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-np-to-door" id="order-delivery-city-np-to-door" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-np-to-door" id="order-delivery-city-np-to-door" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-street-np-to-door" id="order-delivery-street-np-to-door" placeholder="Enter street" value="">
-                            <div class="invalid-feedback">
-                                Valid street is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-street-np-to-door" id="order-delivery-street-np-to-door" placeholder="{% trans 'Enter street' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-building-np-to-door" id="order-delivery-building-np-to-door" placeholder="Enter building №" value="">
-                            <div class="invalid-feedback">
-                                Valid building number is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-building-np-to-door" id="order-delivery-building-np-to-door" placeholder="{% trans 'Enter building №' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-np-to-door" id="order-delivery-apartment-np-to-door" placeholder="Enter ap №" value="">
-                            <div class="invalid-feedback">
-                                Valid apartment number is required.
-                        </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-np-to-door" id="order-delivery-apartment-np-to-door" placeholder="{% trans 'Enter ap №' %}" value="">
                       </div>
                     </div>
                 </div>
@@ -200,22 +143,13 @@
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
 
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-ukrp-to-branch" id="order-delivery-region-ukrp-to-branch" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-ukrp-to-branch" id="order-delivery-region-ukrp-to-branch" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-ukrp-to-branch" id="order-delivery-city-ukrp-to-branch" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-ukrp-to-branch" id="order-delivery-city-ukrp-to-branch" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-office-ukrp-to-branch" id="order-delivery-office-ukrp-to-branch" placeholder="Enter post office №" value="">
-                            <div class="invalid-feedback">
-                            Valid post office № is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-office-ukrp-to-branch" id="order-delivery-office-ukrp-to-branch" placeholder="{% trans 'Enter post office №' %}" value="">
                         </div>
                     </div>
                 </div>
@@ -226,40 +160,22 @@
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
 
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-ukrp-to-door" id="order-delivery-region-ukrp-to-door" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-ukrp-to-door" id="order-delivery-region-ukrp-to-door" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-ukrp-to-door" id="order-delivery-city-ukrp-to-door" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-ukrp-to-door" id="order-delivery-city-ukrp-to-door" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-street-ukrp-to-door" id="order-delivery-street-ukrp-to-door" placeholder="Enter street" value="">
-                            <div class="invalid-feedback">
-                                Valid street is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-street-ukrp-to-door" id="order-delivery-street-ukrp-to-door" placeholder="{% trans 'Enter street' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-building-ukrp-to-door" id="order-delivery-building-ukrp-to-door" placeholder="Enter building №" value="">
-                            <div class="invalid-feedback">
-                                Valid building number is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-building-ukrp-to-door" id="order-delivery-building-ukrp-to-door" placeholder="{% trans 'Enter building №' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-ukrp-to-door" id="order-delivery-apartment-ukrp-to-door" placeholder="Enter ap №" value="">
-                            <div class="invalid-feedback">
-                                Valid apartment number is required.
-                        </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-apartment-ukrp-to-door" id="order-delivery-apartment-ukrp-to-door" placeholder="{% trans 'Enter ap №' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-zipcode-ukrp-to-door" id="order-delivery-zipcode-ukrp-to-door" placeholder="Enter zip code №" value="">
-                            <div class="invalid-feedback">
-                                Valid zip code № is required.
-                        </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-zipcode-ukrp-to-door" id="order-delivery-zipcode-ukrp-to-door" placeholder="{% trans 'Enter zip code №' %}" value="">
                         </div>
                     </div>
                 </div>
@@ -268,23 +184,15 @@
             <!--Collapse if Justin to the branch -->
                 <div class="collapse" id="collapseDeliveryJustinToBranch">
                     <div class="card card-body bg-cart-modal-color" style="border:0px;">
+
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-region-justin-to-branch" id="order-delivery-region-justin-to-branch" placeholder="Enter region" value="">
-                            <div class="invalid-feedback">
-                                Valid region is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-region-justin-to-branch" id="order-delivery-region-justin-to-branch" placeholder="{% trans 'Enter region' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-3">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-city-justin-to-branch" id="order-delivery-city-justin-to-branch" placeholder="Enter city" value="">
-                            <div class="invalid-feedback">
-                                Valid city is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-city-justin-to-branch" id="order-delivery-city-justin-to-branch" placeholder="{% trans 'Enter city' %}" value="">
                         </div>
                         <div class="row d-flex justify-content-between align-items-center mt-3 mb-2">
-                            <input type="text" class="form-control rounded-0" name="order-delivery-office-justin-to-branch" id="order-delivery-office-justin-to-branch" placeholder="Enter post office №" value="">
-                            <div class="invalid-feedback">
-                            Valid post office № is required.
-                            </div>
+                            <input type="text" class="form-control rounded-0" name="order-delivery-office-justin-to-branch" id="order-delivery-office-justin-to-branch" placeholder="{% trans 'Enter post office №' %}" value="">
                         </div>
                     </div>
                 </div>
@@ -292,33 +200,33 @@
 
             <!--Payment information block -->
                 <span class="row mt-3 hb-main-menu-background-color" style="height:35px;">
-                    <h4 class="mx-auto mt-1 align-middle" style="color:white;">Payment type</h4>
+                    <h4 class="mx-auto mt-1 align-middle" style="color:white;">{% trans 'Payment type' %}</h4>
                 </span>
 
                 <div class="container mt-3" style="float:left;">
                     <div class="form-check mt-2">
                         <input id="ordr-pay-visa-mstrcrd" name="ordr-pay-visa-mstrcrd" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-visa-mstrcrd">Visa / Mastercard</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-visa-mstrcrd">{% trans 'Visa / Mastercard' %}</label>
                     </div>
                     <div class="form-check mt-2">
                         <input id="ordr-pay-applepay" name="ordr-pay-applepay" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-applepay">ApplePay</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-applepay">{% trans 'ApplePay' %}</label>
                     </div>
                     <div class="form-check mt-2">
                         <input id="ordr-pay-googlepay" name="ordr-pay-googlepay" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-googlepay">GooglePay</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-googlepay">{% trans 'GooglePay' %}</label>
                     </div>
                     <div class="form-check mt-2">
                         <input id="ordr-pay-paypal" name="ordr-pay-paypal" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-paypal">PayPal</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-paypal">{% trans 'PayPal' %}</label>
                     </div>
                     <div class="form-check mt-2">
                         <input id="ordr-pay-bycard" name="ordr-pay-bycard" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-bycard">Pay by card</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-bycard">{% trans 'Pay by card' %}</label>
                     </div>
                     <div class="form-check mt-2">
                         <input id="ordr-pay-cash-on-del" name="ordr-pay-cash-on-del" type="radio" class="form-check-input">
-                        <label class="form-check-label" style="float:left;" for="ordr-pay-cash-on-del">Cash on delivery</label>
+                        <label class="form-check-label" style="float:left;" for="ordr-pay-cash-on-del">{% trans 'Cash on delivery' %}</label>
                     </div>
                 </div>
             <!--Payment information block -->

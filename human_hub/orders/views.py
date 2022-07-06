@@ -139,25 +139,25 @@ def cart_checkout(request):
         if len(form['customer_name']) >= 1:
             this_order.name = form['customer_name']
         else:
-            errors += "Print your name <br>"
+            errors += _("Print your name") + "<br>"
 
     if 'customer_surname' in form:
         if len(form['customer_surname']) >= 1:
             this_order.last_name = form['customer_surname']
         else:
-            errors += "Print your surname <br>"
+            errors += _("Print your surname") + "<br>"
     if 'customer_phone' in form:
         if len(form['customer_phone']) >= 1:
             this_order.phone = form['customer_phone']
         else:
-            errors += "Print your phone <br>"
+            errors += _("Print your phone") + "<br>"
     if 'customer_email' in form:
         if len(form['customer_email']) >= 1:
             if not re.match(r'[^@]+@[^@]+\.[^@]+', form['customer_email']):
-                errors += "Print correct email <br>"
+                errors += _("Print correct email") + "<br>"
             this_order.email = form['customer_email']
         else:
-            errors += "Print your email <br>"
+            errors += _("Print your email") + "<br>"
 
     if 'ordr-deliv-worldwide' in form:
         if form['ordr-deliv-worldwide'] == 'on':
@@ -167,43 +167,43 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-country-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print country to deliver <br>'
+                    errors += _("Print country to deliver") + "<br>"
             if 'order-delivery-region-world-wide' in form:
                 if len(form['order-delivery-region-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-region-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region to deliver <br>'
+                    errors += _("Print region to deliver") + "<br>"
             if 'order-delivery-city-world-wide' in form:
                 if len(form['order-delivery-city-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-city-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print city to deliver <br>'
+                    errors += _("Print city to deliver") + "<br>"
             if 'order-delivery-street-world-wide' in form:
                 if len(form['order-delivery-street-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-street-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print street to deliver <br>'
+                    errors += _("Print street to deliver") + "<br>"
             if 'order-delivery-building-world-wide' in form:
                 if len(form['order-delivery-building-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-building-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print building number <br>'
+                    errors += _("Print building number") + "<br>"
             if 'order-delivery-apartment-world-wide' in form:
                 if len(form['order-delivery-apartment-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-apartment-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print apartment number <br>'
+                    errors += _("Print apartment number") + "<br>"
             if 'order-delivery-zipcode-world-wide' in form:
                 if len(form['order-delivery-zipcode-world-wide']) >= 1:
                     this_order.comment += form['order-delivery-zipcode-world-wide']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print zipcode <br>'
+                    errors += _("Print zipcode") + "<br>"
 
     elif 'ordr-deliv-novpostobranch' in form:
         if form['ordr-deliv-novpostobranch'] == 'on':
@@ -213,19 +213,19 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-region-np-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region to deliver <br>'
+                    errors += _("Print region to deliver") + "<br>"
             if 'order-delivery-city-np-to-branch' in form:
                 if len(form['order-delivery-city-np-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-city-np-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print city <br>'
+                    errors += _("Print city") + "<br>"
             if 'order-delivery-office-np-to-branch' in form:
                 if len(form['order-delivery-office-np-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-office-np-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print office number <br>'
+                    errors += _("Print office number") + "<br>"
 
     elif 'ordr-deliv-novpostodoor' in form:
         if form['ordr-deliv-novpostodoor'] == 'on':
@@ -235,37 +235,37 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-region-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region <br>'
+                    errors += _("Print region") + "<br>"
             if 'order-delivery-city-np-to-door' in form:
                 if len(form['order-delivery-city-np-to-door']) >= 1:
                     this_order.comment += form['order-delivery-city-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print city <br>'
+                    errors += _("Print city") + "<br>"
             if 'order-delivery-street-np-to-door' in form:
                 if len(form['order-delivery-street-np-to-door']) >= 1:
                     this_order.comment += form['order-delivery-street-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print street <br>'
+                    errors += _("Print street") + "<br>"
             if 'order-delivery-building-np-to-door' in form:
                 if len(form['order-delivery-building-np-to-door']) >= 1:
                     this_order.comment += form['order-delivery-building-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print street <br>'
+                    errors += _("Print street") + "<br>"
             if 'order-delivery-building-np-to-door' in form:
                 if len(form['order-delivery-building-np-to-door']) >= 1:
                     this_order.comment += form['order-delivery-building-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print building number <br>'
+                    errors += _("Print building number") +"<br>"
             if 'order-delivery-apartment-np-to-door' in form:
                 if len(form['order-delivery-apartment-np-to-door']) >= 1:
                     this_order.comment += form['order-delivery-apartment-np-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print apartment number <br>'
+                    errors += _("Print apartment number") + "<br>"
 
     elif 'ordr-deliv-urkpostobranch' in form:
         if form['ordr-deliv-urkpostobranch'] == 'on':
@@ -275,20 +275,20 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-region-ukrp-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region <br>'
+                    errors += _("Print region") + "<br>"
         if form['ordr-deliv-urkpostobranch'] == 'on':
             if 'order-delivery-city-ukrp-to-branch' in form:
                 if len(form['order-delivery-city-ukrp-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-city-ukrp-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print city <br>'
+                    errors += _("Print city") + "<br>"
             if 'order-delivery-office-ukrp-to-branch' in form:
                 if len(form['order-delivery-office-ukrp-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-office-ukrp-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print office number <br>'
+                    errors += _("Print office number") + "<br>"
 
     elif 'ordr-deliv-urkpostodoor' in form:
         if form['ordr-deliv-urkpostodoor'] == 'on':
@@ -298,37 +298,37 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-region-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region <br>'
+                    errors += _("Print region") + "<br>"
             if 'order-delivery-city-ukrp-to-door' in form:
                 if len(form['order-delivery-city-ukrp-to-door']) >= 1:
                     this_order.comment += form['order-delivery-city-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print city <br>'
+                    errors += _("Print city") + "<br>"
             if 'order-delivery-street-ukrp-to-door' in form:
                 if len(form['order-delivery-street-ukrp-to-door']) >= 1:
                     this_order.comment += form['order-delivery-street-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print street <br>'
+                    errors += _("Print street") + "<br>"
             if 'order-delivery-building-ukrp-to-door' in form:
                 if len(form['order-delivery-building-ukrp-to-door']) >= 1:
                     this_order.comment += form['order-delivery-building-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print building number <br>'
+                    errors += _("Print building number") + "<br>"
             if 'order-delivery-apartment-ukrp-to-door' in form:
                 if len(form['order-delivery-apartment-ukrp-to-door']) >= 1:
                     this_order.comment += form['order-delivery-apartment-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print apartment number <br>'
+                    errors += _("Print apartment number") + "<br>"
             if 'order-delivery-zipcode-ukrp-to-door' in form:
                 if len(form['order-delivery-zipcode-ukrp-to-door']) >= 1:
                     this_order.comment += form['order-delivery-zipcode-ukrp-to-door']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print zipcode <br>'
+                    errors += _("Print zipcode") + "<br>"
 
     elif 'ordr-deliv-justintobranch' in form:
         if form['ordr-deliv-justintobranch'] == 'on':
@@ -338,19 +338,19 @@ def cart_checkout(request):
                     this_order.comment += form['order-delivery-region-justin-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region <br>'
+                    errors += _("Print region") + "<br>"
             if 'order-delivery-city-justin-to-branch' in form:
                 if len(form['order-delivery-city-justin-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-city-justin-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print region <br>'
+                    errors += _("Print region") + "<br>"
             if 'order-delivery-office-justin-to-branch' in form:
                 if len(form['order-delivery-office-justin-to-branch']) >= 1:
                     this_order.comment += form['order-delivery-office-justin-to-branch']
                     this_order.comment += '\n'
                 else:
-                    errors += 'Print office number <br>'
+                    errors += _("Print office number") + "<br>"
     else:
         errors += 'Choose delivery type <br>'
 
@@ -373,7 +373,7 @@ def cart_checkout(request):
         if form['ordr-pay-cash-on-del'] == 'on':
             this_order.payment_method = 'CashOnDelivery'
     else:
-        errors += 'Chose payment type <br>'
+        errors += _("Chose payment type") + "<br>"
 
     if errors == "":
         this_order.save()

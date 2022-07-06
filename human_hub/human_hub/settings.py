@@ -53,7 +53,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'middleware.session_middleware',
     'orders.middleware.info_middleware',
-
 ]
 
 ROOT_URLCONF = 'human_hub.urls'
@@ -108,7 +107,6 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-
 LANGUAGES = (
     ('ru', gettext('Russian')),
     ('uk', gettext('Ukrainian')),
@@ -117,14 +115,7 @@ LANGUAGES = (
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
 USE_TZ = True
-
-
-# Static files (CSS, JavaScript, Images)
 
 STATIC_ROOT = env('HU_STATIC_ROOT')
 
@@ -134,15 +125,9 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = env('HU_MEDIA_ROOT')
 
-
-# Default primary key field type
+TIME_ZONE = 'Europe/Kiev'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# LANGUAGES = (
-#     ("ru", _("Russian")),
-#     ("uk", _("Ukrainian")),
-# )
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
