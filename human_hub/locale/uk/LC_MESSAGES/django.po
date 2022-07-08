@@ -1,0 +1,636 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-07 15:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: human_hub/settings.py:111 templates/navbar.html:50
+msgid "Russian"
+msgstr "Російська"
+
+#: human_hub/settings.py:112 templates/navbar.html:49
+msgid "Ukrainian"
+msgstr "Українська"
+
+#: human_hub/settings.py:113 templates/navbar.html:48
+msgid "English"
+msgstr "Англійська"
+
+#: info/models.py:8
+msgid "topic"
+msgstr "тема"
+
+#: info/models.py:9 orders/models.py:118 showcase/models.py:16
+#: showcase/models.py:43 showcase/models.py:91
+msgid "name"
+msgstr "Назва"
+
+#: info/models.py:11
+msgid "video"
+msgstr "відео"
+
+#: info/models.py:12
+msgid "text"
+msgstr "текст"
+
+#: info/models.py:13 showcase/models.py:18 showcase/models.py:56
+msgid "title tag"
+msgstr ""
+
+#: info/models.py:15 showcase/models.py:19 showcase/models.py:57
+msgid "description tag"
+msgstr ""
+
+#: info/models.py:19
+msgid "Info"
+msgstr "Инфо"
+
+#: info/models.py:20
+msgid "Infos"
+msgstr "Инфо"
+
+#: info/models.py:27
+msgid "About page text"
+msgstr ""
+
+#: info/models.py:32
+msgid "Contacts page text"
+msgstr ""
+
+#: info/models.py:37
+msgid "Discounts page text"
+msgstr ""
+
+#: info/models.py:42
+msgid "Sizing page text"
+msgstr ""
+
+#: info/models.py:47
+msgid "Shipping page text"
+msgstr ""
+
+#: info/models.py:52
+msgid "Refund page text"
+msgstr ""
+
+#: orders/models.py:13
+msgid "first name"
+msgstr "Імʼя"
+
+#: orders/models.py:14
+msgid "last name"
+msgstr "Прізвище"
+
+#: orders/models.py:15
+msgid "phone"
+msgstr "Телефон"
+
+#: orders/models.py:16 orders/models.py:104
+msgid "comment"
+msgstr "Коментар"
+
+#: orders/models.py:17
+msgid "email"
+msgstr "Електронна пошта"
+
+#: orders/models.py:18
+msgid "lang code"
+msgstr "Код мови"
+
+#: orders/models.py:19
+msgid "delivered"
+msgstr "Доставлено"
+
+#: orders/models.py:20
+msgid "paid"
+msgstr "Оплачено"
+
+#: orders/models.py:21
+msgid "date_of_delivery"
+msgstr "Дата доставки"
+
+#: orders/models.py:22
+msgid "delivery_method"
+msgstr "Метод доставки"
+
+#: orders/models.py:23
+msgid "payment_method"
+msgstr "Метод оплати"
+
+#: orders/models.py:24
+msgid "LiqPay wait accept"
+msgstr "LiqPay очикування підтвердження"
+
+#: orders/models.py:25
+msgid "WFP status"
+msgstr "WFP статус"
+
+#: orders/models.py:26
+msgid "TTN"
+msgstr "TTN"
+
+#: orders/models.py:27
+msgid "Packed"
+msgstr "Упаковано"
+
+#: orders/models.py:28 orders/models.py:90 orders/models.py:107
+#: orders/models.py:114 orders/models.py:119 showcase/models.py:58
+#: showcase/models.py:114
+msgid "added"
+msgstr "Добавлено"
+
+#: orders/models.py:32 orders/models.py:33
+msgid "Orders"
+msgstr "Замовлення"
+
+#: orders/models.py:88 orders/models.py:103 showcase/models.py:133
+msgid "amount"
+msgstr "Кількість"
+
+#: orders/models.py:89 showcase/models.py:49
+msgid "price"
+msgstr "Ціна"
+
+#: orders/models.py:94
+msgid "Order item"
+msgstr "Товар в замовленні"
+
+#: orders/models.py:95
+msgid "Order items"
+msgstr "Товари в замовленні"
+
+#: orders/models.py:105
+msgid "liqpay token"
+msgstr "liqpay token"
+
+#: orders/models.py:106
+msgid "liqpay sender phone"
+msgstr "liqpay телефон відправника"
+
+#: orders/models.py:111
+msgid "data"
+msgstr ""
+
+#: orders/models.py:112
+msgid "sign"
+msgstr ""
+
+#: orders/models.py:113
+msgid "data decoded"
+msgstr ""
+
+#: orders/models.py:123 templates/base.html:65
+msgid "Cart"
+msgstr "Кошик"
+
+#: orders/models.py:124
+msgid "Carts"
+msgstr "Кишики"
+
+#: orders/models.py:170
+#, python-format
+msgid "Your discount is %s UAH."
+msgstr "Ваша зніжка %s"
+
+#: orders/models.py:175
+#, python-format
+msgid "You have %(items)s discounted items for %(sum)s UAH."
+msgstr "У вас є %(items)s товарів зі знижкою на %(sum)s"
+
+#: orders/models.py:180
+msgid "You can add one more item and get a discount."
+msgstr "Ви можете додати ща один товар та отримати знижку"
+
+#: orders/templates/orders/cart.html:23
+#: orders/templates/orders/make_order.html:5
+msgid "Total price"
+msgstr "Загальна вартість"
+
+#: orders/templates/orders/make_order.html:16
+msgid "Type your first name"
+msgstr "Введіть имʼя"
+
+#: orders/templates/orders/make_order.html:19
+msgid "Type your surname"
+msgstr "Введіть прізвище"
+
+#: orders/templates/orders/make_order.html:22
+msgid "Type your phone"
+msgstr "Введіть ваш телефон"
+
+#: orders/templates/orders/make_order.html:25
+msgid "Type your email"
+msgstr "Введіть вашу пошту"
+
+#: orders/templates/orders/make_order.html:31
+msgid "Delivery type"
+msgstr "Спосіб доставки"
+
+#: orders/templates/orders/make_order.html:38
+msgid "World wide"
+msgstr "В інші країни"
+
+#: orders/templates/orders/make_order.html:43
+msgid "NovaPoshta to branch"
+msgstr "Новою Поштою до відділення"
+
+#: orders/templates/orders/make_order.html:48
+msgid "NovaPoshta to the door"
+msgstr "Новою Поштою до двері"
+
+#: orders/templates/orders/make_order.html:53
+msgid "Ukrposhta to the branch"
+msgstr "Укрпоштою до відділення"
+
+#: orders/templates/orders/make_order.html:58
+msgid "Ukrposhta to the door"
+msgstr "Укрпоштою до двері"
+
+#: orders/templates/orders/make_order.html:63
+msgid "Justin to the branch"
+msgstr "Justin до відділення"
+
+#: orders/templates/orders/make_order.html:69
+msgid "Delivery data"
+msgstr "Данні про доставку"
+
+#: orders/templates/orders/make_order.html:78
+msgid "Enter country"
+msgstr "Введіть країну"
+
+#: orders/templates/orders/make_order.html:81
+#: orders/templates/orders/make_order.html:106
+#: orders/templates/orders/make_order.html:123
+#: orders/templates/orders/make_order.html:146
+#: orders/templates/orders/make_order.html:163
+#: orders/templates/orders/make_order.html:189
+msgid "Enter region"
+msgstr "Введіть регіон"
+
+#: orders/templates/orders/make_order.html:84
+#: orders/templates/orders/make_order.html:109
+#: orders/templates/orders/make_order.html:126
+#: orders/templates/orders/make_order.html:149
+#: orders/templates/orders/make_order.html:166
+#: orders/templates/orders/make_order.html:192
+msgid "Enter city"
+msgstr "Ведіть місто"
+
+#: orders/templates/orders/make_order.html:87
+#: orders/templates/orders/make_order.html:129
+#: orders/templates/orders/make_order.html:169
+msgid "Enter street"
+msgstr "Введіть вулицю"
+
+#: orders/templates/orders/make_order.html:90
+#: orders/templates/orders/make_order.html:132
+#: orders/templates/orders/make_order.html:172
+msgid "Enter building №"
+msgstr "Введіть номер будівлі"
+
+#: orders/templates/orders/make_order.html:93
+#: orders/templates/orders/make_order.html:135
+#: orders/templates/orders/make_order.html:175
+msgid "Enter ap №"
+msgstr "Введіть номер квартири / офісу"
+
+#: orders/templates/orders/make_order.html:96
+#: orders/templates/orders/make_order.html:178
+msgid "Enter zip code №"
+msgstr "Введіть поштовій індекс"
+
+#: orders/templates/orders/make_order.html:112
+#: orders/templates/orders/make_order.html:152
+#: orders/templates/orders/make_order.html:195
+msgid "Enter post office №"
+msgstr "Введіть номер відділення"
+
+#: orders/templates/orders/make_order.html:203
+msgid "Payment type"
+msgstr "Спосіб оплати"
+
+#: orders/templates/orders/make_order.html:209
+msgid "Visa / Mastercard"
+msgstr "Visa / Mastercard"
+
+#: orders/templates/orders/make_order.html:213
+msgid "ApplePay"
+msgstr "ApplePay"
+
+#: orders/templates/orders/make_order.html:217
+msgid "GooglePay"
+msgstr "GooglePay"
+
+#: orders/templates/orders/make_order.html:221
+msgid "PayPal"
+msgstr "PayPal"
+
+#: orders/templates/orders/make_order.html:225
+msgid "Pay by card"
+msgstr "Оплата карткою"
+
+#: orders/templates/orders/make_order.html:229
+msgid "Cash on delivery"
+msgstr "Готівкою при отриманні"
+
+#: orders/templates/orders/make_order.html:239
+msgid "Checkout"
+msgstr "Зробіти замовлення"
+
+#: orders/views.py:142
+msgid "Print your name"
+msgstr "Введіть імʼя"
+
+#: orders/views.py:148
+msgid "Print your surname"
+msgstr "Введіть прізвище"
+
+#: orders/views.py:153
+msgid "Print your phone"
+msgstr "Введіть ваш телефон"
+
+#: orders/views.py:157
+msgid "Print correct email"
+msgstr "Введіть правильну пошту"
+
+#: orders/views.py:160
+msgid "Print your email"
+msgstr "Введіть вашу пошту"
+
+#: orders/views.py:170
+msgid "Print country to deliver"
+msgstr "Введіть країну"
+
+#: orders/views.py:176 orders/views.py:216
+msgid "Print region to deliver"
+msgstr "Введіть регіон"
+
+#: orders/views.py:182
+msgid "Print city to deliver"
+msgstr "Введіть місто"
+
+#: orders/views.py:188
+msgid "Print street to deliver"
+msgstr "Введіть вулицю"
+
+#: orders/views.py:194 orders/views.py:262 orders/views.py:319
+msgid "Print building number"
+msgstr "Введіть номер будівлі"
+
+#: orders/views.py:200 orders/views.py:268 orders/views.py:325
+msgid "Print apartment number"
+msgstr "Ведіть номер квартири / офісу"
+
+#: orders/views.py:206 orders/views.py:331
+msgid "Print zipcode"
+msgstr "Введіть поштовий индекс"
+
+#: orders/views.py:222 orders/views.py:244 orders/views.py:285
+#: orders/views.py:307
+msgid "Print city"
+msgstr "Введіть місто"
+
+#: orders/views.py:228 orders/views.py:291 orders/views.py:353
+msgid "Print office number"
+msgstr "Введіть номер відділення"
+
+#: orders/views.py:238 orders/views.py:278 orders/views.py:301
+#: orders/views.py:341 orders/views.py:347
+msgid "Print region"
+msgstr "Введіть регіон"
+
+#: orders/views.py:250 orders/views.py:256 orders/views.py:313
+msgid "Print street"
+msgstr "Введіть вулицю"
+
+#: orders/views.py:376
+msgid "Chose payment type"
+msgstr "Оберіть спосіб оплаті"
+
+#: showcase/models.py:17 showcase/models.py:48
+msgid "details"
+msgstr "Опис"
+
+#: showcase/models.py:20 showcase/models.py:94
+msgid "sequence"
+msgstr "Порядок"
+
+#: showcase/models.py:21 showcase/models.py:54
+msgid "showcase_displayed"
+msgstr "Показувати на вітрині"
+
+#: showcase/models.py:25 showcase/models.py:26
+msgid "Categories"
+msgstr "Категорії"
+
+#: showcase/models.py:47
+msgid "how it fits"
+msgstr "Як виглядає"
+
+#: showcase/models.py:50 showcase/models.py:181 showcase/models.py:184
+#: showcase/models.py:187
+msgid "price_description"
+msgstr "Валюта"
+
+#: showcase/models.py:50 showcase/models.py:181
+msgid "Grn."
+msgstr "грн"
+
+#: showcase/models.py:51
+msgid "views"
+msgstr "Переглядів"
+
+#: showcase/models.py:52
+msgid "views today"
+msgstr "Переглядів сьогодні"
+
+#: showcase/models.py:53
+msgid "views month"
+msgstr "Переглядів за місяць"
+
+#: showcase/models.py:55
+msgid "showcase_new"
+msgstr "Новій товар"
+
+#: showcase/models.py:62 showcase/models.py:63
+msgid "items"
+msgstr "товари"
+
+#: showcase/models.py:93
+msgid "description"
+msgstr "опис"
+
+#: showcase/models.py:98 showcase/models.py:99
+msgid "Sizes"
+msgstr "Розміри"
+
+#: showcase/models.py:118
+msgid "Photo"
+msgstr "Фото"
+
+#: showcase/models.py:119
+msgid "Photos"
+msgstr "Фото"
+
+#: showcase/models.py:137 showcase/models.py:138
+msgid "Amount"
+msgstr "Кількість"
+
+#: showcase/models.py:146
+msgid "old value"
+msgstr "Старе кількість"
+
+#: showcase/models.py:147
+msgid "new value"
+msgstr "Нова кількість"
+
+#: showcase/models.py:148
+msgid "arrival"
+msgstr "Надходження"
+
+#: showcase/models.py:154
+msgid "Balance log"
+msgstr "Журнал"
+
+#: showcase/models.py:155
+msgid "Balance logs"
+msgstr "Записи"
+
+#: showcase/models.py:175
+msgid "dollar rate"
+msgstr "Курс доллара"
+
+#: showcase/models.py:178
+msgid "euro rate"
+msgstr "Курс євро"
+
+#: showcase/models.py:184
+msgid "Usd."
+msgstr "Долл"
+
+#: showcase/models.py:187
+msgid "Eur."
+msgstr "Евр"
+
+#: showcase/models.py:192 showcase/models.py:193
+msgid "Config"
+msgstr ""
+
+#: showcase/templates/showcase/item_page.html:15
+msgid "Main"
+msgstr "Головна"
+
+#: showcase/templates/showcase/item_page.html:69
+msgid "How it fits:"
+msgstr "Як виглядає"
+
+#: showcase/templates/showcase/item_page.html:81
+msgid "Choose size:"
+msgstr "Оберіть розмір"
+
+#: showcase/templates/showcase/item_page.html:100
+msgid "CHOOSE SIZE BEFORE ADD TO CART"
+msgstr "Оберіть розмір для додавання в кошик"
+
+#: showcase/templates/showcase/item_page.html:104
+msgid "ADD TO CART"
+msgstr "ДОДАТИ У КОШИК"
+
+#: showcase/templates/showcase/showcase.html:103
+msgid "Go to"
+msgstr "Перейти до"
+
+#: showcase/views.py:30
+msgid "main pae title_tag"
+msgstr ""
+
+#: showcase/views.py:31
+msgid "main pae description_tag"
+msgstr ""
+
+#: templates/base.html:73
+msgid "Make order"
+msgstr "Зробити замовлення"
+
+#: templates/base.html:74
+msgid "Back to shop"
+msgstr "Повернутися до магазину"
+
+#: templates/base.html:87
+msgid "Order"
+msgstr ""
+
+#: templates/base.html:103
+msgid "Choose size"
+msgstr "Оберіть розмір"
+
+#: templates/footer.html:5 templates/footer.html:6 templates/navbar.html:66
+#: templates/navbar.html:67
+msgid "Discounts"
+msgstr "Знижки"
+
+#: templates/footer.html:7 templates/footer.html:8 templates/navbar.html:73
+#: templates/navbar.html:74
+msgid "Sizing"
+msgstr "Розміри"
+
+#: templates/footer.html:9
+msgid "SHipping"
+msgstr "Доставка"
+
+#: templates/footer.html:10 templates/navbar.html:80 templates/navbar.html:81
+msgid "Shipping"
+msgstr "Доставка"
+
+#: templates/footer.html:11 templates/footer.html:12 templates/footer.html:19
+msgid "Refund"
+msgstr "Повернення"
+
+#: templates/footer.html:20 templates/navbar.html:95 templates/navbar.html:96
+msgid "Contacts"
+msgstr "Контакти"
+
+#: templates/footer.html:21
+msgid "Terms"
+msgstr "Узгодження"
+
+#: templates/navbar.html:29
+msgid "Search"
+msgstr "Пошук"
+
+#: templates/navbar.html:30
+msgid "Type what to search"
+msgstr "Надрукуйте що шукати"
+
+#: templates/navbar.html:35
+msgid "Currency"
+msgstr "Валюта"
+
+#: templates/navbar.html:45
+msgid "Language"
+msgstr "Мова"
+
+#: templates/navbar.html:56 templates/navbar.html:57
+msgid "About project"
+msgstr "Про проект"
+
+#: templates/navbar.html:87 templates/navbar.html:88
+msgid "Purchase returns"
+msgstr "Повернення"

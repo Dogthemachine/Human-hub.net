@@ -194,4 +194,18 @@ $(document).ready(function() {
         });
    };
 //-----------   MAKE ORDER MODAL WINDOW     -----------
+
+
+
+
+
+$('.dropdown-menu li').click(function () {
+    var lang = this.id;
+    var loc = window.location.toString().substring( 0, window.location.toString().indexOf(window.location.host)
+        + window.location.host.toString().length + 1) + lang
+        + window.location.toString().substring(window.location.toString().indexOf(window.location.host)
+        + window.location.host.toString().length + 3);
+    window.location = loc;
+});
+
 });

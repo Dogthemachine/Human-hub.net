@@ -25,9 +25,9 @@
   <div class="collapse" id="navbarToggleExternalContent">
   <div class="bg-light p-4 hb-main-menu-background-color">
 
-        <form class="d-flex">
+        <form class="d-flex" style="font-family: IBM Plex Mono;">
           <button class="btn ms-2 btn-outline-secondary rounded-0 hb-main-menu-color" type="submit" style="font-family: IBM Plex Mono;">{% trans 'Search' %}</button>
-            <input class="form-control mx-2 bg-transparent rounded-0 hb-main-menu-color" style="font-family: IBM Plex Mono;" type="search" placeholder="Type what to search" aria-label="Search">
+            <input class="form-control mx-2 bg-transparent rounded-0 hb-main-menu-color" style="font-family: IBM Plex Mono;" type="search" placeholder="{% trans 'Type what to search' %}" aria-label="Search">
         </form>
 
         <div class="dropdown mt-3">
@@ -35,20 +35,27 @@
             {% trans 'Currency' %}
           </button>
           <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">UAH</a></li>
-            <li><a class="dropdown-item" href="#">USD</a></li>
-            <li><a class="dropdown-item" href="#">UER</a></li>
+            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">UAH</a></li>
+            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">USD</a></li>
+            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">UER</a></li>
           </ul>
         </div>
+
+
+
+
         <div class="dropdown mt-1">
-            <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              {% trans 'Language' %}
-            </button>
-            <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">{% trans 'English' %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans 'Ukrainian' %}</a></li>
-              <li><a class="dropdown-item" href="#">{% trans 'Russian' %}</a></li>
-            </ul>
+            <div class="select">
+                <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                  {% trans 'Language' %}
+                </button>
+                <input type="hidden" name="lang">
+                <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
+                  <li class="ms-3 mb-3" style="font-family: IBM Plex Mono;" id="en">{% trans 'English' %}</li>
+                  <li class="ms-3 my-3" style="font-family: IBM Plex Mono;" id="uk">{% trans 'Ukrainian' %}</li>
+                  <li class="ms-3 mt-3" style="font-family: IBM Plex Mono;" id="ru">{% trans 'Russian' %}</li>
+                </ul>
+            </div>
         </div>
 
           <ul class="nav navbar-nav navbar-right ms-2 mt-3 mb-0 h1 fs-5">

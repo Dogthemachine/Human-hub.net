@@ -45,10 +45,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'middleware.session_middleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'middleware.session_middleware',
@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'django.template.context_processors.static',
@@ -107,15 +108,18 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
+
+LANGUAGE_CODE = 'uk'
+
 LANGUAGES = (
-    ('ru', gettext('Russian')),
     ('uk', gettext('Ukrainian')),
+    ('ru', gettext('Russian')),
     ('en', gettext('English')),
 )
 
-LANGUAGE_CODE = 'en-us'
-
 USE_TZ = True
+
+USE_I18N = True
 
 STATIC_ROOT = env('HU_STATIC_ROOT')
 
@@ -128,6 +132,10 @@ MEDIA_ROOT = env('HU_MEDIA_ROOT')
 TIME_ZONE = 'Europe/Kiev'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOCALE_PATHS = (
+  os.environ.get('TC_LOCALE_PATH'),
+)
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets"),
