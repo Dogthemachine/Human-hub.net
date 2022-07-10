@@ -88,8 +88,9 @@ def ChooseSizes(request, item_id):
 
 
 @json_view
-def cart_val(request):
-    valuta = request.POST.get('valuta', 'grn')
+def cart_val(request, valuta):
+
     request.session['valuta'] = valuta
+    print('\n\n\n', valuta)
 
     return {'success': True}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block content %}
+{% load showcase_tags %}
 
 <link rel="stylesheet" href="{{ STATIC_URL }}css/owl.carousel.min.css">
 <link rel="stylesheet" href="{{ STATIC_URL }}css/owl.theme.default.min.css">
@@ -54,7 +55,7 @@
 
         <div class="row col-12 ms-1 mb-2 me-1" style="float:right !important;">
             <div style="float:left;">
-                <p class="fs-4" style="font-family: IBM Plex Mono; color: black !important; float:right; !important">{{ item.price }} {{ item.price_description }}</p>
+                {% get_price_itempage request item.id %}
             </div>
         </div>
 

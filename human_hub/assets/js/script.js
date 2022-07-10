@@ -216,8 +216,7 @@ $('.val li').click(function () {
     var val = this.id;
     event.preventDefault();
       $.ajax({
-          url: '/currency/',
-          data: 'valuta=' + val,
+          url: '/currency/' + val + '/',
           type: 'post',
           success: function() {
               location.reload();
