@@ -55,7 +55,7 @@
 
         <div class="row col-12 ms-1 mb-2 me-1" style="float:right !important;">
             <div style="float:left;">
-                {% get_price_itempage request item.id %}
+                <p class="fs-4" style="font-family: IBM Plex Mono; color: black !important; float:right; !important">{% get_price_itempage request item.id %}</p>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
         </div>
 
 
-            <div class="mt-2 ms-5 mb-3 me-2 d-flex justify-content-center col-xs-8 col-sm-7 col-md-8 col-lg-7" style="white-space: nowrap; background-opacity: 0;">
+            <div class="mt-2 ms-0 mb-3 me-2 d-flex justify-content-center col-xs-8 col-sm-7 col-md-8 col-lg-7" style="white-space: nowrap; background-opacity: 0;">
                 <div class="btn-group" role="group" aria-label="Robot toggle group">
                     {% for size in sizes %}
                     {% if size.amount == 0 %}

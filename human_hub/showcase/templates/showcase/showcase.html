@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load i18n %}
+{% load showcase_tags %}
 
 {% block title %}{{ title_tag }}{% endblock %}
 {% block description %}{{ description_tag }}{% endblock %}
@@ -29,7 +30,7 @@
                                     <span class="item-name-in-category-page">{{ category.0.0.name }}</span>
                                 </h3>
                                 <div class="row item-price-category-page">
-                                    <span style="float:left !important; margin-left: 0rem !important;">{{ category.0.0.price }} {{ category.0.0.price_description }}</span>
+                                    <span style="float:left !important; margin-left: 0rem !important;">{% get_price_itempage request category.0.0.id %}</span>
                                 </div>
                             </div>
                             <div class="col-4" style="padding-left: 0px !important;">
@@ -51,7 +52,7 @@
                                     <span class="item-name-in-category-page">{{ category.0.1.name }}</span>
                                 </h3>
                                 <div class="row item-price-category-page">
-                                    <span style="float:left !important; margin-left: 0rem !important;">{{ category.0.1.price }} {{ category.0.1.price_description }}</span>
+                                    <span style="float:left !important; margin-left: 0rem !important;">{% get_price_itempage request category.0.1.id %}</span>
                                 </div>
                             </div>
                             <div class="col-4" style="padding-left: 0px !important;">

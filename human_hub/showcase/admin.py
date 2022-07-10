@@ -4,6 +4,8 @@ from django.contrib import admin
 
 from showcase.models import Items, Photo, Categories, Sizes, Balance, Banner, Config
 
+from django.contrib.auth.models import Group
+
 
 class PhotoInline(admin.TabularInline):
     model = Photo
@@ -45,3 +47,5 @@ admin.site.register(Balance, BalanceAdmin)
 admin.site.register(Banner, BannerAdmin)
 
 admin.site.register(Config, ConfigAdmin)
+
+admin.site.unregister(Group)

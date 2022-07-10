@@ -2,6 +2,8 @@
 {% load i18n %}
 {% load static %}
 {% block content %}
+{% load showcase_tags %}
+
 <div class="row">
     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7 text-center mx-auto">
 
@@ -41,7 +43,7 @@
                                     <span class="item-name-in-category-page kuku">{{ item.name }}</span>
                                 </h3>
                                 <div class="row item-price-category-page">
-                                    <span style="float:left !important; margin-left: 0rem !important;">{{ item.price }} {{ item.price_description }}</span>
+                                    <span style="float:left !important; margin-left: 0rem !important;">{% get_price_itempage request item.id %}</span>
                                 </div>
                             </div>
                             <div class="col-4" style="padding-left: 0px !important;">

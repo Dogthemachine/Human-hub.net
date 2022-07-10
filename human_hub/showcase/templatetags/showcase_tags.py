@@ -55,7 +55,6 @@ def get_price_itempage(request, item_id):
         price = round(price / rate, 2)
     price = str(price)
 
-    html = '<p class="fs-4" style="font-family: IBM Plex Mono; color: black !important; float:right; !important">'\
-           + price + ' ' + price_description(request) + '</p>'
+    html = price + price_description(request)
 
     return mark_safe(html)
