@@ -2,7 +2,7 @@ from modeltranslation.admin import TranslationAdmin
 
 from django.contrib import admin
 
-from showcase.models import Items, Photo, Categories, Sizes, Balance, Banner
+from showcase.models import Items, Photo, Categories, Sizes, Balance, Banner, Config
 
 
 class PhotoInline(admin.TabularInline):
@@ -11,7 +11,6 @@ class PhotoInline(admin.TabularInline):
 
 class ItemsAdmin(TranslationAdmin):
     inlines = [PhotoInline]
-
     list_display = ('name', 'category', 'added', 'price', 'price_description', 'description',)
 
 
@@ -31,6 +30,10 @@ class BannerAdmin(admin.ModelAdmin):
     list_display = ('image_showcase', 'image_category',)
 
 
+class ConfigAdmin(TranslationAdmin):
+    list_display = ('dollar_rate', 'euro_rate',)
+
+
 admin.site.register(Items, ItemsAdmin)
 
 admin.site.register(Categories, CategoriesAdmin)
@@ -40,3 +43,5 @@ admin.site.register(Sizes, SizesAdmin)
 admin.site.register(Balance, BalanceAdmin)
 
 admin.site.register(Banner, BannerAdmin)
+
+admin.site.register(Config, ConfigAdmin)

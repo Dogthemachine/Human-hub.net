@@ -186,6 +186,20 @@ class Config(SingletonModel):
     price_description_eur = models.CharField(
         _("price_description"), max_length=250, default=gettext("Eur.")
     )
+    static = models.CharField(
+        _("static url"), max_length=250, default="https://catcult.club/static/"
+    )
+    media = models.CharField(
+        _("media url"), max_length=250, default="https://catcult.club/media/"
+    )
+    merchant_account = models.CharField(
+        _("merchant account"), max_length=64, default=""
+    )
+    merchant_secret = models.CharField(_("merchant secret"), max_length=128, default="")
+    merchant_domain_name = models.CharField(
+        _("merchant domain name"), max_length=64, default=""
+    )
+    service_url = models.CharField(_("service URL"), max_length=512, default="")
 
     class Meta:
         ordering = ("dollar_rate",)
@@ -194,7 +208,6 @@ class Config(SingletonModel):
 
     def __str__(self):
         return u"%s" % self.dollar_rate
-
 
 
 @receiver(post_save, sender=Items)

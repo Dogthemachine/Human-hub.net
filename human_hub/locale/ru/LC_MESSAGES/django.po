@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-07 15:48+0300\n"
+"POT-Creation-Date: 2022-07-10 12:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,15 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: human_hub/settings.py:111 templates/navbar.html:50
-msgid "Russian"
-msgstr "Русский"
-
-#: human_hub/settings.py:112 templates/navbar.html:49
+#: human_hub/settings.py:114 templates/navbar.html:55
 msgid "Ukrainian"
 msgstr "Украинский"
 
-#: human_hub/settings.py:113 templates/navbar.html:48
+#: human_hub/settings.py:115 templates/navbar.html:56
+msgid "Russian"
+msgstr "Русский"
+
+#: human_hub/settings.py:116 templates/navbar.html:54
 msgid "English"
 msgstr "Английский"
 
@@ -131,7 +131,7 @@ msgstr "Тип доставки"
 
 #: orders/models.py:23
 msgid "payment_method"
-msgstr ""
+msgstr "Тип оплаты"
 
 #: orders/models.py:24
 msgid "LiqPay wait accept"
@@ -353,73 +353,77 @@ msgstr "Наличными при доставке"
 msgid "Checkout"
 msgstr "Сделать заказ"
 
-#: orders/views.py:142
+#: orders/views.py:134
 msgid "Print your name"
 msgstr "Введите имя"
 
-#: orders/views.py:148
+#: orders/views.py:140
 msgid "Print your surname"
 msgstr "Введите фамилию"
 
-#: orders/views.py:153
+#: orders/views.py:145
 msgid "Print your phone"
 msgstr "Введите телефон"
 
-#: orders/views.py:157
+#: orders/views.py:149
 msgid "Print correct email"
 msgstr "Введите правильную почту"
 
-#: orders/views.py:160
+#: orders/views.py:152
 msgid "Print your email"
 msgstr "Введите почту"
 
-#: orders/views.py:170
+#: orders/views.py:162
 msgid "Print country to deliver"
 msgstr "Введите страну"
 
-#: orders/views.py:176 orders/views.py:216
+#: orders/views.py:168 orders/views.py:208
 msgid "Print region to deliver"
 msgstr "Введите область"
 
-#: orders/views.py:182
+#: orders/views.py:174
 msgid "Print city to deliver"
 msgstr "Введите город"
 
-#: orders/views.py:188
+#: orders/views.py:180
 msgid "Print street to deliver"
 msgstr "Введите улицу"
 
-#: orders/views.py:194 orders/views.py:262 orders/views.py:319
+#: orders/views.py:186 orders/views.py:254 orders/views.py:311
 msgid "Print building number"
 msgstr "Введите номер здания"
 
-#: orders/views.py:200 orders/views.py:268 orders/views.py:325
+#: orders/views.py:192 orders/views.py:260 orders/views.py:317
 msgid "Print apartment number"
 msgstr "Введите номер квартиры / офиса"
 
-#: orders/views.py:206 orders/views.py:331
+#: orders/views.py:198 orders/views.py:323
 msgid "Print zipcode"
 msgstr "Введите почтовый индекс"
 
-#: orders/views.py:222 orders/views.py:244 orders/views.py:285
-#: orders/views.py:307
+#: orders/views.py:214 orders/views.py:236 orders/views.py:277
+#: orders/views.py:299
 msgid "Print city"
 msgstr "Введите город"
 
-#: orders/views.py:228 orders/views.py:291 orders/views.py:353
+#: orders/views.py:220 orders/views.py:283 orders/views.py:345
 msgid "Print office number"
 msgstr "Введите номер отделения"
 
-#: orders/views.py:238 orders/views.py:278 orders/views.py:301
-#: orders/views.py:341 orders/views.py:347
+#: orders/views.py:230 orders/views.py:270 orders/views.py:293
+#: orders/views.py:333 orders/views.py:339
 msgid "Print region"
 msgstr "Введите область"
 
-#: orders/views.py:250 orders/views.py:256 orders/views.py:313
+#: orders/views.py:242 orders/views.py:248 orders/views.py:305
 msgid "Print street"
 msgstr "Введите улицу"
 
-#: orders/views.py:376
+#: orders/views.py:347
+msgid "Choose delivery type"
+msgstr "Выберите тип доставки"
+
+#: orders/views.py:368
 msgid "Chose payment type"
 msgstr "Выберите тип оплаты"
 
@@ -528,7 +532,31 @@ msgstr "Долл"
 msgid "Eur."
 msgstr "Евр"
 
-#: showcase/models.py:192 showcase/models.py:193
+#: showcase/models.py:190
+msgid "static url"
+msgstr ""
+
+#: showcase/models.py:193
+msgid "media url"
+msgstr ""
+
+#: showcase/models.py:196
+msgid "merchant account"
+msgstr ""
+
+#: showcase/models.py:198
+msgid "merchant secret"
+msgstr ""
+
+#: showcase/models.py:200
+msgid "merchant domain name"
+msgstr ""
+
+#: showcase/models.py:202
+msgid "service URL"
+msgstr ""
+
+#: showcase/models.py:206 showcase/models.py:207
 msgid "Config"
 msgstr ""
 
@@ -580,13 +608,13 @@ msgstr "Заказ"
 msgid "Choose size"
 msgstr "Выберите размер"
 
-#: templates/footer.html:5 templates/footer.html:6 templates/navbar.html:66
-#: templates/navbar.html:67
+#: templates/footer.html:5 templates/footer.html:6 templates/navbar.html:73
+#: templates/navbar.html:74
 msgid "Discounts"
 msgstr "Скидки"
 
-#: templates/footer.html:7 templates/footer.html:8 templates/navbar.html:73
-#: templates/navbar.html:74
+#: templates/footer.html:7 templates/footer.html:8 templates/navbar.html:80
+#: templates/navbar.html:81
 msgid "Sizing"
 msgstr "Размеры"
 
@@ -594,7 +622,7 @@ msgstr "Размеры"
 msgid "SHipping"
 msgstr "Доставка"
 
-#: templates/footer.html:10 templates/navbar.html:80 templates/navbar.html:81
+#: templates/footer.html:10 templates/navbar.html:87 templates/navbar.html:88
 msgid "Shipping"
 msgstr "Доставка"
 
@@ -602,7 +630,7 @@ msgstr "Доставка"
 msgid "Refund"
 msgstr "Возвраты"
 
-#: templates/footer.html:20 templates/navbar.html:95 templates/navbar.html:96
+#: templates/footer.html:20 templates/navbar.html:102 templates/navbar.html:103
 msgid "Contacts"
 msgstr "Контакты"
 
@@ -618,18 +646,30 @@ msgstr "Поиск"
 msgid "Type what to search"
 msgstr "Напечатайте что искать"
 
-#: templates/navbar.html:35
+#: templates/navbar.html:36
 msgid "Currency"
 msgstr "Валюта"
 
-#: templates/navbar.html:45
+#: templates/navbar.html:40
+msgid "UAH"
+msgstr ""
+
+#: templates/navbar.html:41
+msgid "USD"
+msgstr ""
+
+#: templates/navbar.html:42
+msgid "EUR"
+msgstr ""
+
+#: templates/navbar.html:50
 msgid "Language"
 msgstr "Язык"
 
-#: templates/navbar.html:56 templates/navbar.html:57
+#: templates/navbar.html:63 templates/navbar.html:64
 msgid "About project"
 msgstr "О проекте"
 
-#: templates/navbar.html:87 templates/navbar.html:88
+#: templates/navbar.html:94 templates/navbar.html:95
 msgid "Purchase returns"
 msgstr "Возвраты"

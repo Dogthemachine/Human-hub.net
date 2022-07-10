@@ -45,6 +45,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'showcase.middleware.LocaleMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -109,13 +110,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 
-LANGUAGE_CODE = 'uk'
-
 LANGUAGES = (
     ('uk', gettext('Ukrainian')),
     ('ru', gettext('Russian')),
     ('en', gettext('English')),
 )
+
+LANGUAGE_CODE = 'uk'
 
 USE_TZ = True
 

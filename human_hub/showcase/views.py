@@ -1,23 +1,16 @@
-from django.shortcuts import render, redirect, get_object_or_404
 from jsonview.decorators import json_view
 from django.views.decorators.csrf import csrf_exempt
 from django.views import View
 from django.template import loader
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.contrib import messages
-from django.conf import settings
 from django.shortcuts import get_object_or_404, render, redirect
 from django.utils.translation import gettext_lazy as _
-from datetime import datetime, timedelta
-from django.utils import timezone
-from showcase.models import Photo, Categories, Items, Sizes, Balance
-from orders.models import Cart, CartItem
+from showcase.models import Photo, Categories, Items, Sizes, Balance, Banner
 
 
 class ShowcaseView(View):
 
     def get(self, request):
-
+        banner = Banner.objects.all()[0]
         cat = Categories.objects.all()
         categories = []
 
@@ -37,6 +30,7 @@ class ShowcaseView(View):
                 "categories": categories,
                 "title_tag": title_tag,
                 "description_tag": description_tag,
+                'banner': banner,
             },
         )
 
@@ -44,27 +38,26 @@ class ShowcaseView(View):
 class CategoryPageView(View):
 
     def get(self, request, category_id):
+        banner = Banner.objects.all()[0]
         cat = get_object_or_404(Categories, id=category_id)
         items = Items.objects.filter(category=category_id)
+
         return render(
             request,
             'showcase/category_page.html',
             {
                 'category': cat,
                 'items': items,
+                'banner': banner,
             }
-
         )
 
 
 class ItemPageView(View):
 
     def get(self, request, item_id):
-
         item = get_object_or_404(Items, id=item_id)
-
         photos = Photo.objects.all().filter(item=item)
-
         sizes = Sizes.objects.all().filter(categories=item.category)
         for size in sizes:
             size.amount = Balance.objects.get(item=item, size=size).amount
@@ -94,3 +87,9 @@ def ChooseSizes(request, item_id):
     return {'success': True, 'html': html}
 
 
+@json_view
+def cart_val(request):
+    valuta = request.POST.get('valuta', 'grn')
+    request.session['valuta'] = valuta
+
+    return {'success': True}

@@ -9,14 +9,13 @@ $(document).ready(function() {
     var animationSpeed = 600;
 
     $("#carouselShowcasePage .carousel-control-next").on("click", function () {
-        console.log('$("#carouselShowcasePage .carousel-control-next").on("click", function ()');
         if (scrollPosition < carouselWidth - cardWidth * 4) {
             scrollPosition += cardWidth;
             $("#carouselShowcasePage .carousel-inner-showcase").animate(
                 { scrollLeft: scrollPosition },
                 animationSpeed
             );
-        } else {console.log('if (scrollPosition < carouselWidth - cardWidth * 4 /// else)')}
+        } else {}
         });
 
     $("#carouselShowcasePage .carousel-control-prev").on("click", function () {
@@ -29,4 +28,20 @@ $(document).ready(function() {
         }
         });
 //-----------   CAROUSEL IN SHOWCASE PAGE     -----------
+
+    var modal_sizes_windows = document.getElementsByClassName("choose-size-showcase");
+    var i;
+    for (i = 0; i < modal_sizes_windows.length; i++) {
+        modal_sizes_windows[i].addEventListener("click", function() {
+            $.ajax({
+                url: '/category/' + $(this).data('id') +'/sizes/',
+                type: 'post',
+                success: function(data) {
+                if (data.success) {
+                $('#modal-sizes').html(data.html);
+                }
+                },
+            });
+    })};
+
 });

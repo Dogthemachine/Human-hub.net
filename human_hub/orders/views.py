@@ -27,7 +27,6 @@ def cart(request):
     cart, created = Cart.objects.get_or_create(session_key=request.session.session_key)
     cart.session = request.session.session_key
     cart.save()
-
     tot_price = 0
     if not created:
         cart_items = CartItem.objects.filter(cart=cart)
@@ -36,12 +35,8 @@ def cart(request):
             tot_price += c_i.item.price
     else:
         cart_items = []
-
-
-
     t = loader.get_template('orders/cart.html')
     c = {'cart': cart, 'cart_items': cart_items, 'total_price': tot_price}
-
     html = t.render(c, request)
 
     return {'html': html}
@@ -62,9 +57,7 @@ def order(request):
 
 @json_view
 def submit(request, data):
-    print(data)
-
-
+    pass
 
 
 @csrf_exempt
@@ -74,6 +67,7 @@ def cart_remove(request, id):
     cart_item.delete()
     request.cart_amount -= 1
     cart_total = cart_item.cart.get_total()
+
     return {'success': True, 'cart_amount': request.cart_amount, 'cart_total': cart_total}
 
 
@@ -108,14 +102,12 @@ def price_description(request):
 
 def normalize_phone(phone):
     phone = "".join(i for i in phone if i.isdigit())
-
     if len(phone) == 10:
         phone = "38" + phone
     elif len(phone) == 9:
         phone = "380" + phone
     else:
         pass
-
     if len(phone) == 0:
         phone = 0
 
@@ -125,13 +117,11 @@ def normalize_phone(phone):
 @csrf_exempt
 @json_view
 def cart_checkout(request):
-
     this_order = Orders()
     errors = ""
     data = request.POST.get('form', '')
     form = {}
     data = json.loads(data)
-
     for i in data:
         form[i['name']] = i['value']
 
@@ -352,7 +342,7 @@ def cart_checkout(request):
                 else:
                     errors += _("Print office number") + "<br>"
     else:
-        errors += 'Choose delivery type <br>'
+        errors += _("Choose delivery type") + "<br>"
 
     if 'ordr-pay-visa-mstrcrd' in form:
         if form['ordr-pay-visa-mstrcrd'] == 'on':
@@ -374,7 +364,6 @@ def cart_checkout(request):
             this_order.payment_method = 'CashOnDelivery'
     else:
         errors += _("Chose payment type") + "<br>"
-
     if errors == "":
         this_order.save()
         cart = get_object_or_404(Cart, session_key=request.session.session_key)
@@ -382,15 +371,14 @@ def cart_checkout(request):
         for item in cart_items:
             item.delete()
         cart_amount = 0
+
         return {'success': True, 'cart_amount': cart_amount}
 
-    errors_block = '<div class="row"><a  id="errors" class="btn btn-warning btn-lg rounded-0 mt-4 mb-0 mx-auto disabled" ' \
-                   'style="font-size:8px height:auto; width:auto;">' + errors + '</a></div>'
+    errors_block = '<div class="row"><a  id="errors" class="btn btn-lg choose_size_before mt-4 mb-0 mx-auto disabled" ' \
+                   'style="color:black; height:auto; width:auto;">' + errors + '</a></div>'
     errors_block = mark_safe(errors_block)
-    print('\n\n\n', errors_block, '\n\n\n')
+
     return {'success': False, "errors": errors_block}
-
-
 
 
 

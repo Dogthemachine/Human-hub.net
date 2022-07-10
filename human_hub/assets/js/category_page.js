@@ -1,6 +1,6 @@
 $(document).ready(function() {
-//-----------   CATEGORY TOGGLER     -----------
 
+//-----------   CATEGORY TOGGLER     -----------
     var all_item_names = document.getElementsByClassName("kuku");
     var i;
     for (i = 0; i < all_item_names.length; i++) {
@@ -43,8 +43,5 @@ $(document).ready(function() {
                 },
             });
     })};
-
-
-
 //-----------   CATEGORY TOGGLER     -----------
 });

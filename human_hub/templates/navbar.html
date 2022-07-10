@@ -31,18 +31,18 @@
         </form>
 
         <div class="dropdown mt-3">
-          <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-            {% trans 'Currency' %}
-          </button>
-          <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">UAH</a></li>
-            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">USD</a></li>
-            <li><a class="dropdown-item" style="font-family: IBM Plex Mono;" href="#">UER</a></li>
-          </ul>
+            <div class="select">
+                <button class="btn btn-outline-secondary dropdown-toggle btn-sm mb-0 h1 fs-5 hb-main-menu-color" style="box-shadow:none; border: 0px !important; font-family: IBM Plex Mono;" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                  {% trans 'Currency' %}
+                </button>
+                <input type="hidden" name="lang">
+                <ul class="dropdown-menu val dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
+                  <li class="ms-3 mb-3" style="font-family: IBM Plex Mono;" id="grn">{% trans 'UAH' %}</li>
+                  <li class="ms-3 my-3" style="font-family: IBM Plex Mono;" id="usd">{% trans 'USD' %}</li>
+                  <li class="ms-3 mt-3" style="font-family: IBM Plex Mono;" id="eur">{% trans 'EUR' %}</li>
+                </ul>
+            </div>
         </div>
-
-
-
 
         <div class="dropdown mt-1">
             <div class="select">
@@ -50,7 +50,7 @@
                   {% trans 'Language' %}
                 </button>
                 <input type="hidden" name="lang">
-                <ul class="dropdown-menu dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
+                <ul class="dropdown-menu lang dropdown-menu-dark mb-0 h1 fs-5" aria-labelledby="dropdownMenuButton1">
                   <li class="ms-3 mb-3" style="font-family: IBM Plex Mono;" id="en">{% trans 'English' %}</li>
                   <li class="ms-3 my-3" style="font-family: IBM Plex Mono;" id="uk">{% trans 'Ukrainian' %}</li>
                   <li class="ms-3 mt-3" style="font-family: IBM Plex Mono;" id="ru">{% trans 'Russian' %}</li>

@@ -1,5 +1,12 @@
 $(document).ready(function() {
 
+function get_loc_lang() {
+    return window.location.toString().substr(window.location.toString().indexOf(window.location.host)
+        + window.location.host.toString().length + 1,2);
+};
+
+loclang = get_loc_lang()
+
 //-----------   FOOTER BUTTONS     -----------
     if (window.matchMedia("(max-width: 450px)").matches) {
         $('.btn-footer').removeClass('btn-sm');
@@ -29,7 +36,7 @@ $(document).ready(function() {
 
     function showCarModal() {
         $.ajax({
-            url: '/orders/cart/',
+            url: '/' + loclang + '/orders/cart/',
             type: 'get',
             success: function(data) {
                 $('#hb-cart-content').html(data.html);
@@ -54,7 +61,7 @@ $(document).ready(function() {
 
     function showOrderModal() {
         $.ajax({
-            url: '/orders/order',
+            url: '/' + loclang + '/orders/order',
             type: 'get',
             success: makeorderSuccess
         });
@@ -195,17 +202,29 @@ $(document).ready(function() {
    };
 //-----------   MAKE ORDER MODAL WINDOW     -----------
 
-
-
-
-
-$('.dropdown-menu li').click(function () {
+$('.lang li').click(function () {
     var lang = this.id;
     var loc = window.location.toString().substring( 0, window.location.toString().indexOf(window.location.host)
         + window.location.host.toString().length + 1) + lang
         + window.location.toString().substring(window.location.toString().indexOf(window.location.host)
         + window.location.host.toString().length + 3);
     window.location = loc;
+});
+
+
+$('.val li').click(function () {
+    var val = this.id;
+    event.preventDefault();
+      $.ajax({
+          url: '/currency/',
+          data: 'valuta=' + val,
+          type: 'post',
+          success: function() {
+              location.reload();
+          },
+          error: function() {
+          }
+      });
 });
 
 });

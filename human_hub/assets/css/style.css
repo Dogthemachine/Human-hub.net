@@ -58,13 +58,6 @@ html, body {
     color:  #D3D3D3 !important;
 
 }
-
-
-
-
-
-
-
 /*  NAVBAR  */
 
 /*  FOOTER  */
@@ -275,7 +268,16 @@ background: 0;
     }
 }
 
-
+.choose_size_before {
+border: 5px solid #FAD905;
+box-shadow: 0 0 20px #FAD905;
+border-radius: 50px;
+font-family: IBM Plex Mono;
+color: BEBEBE;
+height: auto;
+width:270px;
+padding: 20px 50px;
+}
 /*  ITEM  */
 
 /*  SHOWCASE  */

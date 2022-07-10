@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-xs-9 col-sm-9 col-md-9 col-lg-7 text-center mx-auto">
 
-            <img class='img-fluid w-80' src="{{ STATIC_URL }}img/SomeBanner.png" alt="" />
+            <img class='img-fluid w-80' src="{{ MEDIA_URL }}{{ banner.image_showcase }}" alt="" />
 
     <!--   CATEGORY   -->
         {% for category in categories %}
@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             <div class="col-4" style="padding-left: 0px !important;">
-                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;" id="choose-size" data-bs-toggle="modal" data-bs-target="#hb-choose-size"><i class="bi bi-cart text-light"></i></button>
+                                <button type="button" class=" btn btn-dark rounded-0 col-4 choose-size-showcase" style="width: 100%;" data-id="{{ category.0.0.id }}" data-bs-toggle="modal" data-bs-target="#hb-choose-size"><i class="bi bi-cart text-light"></i></button>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                             <div class="col-4" style="padding-left: 0px !important;">
-                                <button type="button" class="btn btn-dark rounded-0 col-4" style="width: 100%;" id="choose-size" data-bs-toggle="modal" data-bs-target="#hb-choose-size"><i class="bi bi-cart text-light"></i></button>
+                                <button type="button" class="btn btn-dark rounded-0 col-4 choose-size-showcase" style="width: 100%;" data-id="{{ category.0.1.id }}" data-bs-toggle="modal" data-bs-target="#hb-choose-size"><i class="bi bi-cart text-light"></i></button>
                             </div>
                         </div>
                     </div>
