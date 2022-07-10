@@ -55,6 +55,6 @@ def get_price_itempage(request, item_id):
         price = round(price / rate, 2)
     price = str(price)
 
-    html = price + price_description(request)
+    html = price + ' ' + price_description(request)
 
     return mark_safe(html)

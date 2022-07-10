@@ -101,7 +101,7 @@
         </div>
         <!--   CAROUSEL   -->
         <div class="row">
-            <a class="btn btn-dark btn-lg rounded-0 mt-5 mb-5 mx-auto" href="{% url 'showcase:category_page' category.2.id %}" role="button" style="font-family: IBM Plex Mono; height:45px; width:250px;">{% trans 'Go to' %} {{ category.2.name }}</a>
+            <a class="btn btn-dark btn-lg rounded-0 mt-5 mb-5 mx-auto" href="{% url 'showcase:category_page' category.2.id %}" role="button" style="font-family: IBM Plex Mono; height:auto; max-width:70%;">{% trans 'Go to' %} {{ category.2.name }}</a>
         </div>
         {% endfor %}
     <!--   CATEGORY   -->
