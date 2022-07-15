@@ -67,8 +67,8 @@ class RefundPage(models.Model):
 
 
 class TermsPage(models.Model):
-    terms = models.TextField(_("Refund page text"), default="", blank=True)
-    privacy = models.TextField(_("Refund page text"), default="", blank=True)
+    terms = models.TextField(_("Terms of use"), default="", blank=True)
+    privacy = models.TextField(_("Privacy policy"), default="", blank=True)
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

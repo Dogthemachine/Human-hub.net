@@ -28,7 +28,7 @@ class BalanceAdmin(admin.ModelAdmin):
     list_display = ('item', 'size', 'amount',)
 
 
-class BannerAdmin(admin.ModelAdmin):
+class BannerAdmin(TranslationAdmin):
     list_display = ('image_showcase', 'image_category',)
 
 

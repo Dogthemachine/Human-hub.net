@@ -19,8 +19,8 @@ class ConfigTranslationOptions(TranslationOptions):
     fields = ('price_description', 'price_description_usd', 'price_description_eur',)
 
 
-# class BannerTranslationOptions(TranslationOptions):
-#     fields = ('image_showcase', 'image_category',)
+class BannerTranslationOptions(TranslationOptions):
+    fields = ('image_showcase', 'image_category',)
 
 
 translator.register(Items, ItemsTranslationOptions)
@@ -31,4 +31,4 @@ translator.register(Sizes, SizesTranslationOptions)
 
 translator.register(Config, ConfigTranslationOptions)
 
-# translator.register(Banner, BannerTranslationOptions)
+translator.register(Banner, BannerTranslationOptions)
