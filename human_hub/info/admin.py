@@ -2,7 +2,7 @@ from modeltranslation.admin import TranslationAdmin
 
 from django.contrib import admin
 
-from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage
+from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage
 
 
 class AboutPageAdmin(TranslationAdmin):
@@ -29,6 +29,10 @@ class RefundPageAdmin(TranslationAdmin):
     list_display = ('text', 'image',)
 
 
+class TermsPageAdmin(TranslationAdmin):
+    list_display = ('terms', 'privacy',)
+
+
 admin.site.register(AboutPage, AboutPageAdmin)
 
 admin.site.register(ContactsPage, ContactsPageAdmin)
@@ -40,4 +44,6 @@ admin.site.register(SizingPage, SizingPageAdmin)
 admin.site.register(ShippingPage, ShippingPageAdmin)
 
 admin.site.register(RefundPage, RefundPageAdmin)
+
+admin.site.register(TermsPage, TermsPageAdmin)
 

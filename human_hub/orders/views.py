@@ -4,9 +4,7 @@ import re
 import hashlib
 import hmac
 from jsonview.decorators import json_view
-from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import get_object_or_404, render, redirect
-
 from django.utils.safestring import mark_safe
 from django.conf import settings
 from django.http import Http404, HttpResponse
