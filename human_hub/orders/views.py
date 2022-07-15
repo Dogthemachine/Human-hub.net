@@ -118,19 +118,19 @@ def normalize_phone(phone):
 @json_view
 def cart_checkout(request):
     this_order = Orders()
+
+#   ------- ORDER FORM VALIDATION --------
     errors = ""
     data = request.POST.get('form', '')
     form = {}
     data = json.loads(data)
     for i in data:
         form[i['name']] = i['value']
-
     if 'customer_name' in form:
         if len(form['customer_name']) >= 1:
             this_order.name = form['customer_name']
         else:
             errors += _("Print your name") + "<br>"
-
     if 'customer_surname' in form:
         if len(form['customer_surname']) >= 1:
             this_order.last_name = form['customer_surname']
@@ -148,7 +148,6 @@ def cart_checkout(request):
             this_order.email = form['customer_email']
         else:
             errors += _("Print your email") + "<br>"
-
     if 'ordr-deliv-worldwide' in form:
         if form['ordr-deliv-worldwide'] == 'on':
             this_order.delivery_method = 'Worldwide'
@@ -194,7 +193,6 @@ def cart_checkout(request):
                     this_order.comment += '\n'
                 else:
                     errors += _("Print zipcode") + "<br>"
-
     elif 'ordr-deliv-novpostobranch' in form:
         if form['ordr-deliv-novpostobranch'] == 'on':
             this_order.delivery_method = 'Nova Posta to branch'
@@ -216,7 +214,6 @@ def cart_checkout(request):
                     this_order.comment += '\n'
                 else:
                     errors += _("Print office number") + "<br>"
-
     elif 'ordr-deliv-novpostodoor' in form:
         if form['ordr-deliv-novpostodoor'] == 'on':
             this_order.delivery_method = 'Nova Posta to door'
@@ -256,7 +253,6 @@ def cart_checkout(request):
                     this_order.comment += '\n'
                 else:
                     errors += _("Print apartment number") + "<br>"
-
     elif 'ordr-deliv-urkpostobranch' in form:
         if form['ordr-deliv-urkpostobranch'] == 'on':
             this_order.delivery_method = 'Ukr Posta to branch'
@@ -279,7 +275,6 @@ def cart_checkout(request):
                     this_order.comment += '\n'
                 else:
                     errors += _("Print office number") + "<br>"
-
     elif 'ordr-deliv-urkpostodoor' in form:
         if form['ordr-deliv-urkpostodoor'] == 'on':
             this_order.delivery_method = 'Ukr Posta to door'
@@ -319,7 +314,6 @@ def cart_checkout(request):
                     this_order.comment += '\n'
                 else:
                     errors += _("Print zipcode") + "<br>"
-
     elif 'ordr-deliv-justintobranch' in form:
         if form['ordr-deliv-justintobranch'] == 'on':
             this_order.delivery_method = 'Justin to branch'
@@ -343,6 +337,7 @@ def cart_checkout(request):
                     errors += _("Print office number") + "<br>"
     else:
         errors += _("Choose delivery type") + "<br>"
+#   ------- ORDER FORM VALIDATION --------
 
     if 'ordr-pay-visa-mstrcrd' in form:
         if form['ordr-pay-visa-mstrcrd'] == 'on':
@@ -364,21 +359,146 @@ def cart_checkout(request):
             this_order.payment_method = 'CashOnDelivery'
     else:
         errors += _("Chose payment type") + "<br>"
+
     if errors == "":
         this_order.save()
-        cart = get_object_or_404(Cart, session_key=request.session.session_key)
-        cart_items = CartItem.objects.filter(cart=cart)
-        for item in cart_items:
-            item.delete()
-        cart_amount = 0
+        payment = {}
 
-        return {'success': True, 'cart_amount': cart_amount}
+        if this_order.payment_method in ('VisaMastercard', 'ApplePay', 'GooglePay', 'PayPal'):
+            config = Config.objects.get()
 
-    errors_block = '<div class="row"><a  id="errors" class="btn btn-lg choose_size_before mt-4 mb-0 mx-auto disabled" ' \
+            payment['account'] = config.merchant_account
+            payment['domain'] = config.merchant_domain_name
+            payment['tr_type'] = 'SALE'
+            payment['auth_type'] = 'SimpleSignature'
+            payment['sign'] = ''
+            payment['url'] = 'https://' + config.merchant_domain_name + 'wfp_callback/'
+            payment['order_id'] = this_order.id
+            payment['order_date'] = format(this_order.added, 'U')
+            payment['amount'] = this_order.get_total_price_grn()
+            payment['currency'] = 'UAH'
+            payment['products'] = []
+            payment['prices'] = []
+            payment['counts'] = []
+            payment['first_name'] = this_order.name
+            payment['last_name'] = this_order.last_name
+            payment['phone'] = this_order.phone
+            payment['lang'] = 'AUTO'
+
+            for order_item in this_order.orderitems_set.all():
+                payment['products'].append(order_item.balance.item.name)
+                payment['prices'].append(order_item.price)
+                payment['counts'].append(order_item.amount)
+
+            products_str = ';'.join(payment['products'])
+            prices_str = ';'.join(str(x) for x in payment['prices'])
+            counts_str = ';'.join(str(x) for x in payment['counts'])
+
+            sign_str = ';'.join([
+                payment['account'], payment['domain'], str(payment['order_id']),
+                str(payment['order_date']), str(payment['amount']), payment['currency'],
+                products_str, str(counts_str), str(prices_str)
+            ])
+            payment['sign'] = hmac.new(
+                str.encode(config.merchant_secret),
+                str.encode(sign_str),
+                hashlib.md5
+            ).hexdigest()
+
+            return {'success': True, 'payment': payment}
+
+        if this_order.payment_method == 'ByCard':
+            message = _("Your order is accepted. Order number is ") + str(this_order.id) + "." + "<br>" \
+                      + _("Cart number to pay is ") + "<br>"
+            message += settings.PRIVAT_CARD
+            info_block = '<div class="row"><a  id="errors" class="btn btn-lg made_order mt-4 mb-0 mx-auto disabled" ' \
+                         'style="color:black; height:auto; width:auto;">' + message + '</a></div>'
+            cart = get_object_or_404(Cart, session_key=request.session.session_key)
+            cart_items = CartItem.objects.filter(cart=cart)
+            for item in cart_items:
+                item.delete()
+            cart_amount = 0
+
+            return {'success': True, 'cart_amount': cart_amount, "info_block": info_block,'payment': payment}
+
+        if this_order.payment_method == 'CashOnDelivery':
+            message = _("Your order is accepted. Order number is ") + str(this_order.id) + "." + "<br>" \
+                      + _("Our manager will contact you to clarify the details, if necessary")
+            info_block = '<div class="row"><a  id="errors" class="btn btn-lg made_order mt-4 mb-0 mx-auto disabled" ' \
+                         'style="color:black; height:auto; width:auto;">' + message + '</a></div>'
+            cart = get_object_or_404(Cart, session_key=request.session.session_key)
+            cart_items = CartItem.objects.filter(cart=cart)
+            for item in cart_items:
+                item.delete()
+            cart_amount = 0
+
+            return {'success': True, 'cart_amount': cart_amount, "info_block": info_block,'payment': payment}
+
+
+
+    info_block = '<div class="row"><a  id="errors" class="btn btn-lg choose_size_before mt-4 mb-0 mx-auto disabled" '\
                    'style="color:black; height:auto; width:auto;">' + errors + '</a></div>'
-    errors_block = mark_safe(errors_block)
+    info_block = mark_safe(info_block)
 
-    return {'success': False, "errors": errors_block}
+    return {'success': False, "info_block": info_block}
+
+
+@csrf_exempt
+def wfp_callback(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body.decode('utf-8'))
+        except:
+            raise
+
+        sign_str = ';'.join([
+            data['merchantAccount'], str(data['orderReference']), str(data['amount']),
+            data['currency'], str(data['authCode']), data['cardPan'],
+            data['transactionStatus'], str(data['reasonCode'])
+        ])
+
+        sign = hmac.new(
+            str.encode(settings.MERCHANT_SIGNATURE),
+            str.encode(sign_str),
+            hashlib.md5
+        ).hexdigest()
+
+        print('\n\n')
+        print('---------wfp_callback---------')
+        print(data)
+        print('\n\n')
+
+        if sign == data['merchantSignature']:
+            response_dict = {}
+            response_dict['orderReference'] = data['orderReference']
+            response_dict['status'] = 'accept'
+            response_dict['time'] = format(timezone.now(), 'U')
+            response_dict['signature'] = ''
+
+            response_sign_str = ';'.join([
+                response_dict['orderReference'], response_dict['status'],
+                str(response_dict['time'])
+            ])
+
+            response_dict['signature'] = hmac.new(
+                str.encode(settings.MERCHANT_SIGNATURE),
+                str.encode(response_sign_str),
+                hashlib.md5
+            ).hexdigest()
+
+            print(data['transactionStatus'])
+
+            if data['transactionStatus'] == 'Approved':
+                print('---------wfp_callback---------')
+                print('\n\n')
+
+            return HttpResponse(json.dumps(response_dict, ensure_ascii=False), content_type="text/plain")
+
+        else:
+            print('>>>>>>>>>>wfp_callback>>>>>>>>>>')
+            return HttpResponse()
+
+
 
 
 

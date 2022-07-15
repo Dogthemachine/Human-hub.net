@@ -2,6 +2,10 @@ $(document).ready(function() {
 
     var closebtns = document.getElementsByClassName("close-cart-item");
     var i;
+    var tot_price = document.getElementById("cart_total_price").innerHTML;
+    if (tot_price == 0) {
+        document.getElementById("show-order-modal").hidden = true;
+        };
 
     for (i = 0; i < closebtns.length; i++) {
         closebtns[i].addEventListener("click", function() {
@@ -18,12 +22,8 @@ $(document).ready(function() {
                 },
             });
             tot = document.getElementById("cart_total_price");
-            console.log("Refreshed");
-
-
       });
-    }
-
-
+    };
 
 });
+

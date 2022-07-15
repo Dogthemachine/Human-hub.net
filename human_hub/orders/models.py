@@ -42,13 +42,6 @@ class Orders(models.Model):
         for i in items:
             sum += i.price * i.amount
 
-        sum -= self.discount_stocks
-        # sum -= self.discount_set
-        if not self.discount_stocks:
-            sum = sum - sum * self.discount_promo // 100
-
-        sum += self.delivery_cost
-
         return sum
 
     def get_total_price(self, request):

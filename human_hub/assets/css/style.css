@@ -278,6 +278,18 @@ height: auto;
 width:270px;
 padding: 20px 50px;
 }
+
+.made_order {
+border: 5px solid #92e601;
+box-shadow: 0 0 20px #92e601;
+border-radius: 50px;
+font-family: IBM Plex Mono;
+color: BEBEBE;
+height: auto;
+width:270px;
+padding: 20px 50px;
+}
+
 /*  ITEM  */
 
 /*  SHOWCASE  */

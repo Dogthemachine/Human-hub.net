@@ -10,7 +10,8 @@ urlpatterns = [
     path("cart/checkout/", views.cart_checkout, name="cart_checkout"),
     path('order/', views.order, name='make_order'),
     path('order/submit/', views.submit, name='make_order'),
-
+    path('order/payment/', views.submit, name='make_order'),
+    path("wfp_callback/", views.wfp_callback, name="wfp_callback"),
 ]
 
 

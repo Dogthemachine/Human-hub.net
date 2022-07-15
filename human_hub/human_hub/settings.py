@@ -150,3 +150,8 @@ STOCKS_TYPES = (
 
 TRANSLATABLE_MODEL_MODULES = ["showcase.Categories", "showcase.Items", "showcase.Sizes",]
 
+PRIVAT_CARD = os.environ.get('TC_PRIVAT_CARD')
+MONO_CARD = os.environ.get('TC_MONO_CARD')
+PRIVAT_NAME = os.environ.get('TC_PRIVAT_NAME')
+MONO_NAME = os.environ.get('TC_MONO_NAME')
+
