@@ -5,10 +5,14 @@ from django.utils.translation import gettext_lazy as _
 
 
 class AboutPage(models.Model):
-    text_1 = models.TextField(_("About page text (frst prt"), default="", blank=True)
+    text_1 = models.TextField(_("frst prt"), default="", blank=True)
     image_1 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
-    text_2 = models.TextField(_("About page text (scnd prt"), default="", blank=True)
+    text_2 = models.TextField(_("scnd prt"), default="", blank=True)
     image_2 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
+
+    class Meta:
+        verbose_name = _("About page")
+        verbose_name_plural = _("About page")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -20,6 +24,10 @@ class ContactsPage(models.Model):
     text = models.TextField(_("Contacts page text"), default="", blank=True)
     image = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
 
+    class Meta:
+        verbose_name = _("Contacts page")
+        verbose_name_plural = _("Contacts page")
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if ContactsPage.objects.count() != 1:
@@ -29,6 +37,10 @@ class ContactsPage(models.Model):
 class DiscountsPage(models.Model):
     text = models.TextField(_("Discounts page text"), default="", blank=True)
     image = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
+
+    class Meta:
+        verbose_name = _("Discounts page")
+        verbose_name_plural = _("Discounts page")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -40,6 +52,10 @@ class SizingPage(models.Model):
     text = models.TextField(_("Sizing page text"), default="", blank=True)
     image = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
 
+    class Meta:
+        verbose_name = _("Sizing page")
+        verbose_name_plural = _("sizing page")
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if SizingPage.objects.count() != 1:
@@ -49,6 +65,10 @@ class SizingPage(models.Model):
 class ShippingPage(models.Model):
     text = models.TextField(_("Shipping page text"), default="", blank=True)
     image = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
+
+    class Meta:
+        verbose_name = _("Shipping page")
+        verbose_name_plural = _("Shipping page")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
@@ -60,6 +80,10 @@ class RefundPage(models.Model):
     text = models.TextField(_("Refund page text"), default="", blank=True)
     image = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
 
+    class Meta:
+        verbose_name = _("Refund page")
+        verbose_name_plural = _("Refund page")
+
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         if RefundPage.objects.count() != 1:
@@ -69,6 +93,10 @@ class RefundPage(models.Model):
 class TermsPage(models.Model):
     terms = models.TextField(_("Terms of use"), default="", blank=True)
     privacy = models.TextField(_("Privacy policy"), default="", blank=True)
+
+    class Meta:
+        verbose_name = _("Terms page")
+        verbose_name_plural = _("Terms page")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

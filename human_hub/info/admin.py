@@ -13,15 +13,15 @@ class ContactsPageAdmin(TranslationAdmin):
     list_display = ('text', 'image',)
 
 
-class DiscountsPageAdmin(admin.ModelAdmin):
+class DiscountsPageAdmin(TranslationAdmin):
     list_display = ('text', 'image',)
 
 
-class SizingPageAdmin(admin.ModelAdmin):
+class SizingPageAdmin(TranslationAdmin):
     list_display = ('text', 'image',)
 
 
-class ShippingPageAdmin(admin.ModelAdmin):
+class ShippingPageAdmin(TranslationAdmin):
     list_display = ('text', 'image',)
 
 

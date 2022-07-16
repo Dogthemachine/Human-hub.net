@@ -1,0 +1,73 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	server_name _;
+        return 444;
+}
+
+server {
+	listen 443 ssl default_server;
+	listen [::]:443 ssl default_server;
+	server_name _;
+        return 444;
+}
+
+server {
+	server_name www.human-hub.net;
+
+	location / {
+		uwsgi_pass unix:///run/uwsgi/uwsgi.sock;
+                include uwsgi_params;
+	}
+
+	location /static/ {
+		root /www/Human-hub.net/;
+	}
+
+	location /media/ {
+		root /www/Human-hub.net/;
+	}
+
+	error_page  404  /404.html;
+	location = /404.html {
+	root   /usr/share/nginx/html;
+	}
+
+	error_page  500 502 503 504 /500.html;
+	location = /500.html {
+	root   /usr/share/nginx/html;
+	}
+
+	error_page 404 403 500 503 /error-page.html;
+    location = /error-page.html {
+        root /var/www/html;
+        internal;
+}
+}
+
+server {
+	server_name human-hub.net;
+
+	location / {
+		uwsgi_pass unix:///run/uwsgi/uwsgi.sock;
+                include uwsgi_params;
+	}
+
+	location /static/ {
+		root /www/Human-hub.net/;
+	}
+
+	location /media/ {
+		root /www/Human-hub.net/;
+
+	error_page  404              /404.html;
+	location = /404.html {
+	root   /usr/share/nginx/html;
+	}
+
+	error_page   500 502 503 504  /50x.html;
+	location = /50x.html {
+	root   /usr/share/nginx/html;
+	}
+	}
+}

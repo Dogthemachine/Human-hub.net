@@ -158,11 +158,13 @@ class BalanceLog(models.Model):
         return "%s - %s" % (self.balance, self.change_time)
 
 
-
-
 class Banner(models.Model):
     image_showcase = ResizedImageField(size=[2000, 300], upload_to="photos/%Y/%m/%d")
     image_category = ResizedImageField(size=[2000, 300], upload_to="photos/%Y/%m/%d")
+
+    class Meta:
+        verbose_name = _("Banners")
+        verbose_name_plural = _("Banners page")
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)

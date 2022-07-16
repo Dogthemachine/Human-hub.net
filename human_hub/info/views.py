@@ -1,52 +1,74 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage
+from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage
 
 
 class AboutView(View):
 
     def get(self, request):
-        content = AboutPage.objects.all()[0]
-
-        return render(request, 'info/about.html', {'content': content})
+        try:
+            content = AboutPage.objects.all()[0]
+            return render(request, 'info/about.html', {'content': content})
+        except:
+            return render(request, 'info/about.html')
 
 
 class ContactsView(View):
 
     def get(self, request):
-        content = ContactsPage.objects.all()[0]
-        return render(request, 'info/contacts.html', {'content': content})
+        try:
+            content = ContactsPage.objects.all()[0]
+            return render(request, 'info/contacts.html', {'content': content})
+        except:
+            return render(request, 'info/contacts.html')
 
 
 class DiscountsView(View):
 
     def get(self, request):
-        content = DiscountsPage.objects.all()[0]
-        return render(request, 'info/discounts.html', {'content': content})
+        try:
+            content = DiscountsPage.objects.all()[0]
+            return render(request, 'info/discounts.html', {'content': content})
+        except:
+            return render(request, 'info/discounts.html')
 
 
 class RefundView(View):
 
     def get(self, request):
-        content = RefundPage.objects.all()[0]
-        return render(request, 'info/refund.html', {'content': content})
+        try:
+            content = RefundPage.objects.all()[0]
+            return render(request, 'info/refund.html', {'content': content})
+        except:
+            return render(request, 'info/refund.html')
 
 
 class ShippingView(View):
 
     def get(self, request):
-        content = ShippingPage.objects.all()[0]
-        return render(request, 'info/shipping.html', {'content': content})
+        try:
+            content = ShippingPage.objects.all()[0]
+            return render(request, 'info/shipping.html', {'content': content})
+
+        except:
+            return render(request, 'info/shipping.html')
 
 
 class SizingView(View):
 
     def get(self, request):
-        content = SizingPage.objects.all()[0]
-        return render(request, 'info/sizing.html', {'content': content})
+        try:
+            content = SizingPage.objects.all()[0]
+            return render(request, 'info/sizing.html', {'content': content})
+        except:
+            return render(request, 'info/sizing.html')
 
 
 class TermsView(View):
 
     def get(self, request):
-        return render(request, 'info/terms.html')
+        try:
+            content = TermsPage.objects.all()[0]
+            return render(request, 'info/terms.html', {'content': content})
+        except:
+            return render(request, 'info/terms.html')

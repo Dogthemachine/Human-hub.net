@@ -1,13 +1,19 @@
 {% extends "base.html" %}
-
+{% load i18n %}
+{% load static %}
 {% block content %}
 
     <div class="container mt-5">
         <div class="row">
             <div class="col d-flex justify-content-center">
                 <div class="text-center w-5">
-                    <div class="col-5 mt-5 mb-5 mx-auto position-relative">DISCOUNTS PAGE HERE</div>
-                    <img class="w-50 p-3 mt-5" src="{{ STATIC_URL }}img/HumanHub_logo_2-01inv.png">
+                    <h1>{% trans 'Discounts page' %}</h1>
+                    {% if content.text %}
+                        <div class="mt-4 mx-auto position-relative info-pages-text">{{ content.text }}</div>
+                    {% endif %}
+                    {% if content.image %}
+                        <img class="mt-3 mb-2 info-pages-image" src="{{ MEDIA_URL }}{{ content.image }}">
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -362,8 +362,14 @@ def cart_checkout(request):
         this_order.save()
         payment = {}
 
-        if this_order.payment_method in ('VisaMastercard', 'ApplePay', 'GooglePay', 'PayPal'):
+
+        print("\n\n\n\n", this_order.payment_method, "\n\n\n\n")
+
+
+        if this_order.payment_method == 'VisaMastercard':
             config = Config.objects.get()
+
+            print("\n\n\n\n", this_order.payment_method, "\n\n\n\n")
 
             payment['account'] = config.merchant_account
             payment['domain'] = config.merchant_domain_name
