@@ -40,17 +40,23 @@
               <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <div id="cc-order-delivery-{{ order.id }}">
 
-                  {% if order.ttn %}
-                    {% trans 'TTN' %}: {{ order.ttn }}<br/>
-                  {% endif %}
+                  <div class="row col-6 text-center mx-auto">
+                    {% if order.ttn %}
+                      {% trans 'TTN' %}: {{ order.ttn }}<br/>
+                    {% endif %}
+                  </div>
 
-                  {% if not order.ttn %}
-                    <span class="btn btn-secondary delivery-link mb-3 mx-3 rounded-0" href="#" data-bs-toggle="modal" id="order-delivered-{{ order.id }}" data-bs-target="#cc-order-modal" data-order-id="{{ order.id }}">{% trans 'Delivery' %}</span>
-                  {% endif %}
+                  <div class="row col-6 text-center mx-auto">
+                    {% if not order.ttn %}
+                      <span class="btn btn-secondary delivery-link mb-3 mt-2 mx-3 rounded-0" href="#" data-bs-toggle="modal" id="order-delivered-{{ order.id }}" data-bs-target="#cc-order-modal" data-order-id="{{ order.id }}">{% trans 'Delivery' %}</span>
+                    {% endif %}
+                  </div>
 
-                  {% if not order.packed %}
-                    <a id="order-packed-{{ order.id }}" class="btn btn-dark mx-3 rounded-0 order-packed" data-order-id="{{ order.id }}">{% trans 'Packed' %}</a>
-                  {% endif %}
+                  <div class="row col-6 text-center mx-auto">
+                    {% if not order.packed %}
+                      <a id="order-packed-{{ order.id }}" class="btn btn-dark mx-3 rounded-0 order-packed" data-order-id="{{ order.id }}">{% trans 'Packed' %}</a>
+                    {% endif %}
+                  </div>
 
                 </div>
               </td>
