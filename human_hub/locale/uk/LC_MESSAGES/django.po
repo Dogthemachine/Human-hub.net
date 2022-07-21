@@ -481,7 +481,7 @@ msgstr "Введіть вашу пошту"
 
 #: orders/views.py:151
 msgid "country "
-msgstr "країна"
+msgstr "країна "
 
 #: orders/views.py:155
 msgid "Print country to deliver"
@@ -490,7 +490,7 @@ msgstr "Введіть країну"
 #: orders/views.py:158 orders/views.py:203 orders/views.py:227
 #: orders/views.py:272 orders/views.py:297 orders/views.py:342
 msgid "region "
-msgstr "регіон"
+msgstr "регіон "
 
 #: orders/views.py:162 orders/views.py:207
 msgid "Print region to deliver"
@@ -499,7 +499,7 @@ msgstr "Введіть регіон"
 #: orders/views.py:165 orders/views.py:210 orders/views.py:234
 #: orders/views.py:280 orders/views.py:304 orders/views.py:349
 msgid "city "
-msgstr "місто"
+msgstr "місто "
 
 #: orders/views.py:169
 msgid "Print city to deliver"
@@ -507,7 +507,7 @@ msgstr "Введіть місто"
 
 #: orders/views.py:172 orders/views.py:241 orders/views.py:311
 msgid "street "
-msgstr "вулиця"
+msgstr "вулиця "
 
 #: orders/views.py:176
 msgid "Print street to deliver"
@@ -516,7 +516,7 @@ msgstr "Введіть вулицю"
 #: orders/views.py:179 orders/views.py:248 orders/views.py:255
 #: orders/views.py:318
 msgid "building "
-msgstr "номер будівлі"
+msgstr "номер будівлі "
 
 #: orders/views.py:183 orders/views.py:259 orders/views.py:322
 msgid "Print building number"
@@ -524,7 +524,7 @@ msgstr "Введіть номер будівлі"
 
 #: orders/views.py:186 orders/views.py:262 orders/views.py:326
 msgid "apartment "
-msgstr "номер квартири / офісу"
+msgstr "номер квартири / офісу "
 
 #: orders/views.py:190 orders/views.py:266 orders/views.py:329
 msgid "Print apartment number"
@@ -532,7 +532,7 @@ msgstr "Ведіть номер квартири / офісу"
 
 #: orders/views.py:193 orders/views.py:332
 msgid "zipcode "
-msgstr "поштовий индекс"
+msgstr "поштовий индекс "
 
 #: orders/views.py:197 orders/views.py:336
 msgid "Print zipcode"

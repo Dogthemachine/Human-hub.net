@@ -480,7 +480,7 @@ msgstr "Введите почту"
 
 #: orders/views.py:151
 msgid "country "
-msgstr "страна"
+msgstr "страна "
 
 #: orders/views.py:155
 msgid "Print country to deliver"
@@ -489,7 +489,7 @@ msgstr "Введите страну"
 #: orders/views.py:158 orders/views.py:203 orders/views.py:227
 #: orders/views.py:272 orders/views.py:297 orders/views.py:342
 msgid "region "
-msgstr "область"
+msgstr "область "
 
 #: orders/views.py:162 orders/views.py:207
 msgid "Print region to deliver"
@@ -498,7 +498,7 @@ msgstr "Введите область"
 #: orders/views.py:165 orders/views.py:210 orders/views.py:234
 #: orders/views.py:280 orders/views.py:304 orders/views.py:349
 msgid "city "
-msgstr "город"
+msgstr "город "
 
 #: orders/views.py:169
 msgid "Print city to deliver"
@@ -506,7 +506,7 @@ msgstr "Введите город"
 
 #: orders/views.py:172 orders/views.py:241 orders/views.py:311
 msgid "street "
-msgstr "улица"
+msgstr "улица "
 
 #: orders/views.py:176
 msgid "Print street to deliver"
@@ -515,7 +515,7 @@ msgstr "Введите улицу"
 #: orders/views.py:179 orders/views.py:248 orders/views.py:255
 #: orders/views.py:318
 msgid "building "
-msgstr "номер здания"
+msgstr "номер здания "
 
 #: orders/views.py:183 orders/views.py:259 orders/views.py:322
 msgid "Print building number"
@@ -523,7 +523,7 @@ msgstr "Введите номер здания"
 
 #: orders/views.py:186 orders/views.py:262 orders/views.py:326
 msgid "apartment "
-msgstr "номер квартиры / офиса"
+msgstr "номер квартиры / офиса "
 
 #: orders/views.py:190 orders/views.py:266 orders/views.py:329
 msgid "Print apartment number"
@@ -531,7 +531,7 @@ msgstr "Введите номер квартиры / офиса"
 
 #: orders/views.py:193 orders/views.py:332
 msgid "zipcode "
-msgstr "почтовый индекс"
+msgstr "почтовый индекс "
 
 #: orders/views.py:197 orders/views.py:336
 msgid "Print zipcode"
@@ -544,7 +544,7 @@ msgstr "Введите город"
 
 #: orders/views.py:217 orders/views.py:287 orders/views.py:356
 msgid "office "
-msgstr "ноиер отделения"
+msgstr "ноиер отделения  "
 
 #: orders/views.py:221 orders/views.py:291 orders/views.py:360
 msgid "Print office number"
