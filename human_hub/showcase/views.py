@@ -91,6 +91,5 @@ def ChooseSizes(request, item_id):
 def cart_val(request, valuta):
 
     request.session['valuta'] = valuta
-    print('\n\n\n', valuta)
 
     return {'success': True}

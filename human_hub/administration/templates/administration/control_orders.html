@@ -1,5 +1,111 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+  {% trans 'Orders' %}
+{% endblock %}
 
 {% block content %}
-ORDERS HERE
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-11 col-md-10 col-lg-10 text-center mx-auto">
+
+      <table id="cs-balances" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+          <tr>
+            <th>{% trans 'Added' %}</th>
+            <th>{% trans 'Order' %}</th>
+            <th>{% trans 'Delivery' %}</th>
+            <th>{% trans 'Payment' %}</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          {% for order in orders %}
+            <tr id="cc-order-{{ order.id }}">
+
+              <td class="col-1">
+                <b>{{ order.added }}</b><br/>
+              </td>
+              <td class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+
+                <a class="cc-order-link link-dark" href="#" data-bs-toggle="modal" data-bs-target="#cc-order-modal" data-order-id="{{ order.id }}">
+                  <b>{% trans 'Number ' %} {{ order.get_number }} -- {{ order.name }} {{ order.last_name }}</b>
+                </a>
+                <br/>
+                <b class="align-middle mt-3">{{ order.get_total_price_grn }} {% trans 'UAH' %}</b> <br/>
+                <br/>
+                <br/>
+              </td>
+              <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div id="cc-order-delivery-{{ order.id }}">
+
+                  {% if order.ttn %}
+                    {% trans 'TTN' %}: {{ order.ttn }}<br/>
+                  {% endif %}
+
+                  {% if not order.ttn %}
+                    <span class="btn btn-secondary delivery-link mb-3 mx-3 rounded-0" href="#" data-bs-toggle="modal" id="order-delivered-{{ order.id }}" data-bs-target="#cc-order-modal" data-order-id="{{ order.id }}">{% trans 'Delivery' %}</span>
+                  {% endif %}
+
+                  {% if not order.packed %}
+                    <a id="order-packed-{{ order.id }}" class="btn btn-dark mx-3 rounded-0 order-packed" data-order-id="{{ order.id }}">{% trans 'Packed' %}</a>
+                  {% endif %}
+
+                </div>
+              </td>
+
+              <td class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div id="cc-order-payment-{{ order.id }}">
+
+                    {% if order.paid %}
+                        <div id="paid_done" class="btn btn-lg paid_done my-2 mx-auto disabled text-center mx-auto"
+                             style="color:black; height:auto; width:auto; border: 5px solid #92e601; box-shadow: 0 0 20px #92e601;
+                             border-radius: 50px; font-size: 15px;">{% trans 'Done' %}<br/>{% trans order.payment_method %}</div>
+                        <br/>
+                    {% else %}
+                      {% trans order.payment_method %} <br/> {{ order.get_total_paid }} {% trans 'UAH' %}<br/>
+                    <span class="btn btn-dark payment-link mt-2 mb-3 mx-3 rounded-0" id="order-payed-{{ order.id }}" href="#" data-bs-toggle="modal" data-bs-target="#cc-order-modal" data-order-id="{{ order.id }}">{% trans 'Payment' %}</span>
+                    {% endif %}
+
+                  </div>
+              </td>
+
+          {% endfor %}
+
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>{% trans 'Added' %}</td>
+            <td>{% trans 'Order' %}</td>
+            <td>{% trans 'Delivery' %}</td>
+            <td>{% trans 'Payment' %}</td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+  </div>
+
+  <!-- SIZE MODAL -->
+  <div class="modal fade" id="cc-order-modal" tabindex="-1" aria-labelledby="hb-order-modal-Label" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-cart-modal-color">
+        <div class="modal-header">
+          <h4 class="modal-title" id="order-modal">{% trans 'Order info' %}</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
+          <span id="cc-order-buttons"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Choose size modal -->
+
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ STATIC_URL }}js/orders_control.js"></script>
 {% endblock %}
