@@ -84,12 +84,81 @@ loclang = get_loc_lang()
         const UkrposhtaToDoor = document.getElementById("collapseDeliveryUkrposhtaToDoor");
         const JustinToBranch = document.getElementById("collapseDeliveryJustinToBranch");
 
+        const VisaMaster = document.getElementById("ordr-pay-visa-mstrcrd");
+        const ApplePay = document.getElementById("ordr-pay-applepay");
+        const Googlepay = document.getElementById("ordr-pay-googlepay");
+        const Paypal = document.getElementById("ordr-pay-paypal");
+        const ByCard = document.getElementById("ordr-pay-bycard");
+        const CashOnDeliv = document.getElementById("ordr-pay-cash-on-del");
+
+
         NovaPoshtaToBranch.style.display = 'none';
         NovaPoshtaToDoor.style.display = 'none';
         UkrposhtaToBranch.style.display = 'none';
         JustinToBranch.style.display = 'none';
         UkrposhtaToDoor.style.display = 'none';
         WorldWide.style.display = 'none';
+
+        VisaMaster.addEventListener('click', () => {
+            if (VisaMaster.checked) {
+                ApplePay.checked = false;
+                Googlepay.checked = false;
+                Paypal.checked = false;
+                ByCard.checked = false;
+                CashOnDeliv.checked = false;
+            };
+        });
+
+        ApplePay.addEventListener('click', () => {
+            if (ApplePay.checked) {
+                VisaMaster.checked = false;
+                Googlepay.checked = false;
+                Paypal.checked = false;
+                ByCard.checked = false;
+                CashOnDeliv.checked = false;
+            };
+        });
+
+
+        Googlepay.addEventListener('click', () => {
+            if (Googlepay.checked) {
+                VisaMaster.checked = false;
+                ApplePay.checked = false;
+                Paypal.checked = false;
+                ByCard.checked = false;
+                CashOnDeliv.checked = false;
+            };
+        });
+
+        Paypal.addEventListener('click', () => {
+            if (Paypal.checked) {
+                VisaMaster.checked = false;
+                ApplePay.checked = false;
+                Googlepay.checked = false;
+                ByCard.checked = false;
+                CashOnDeliv.checked = false;
+            };
+        });
+
+        ByCard.addEventListener('click', () => {
+            if (ByCard.checked) {
+                VisaMaster.checked = false;
+                ApplePay.checked = false;
+                Googlepay.checked = false;
+                Paypal.checked = false;
+                CashOnDeliv.checked = false;
+            };
+        });
+
+        CashOnDeliv.addEventListener('click', () => {
+            if (CashOnDeliv.checked) {
+                VisaMaster.checked = false;
+                ApplePay.checked = false;
+                Googlepay.checked = false;
+                Paypal.checked = false;
+                ByCard.checked = false;
+            };
+        });
 
         worldwide.addEventListener('click', () => {
             if (worldwide.checked) {
