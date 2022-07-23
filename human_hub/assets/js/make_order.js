@@ -15,6 +15,8 @@ $(document).ready(function() {
         var checkout_form = document.getElementById("checkout-html-form");
         var formData = JSON.stringify($("#checkout-html-form").serializeArray());
         var new_check = 'X'
+        if (document.getElementById("pop-order-checkout").innerHTML == 'X') {} else {
+
         $.ajax({
             url: '/' + loclang + '/orders/cart/checkout/',
             type: 'post',
@@ -67,7 +69,7 @@ $(document).ready(function() {
                 }
                 else {document.getElementById("info-block").hidden = false;
                     document.getElementById("info-block").innerHTML = data.info_block};
-        }})
+        }})}
     });
 //-----------   CHECKOUT     -----------
 });
