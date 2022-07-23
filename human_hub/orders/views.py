@@ -113,6 +113,7 @@ def normalize_phone(phone):
 @json_view
 def cart_checkout(request):
     this_order = Orders()
+    print("\n\n\n", "this_order = Orders()", "\n\n\n")
 
 #   ------- ORDER FORM VALIDATION --------
     errors = ""
@@ -336,6 +337,7 @@ def cart_checkout(request):
                     errors += _("Print zipcode") + "<br>"
     elif 'ordr-deliv-justintobranch' in form:
         if form['ordr-deliv-justintobranch'] == 'on':
+            print("\n\n\n", "if form['ordr-deliv-justintobranch'] == 'on':", "\n\n\n")
             this_order.delivery_method = 'Justin to branch'
             if 'order-delivery-region-justin-to-branch' in form:
                 if len(form['order-delivery-region-justin-to-branch']) >= 1:
@@ -378,15 +380,17 @@ def cart_checkout(request):
         if form['ordr-pay-bycard'] == 'on':
             this_order.payment_method = 'ByCard'
     elif 'ordr-pay-cash-on-del' in form:
+        print("\n\n\n", "elif 'ordr-pay-cash-on-del' in form:", "\n\n\n")
         if form['ordr-pay-cash-on-del'] == 'on':
             this_order.payment_method = 'CashOnDelivery'
     else:
         errors += _("Chose payment type") + "<br>"
 
     if errors == "":
+        print("\n\n\n", "if errors == "":", "\n\n\n")
 
         this_order.save()
-
+        print("\n\n\n", "this_order.save()", "\n\n\n")
 #   ------- MAKING ORDER ITEMS --------
         cart = get_object_or_404(Cart, session_key=request.session.session_key)
         cart_items = CartItem.objects.filter(cart=cart)
@@ -439,6 +443,7 @@ def cart_checkout(request):
                 hashlib.md5
             ).hexdigest()
 
+            print("\n\n\n", "448 return {'success': True, 'payment': payment}", "\n\n\n")
             return {'success': True, 'payment': payment}
 
         if this_order.payment_method == 'ByCard':
@@ -453,6 +458,7 @@ def cart_checkout(request):
                 item.delete()
             cart_amount = 0
 
+            print("\n\n\n", "463 return {'success': True, 'payment': payment}", "\n\n\n")
             return {'success': True, 'cart_amount': cart_amount, "info_block": info_block, }
 
         if this_order.payment_method == 'CashOnDelivery':
@@ -466,6 +472,7 @@ def cart_checkout(request):
                 item.delete()
             cart_amount = 0
 
+            print("\n\n\n", "477 return {'success': True, 'payment': payment}", "\n\n\n")
             return {'success': True, 'cart_amount': cart_amount, "info_block": info_block,}
 
 
@@ -474,6 +481,9 @@ def cart_checkout(request):
                    'style="color:black; height:auto; width:auto;">' + errors + '</a></div>'
     info_block = mark_safe(info_block)
 
+    print("\n\n\n", "486 return {'success': False, 'info_block': info_block}", "\n\n\n")
+    if not OrderItems.objects.filter(order=this_order):
+        this_order.delete()
     return {'success': False, "info_block": info_block}
 
 

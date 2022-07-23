@@ -6,7 +6,7 @@ from django.utils.translation import gettext
 from django.utils.translation import gettext_lazy as _
 from django.conf import settings
 
-from showcase.models import Balance, Items, Sizes
+from showcase.models import Balance, Items, Sizes, Config
 
 
 class Orders(models.Model):
@@ -58,6 +58,7 @@ class Orders(models.Model):
             sum = round(sum / rate, 2)
 
         return sum
+
 
     def get_total_paid(self):
         items = Payment.objects.filter(order=self)

@@ -1,6 +1,6 @@
 <div class="item-modal-sizes" id="{{ item.id }}"></div>
 {% for size in sizes %}
-{% if size.amount == 0 %}
+{% if size.amount <= 0 %}
     <label class="btn btn-dark size_button_font mx-1 rounded-0 disabled" style="font-family: IBM Plex Mono;" for="{{ size.name }}">{{ size.name }}</label>
 {% else %}
     <input type="checkbox" name="{{ size.name }}" id="{{ size.name }}" data-id= "{{ size.id }}" class="btn-check mx-1 size-class" autocomplete="off" />
