@@ -29,6 +29,7 @@ USE_I18N = True
 # Application definition
 
 INSTALLED_APPS = [
+    'cacheops',
     'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -106,6 +107,26 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": os.environ.get('REDIS_PORT') + "/1",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    },
+}
+
+CACHEOPS_REDIS = os.environ.get('REDIS_PORT') + "/1"
+
+CACHEOPS_DEFAULTS = {
+    'timeout': 60*60
+}
+
+CACHEOPS = {
+    'showcase.*': {'ops': 'all'},
+}
 
 
 # Internationalization
