@@ -1,10 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
-from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage
+from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage, InfoPages
 
 
 class AboutView(View):
-
     def get(self, request):
         try:
             content = AboutPage.objects.all()[0]
@@ -13,8 +12,16 @@ class AboutView(View):
             return render(request, 'info/about.html')
 
 
-class ContactsView(View):
+class AboutTagView(View):
+    def get(self, request, tag=''):
+        try:
+            content = InfoPages.objects.filter(tag=tag)[0]
+            return render(request, 'info/about.html', {'content': content})
+        except:
+            return render(request, 'info/about.html')
 
+
+class ContactsView(View):
     def get(self, request):
         try:
             content = ContactsPage.objects.all()[0]
@@ -24,7 +31,6 @@ class ContactsView(View):
 
 
 class DiscountsView(View):
-
     def get(self, request):
         try:
             content = DiscountsPage.objects.all()[0]
@@ -34,7 +40,6 @@ class DiscountsView(View):
 
 
 class RefundView(View):
-
     def get(self, request):
         try:
             content = RefundPage.objects.all()[0]
@@ -44,7 +49,6 @@ class RefundView(View):
 
 
 class ShippingView(View):
-
     def get(self, request):
         try:
             content = ShippingPage.objects.all()[0]
@@ -55,7 +59,6 @@ class ShippingView(View):
 
 
 class SizingView(View):
-
     def get(self, request):
         try:
             content = SizingPage.objects.all()[0]
@@ -65,7 +68,6 @@ class SizingView(View):
 
 
 class TermsView(View):
-
     def get(self, request):
         try:
             content = TermsPage.objects.all()[0]

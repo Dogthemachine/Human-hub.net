@@ -4,6 +4,18 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 
+class InfoPages(models.Model):
+    tag = models.CharField(_("tag"), max_length=20)
+    text_1 = models.TextField(_("frst prt"), default="", blank=True)
+    image_1 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
+    text_2 = models.TextField(_("scnd prt"), default="", blank=True)
+    image_2 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
+
+    class Meta:
+        verbose_name = _("About page")
+        verbose_name_plural = _("About page")
+
+
 class AboutPage(models.Model):
     text_1 = models.TextField(_("frst prt"), default="", blank=True)
     image_1 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)

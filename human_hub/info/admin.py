@@ -33,6 +33,10 @@ class TermsPageAdmin(TranslationAdmin):
     list_display = ('terms', 'privacy',)
 
 
+class InfoPagesAdmin(TranslationAdmin):
+    list_display = ('tag', 'text_1', 'image_1', 'text_2', 'image_2',)
+
+
 admin.site.register(AboutPage, AboutPageAdmin)
 
 admin.site.register(ContactsPage, ContactsPageAdmin)

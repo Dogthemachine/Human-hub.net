@@ -11,4 +11,12 @@ urlpatterns = [
     path('shipping/', views.ShippingView.as_view(), name='shipping'),
     path('sizing/', views.SizingView.as_view(), name='sizing'),
     path('terms/', views.TermsView.as_view(), name='terms'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'about'}, name='about_tag'),
+    path('contacts-tag/', views.AboutTagView.as_view(), {'tag': 'contacts'}, name='contacts_tag'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'discounts'}, name='discounts_tag'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'refund'}, name='refund_tag'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'shipping'}, name='shipping_tag'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'sizing'}, name='sizing_tag'),
+    path('about_tag/', views.AboutTagView.as_view(), {'tag': 'aboutermst'}, name='aboutermst_tag'),
+
 ]
