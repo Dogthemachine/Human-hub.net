@@ -8,7 +8,6 @@ from showcase.models import Photo, Categories, Items, Sizes, Balance, Banner
 
 
 class ShowcaseView(View):
-
     def get(self, request):
         banner = Banner.objects.all()[0]
         cat = Categories.objects.all()
@@ -36,7 +35,6 @@ class ShowcaseView(View):
 
 
 class CategoryPageView(View):
-
     def get(self, request, category_id):
         banner = Banner.objects.all()[0]
         cat = get_object_or_404(Categories, id=category_id)
@@ -54,7 +52,6 @@ class CategoryPageView(View):
 
 
 class ItemPageView(View):
-
     def get(self, request, item_id):
         item = get_object_or_404(Items, id=item_id)
         photos = Photo.objects.all().filter(item=item)
@@ -72,11 +69,13 @@ class ItemPageView(View):
             }
         )
 
+
 @csrf_exempt
 @json_view
 def ChooseSizes(request, item_id):
     item = get_object_or_404(Items, id=item_id)
     sizes = Sizes.objects.all().filter(categories=item.category)
+
     for size in sizes:
         size.amount = Balance.objects.get(item=item, size=size).amount
 
@@ -89,7 +88,6 @@ def ChooseSizes(request, item_id):
 
 @json_view
 def cart_val(request, valuta):
-
     request.session['valuta'] = valuta
 
     return {'success': True}

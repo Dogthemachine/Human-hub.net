@@ -12,8 +12,8 @@ class InfoPages(models.Model):
     image_2 = ResizedImageField(size=[1500, 1500], upload_to="info", blank=True)
 
     class Meta:
-        verbose_name = _("About page")
-        verbose_name_plural = _("About page")
+        verbose_name = _("Info pages")
+        verbose_name_plural = _("Info pages")
 
 
 class AboutPage(models.Model):

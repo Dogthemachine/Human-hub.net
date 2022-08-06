@@ -2,7 +2,16 @@ from modeltranslation.admin import TranslationAdmin
 
 from django.contrib import admin
 
-from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage
+from info.models import (
+    AboutPage,
+    ContactsPage,
+    DiscountsPage,
+    SizingPage,
+    ShippingPage,
+    RefundPage,
+    TermsPage,
+    InfoPages,
+)
 
 
 class AboutPageAdmin(TranslationAdmin):
@@ -51,3 +60,4 @@ admin.site.register(RefundPage, RefundPageAdmin)
 
 admin.site.register(TermsPage, TermsPageAdmin)
 
+admin.site.register(InfoPages, InfoPagesAdmin)

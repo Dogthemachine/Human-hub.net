@@ -1,6 +1,6 @@
 from modeltranslation.translator import translator, TranslationOptions
 
-from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage
+from info.models import AboutPage, ContactsPage, DiscountsPage, SizingPage, ShippingPage, RefundPage, TermsPage, InfoPages
 
 
 class AboutPageTranslationOptions(TranslationOptions):
@@ -31,6 +31,9 @@ class TermsPageTranslationOptions(TranslationOptions):
     fields = ('terms', 'privacy',)
 
 
+class InfoPagesTranslationOptions(TranslationOptions):
+    fields = ('tag', 'text_1', 'image_1', 'text_2', 'image_2',)
+
 
 translator.register(AboutPage, AboutPageTranslationOptions)
 
@@ -45,3 +48,5 @@ translator.register(ShippingPage, ShippingPageTranslationOptions)
 translator.register(RefundPage, RefundPageTranslationOptions)
 
 translator.register(TermsPage, TermsPageTranslationOptions)
+
+translator.register(InfoPages, InfoPagesTranslationOptions)

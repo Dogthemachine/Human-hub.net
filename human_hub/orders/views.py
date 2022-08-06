@@ -117,10 +117,8 @@ def cart_checkout(request):
 #   ------- ORDER FORM VALIDATION --------
     errors = ""
     data = request.POST.get('form', '')
-    form = {}
-    data = json.loads(data)
-    for i in data:
-        form[i['name']] = i['value']
+    form = {l['name']: l['value'] for l in json.loads(data)}
+
     if 'customer_name' in form:
         if len(form['customer_name']) >= 1:
             this_order.name = form['customer_name']

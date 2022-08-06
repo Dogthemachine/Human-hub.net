@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-21 20:22+0300\n"
+"POT-Creation-Date: 2022-08-06 11:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -31,25 +31,25 @@ msgid "Orders"
 msgstr "Замовлення"
 
 #: administration/templates/administration/control_orders.html:16
-#: administration/templates/administration/control_orders.html:79
+#: administration/templates/administration/control_orders.html:85
 msgid "Added"
 msgstr "Додано"
 
 #: administration/templates/administration/control_orders.html:17
-#: administration/templates/administration/control_orders.html:80
+#: administration/templates/administration/control_orders.html:86
 #: templates/base.html:87
 msgid "Order"
 msgstr "Замовлення"
 
 #: administration/templates/administration/control_orders.html:18
-#: administration/templates/administration/control_orders.html:48
-#: administration/templates/administration/control_orders.html:81
+#: administration/templates/administration/control_orders.html:51
+#: administration/templates/administration/control_orders.html:87
 msgid "Delivery"
 msgstr "Доставка"
 
 #: administration/templates/administration/control_orders.html:19
-#: administration/templates/administration/control_orders.html:68
-#: administration/templates/administration/control_orders.html:82
+#: administration/templates/administration/control_orders.html:74
+#: administration/templates/administration/control_orders.html:88
 msgid "Payment"
 msgstr "Оплата"
 
@@ -58,28 +58,28 @@ msgid "Number "
 msgstr "Номер"
 
 #: administration/templates/administration/control_orders.html:36
-#: administration/templates/administration/control_orders.html:67
+#: administration/templates/administration/control_orders.html:73
 #: templates/navbar.html:40
 msgid "UAH"
 msgstr ""
 
-#: administration/templates/administration/control_orders.html:44
+#: administration/templates/administration/control_orders.html:45
 #: orders/models.py:26
 msgid "TTN"
 msgstr "TTN"
 
-#: administration/templates/administration/control_orders.html:52
+#: administration/templates/administration/control_orders.html:57
 #: administration/templates/administration/order_info.html:19
 #: orders/models.py:27
 msgid "Packed"
 msgstr "Упаковано"
 
-#: administration/templates/administration/control_orders.html:64
+#: administration/templates/administration/control_orders.html:70
 msgid "Done"
 msgstr "Оплач"
 
-#: administration/templates/administration/control_orders.html:95
-#: administration/views.py:40
+#: administration/templates/administration/control_orders.html:101
+#: administration/views.py:35
 msgid "Order info"
 msgstr "Данні замовлення"
 
@@ -94,7 +94,7 @@ msgstr "Сберегти"
 
 #: administration/templates/administration/order_info.html:23
 msgid "Paid"
-msgstr ""
+msgstr "Сплачений"
 
 #: administration/templates/administration/order_info.html:43
 #: orders/templates/orders/cart.html:23
@@ -110,91 +110,101 @@ msgstr "Видалити"
 msgid "Type sum"
 msgstr "Введіть суму"
 
-#: administration/views.py:75
+#: administration/views.py:67
 msgid "Delivery info"
 msgstr "Данні даставки"
 
-#: administration/views.py:115
+#: administration/views.py:104
 msgid "Payment info"
 msgstr "Данні оплати"
 
-#: human_hub/settings.py:114 templates/navbar.html:55
+#: human_hub/settings.py:135 templates/navbar.html:55
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: human_hub/settings.py:115 templates/navbar.html:56
+#: human_hub/settings.py:136 templates/navbar.html:56
 msgid "Russian"
 msgstr "Російська"
 
-#: human_hub/settings.py:116 templates/navbar.html:54
+#: human_hub/settings.py:137 templates/navbar.html:54
 msgid "English"
 msgstr "Англійська"
 
 #: info/models.py:8
+msgid "tag"
+msgstr "Тег"
+
+#: info/models.py:9 info/models.py:20
 msgid "frst prt"
 msgstr "Перша частина тексту"
 
-#: info/models.py:10
+#: info/models.py:11 info/models.py:22
 msgid "scnd prt"
 msgstr "Друга частына тексту"
 
-#: info/models.py:14 info/models.py:15
+#: info/models.py:15 info/models.py:16
+#, fuzzy
+#| msgid "Infos"
+msgid "Info pages"
+msgstr "Инфо"
+
+#: info/models.py:26 info/models.py:27
 msgid "About page"
 msgstr "Про проект"
 
-#: info/models.py:24
+#: info/models.py:36
 msgid "Contacts page text"
 msgstr "Текст сторінки контактів"
 
-#: info/models.py:28 info/models.py:29 info/templates/info/contacts.html:10
+#: info/models.py:40 info/models.py:41 info/templates/info/contacts.html:10
 msgid "Contacts page"
 msgstr "Контакти"
 
-#: info/models.py:38
+#: info/models.py:50
 msgid "Discounts page text"
 msgstr "Текст сторінки знижок"
 
-#: info/models.py:42 info/models.py:43 info/templates/info/discounts.html:10
+#: info/models.py:54 info/models.py:55 info/templates/info/discounts.html:10
 msgid "Discounts page"
 msgstr "Знижки"
 
-#: info/models.py:52
+#: info/models.py:64
 msgid "Sizing page text"
 msgstr "Текст сторінки розмірів"
 
-#: info/models.py:56
+#: info/models.py:68
 msgid "Sizing page"
 msgstr "розміри"
 
-#: info/models.py:57
+#: info/models.py:69
 msgid "sizing page"
 msgstr "Розміри"
 
-#: info/models.py:66
+#: info/models.py:78
 msgid "Shipping page text"
 msgstr "Текст сторінки доставки"
 
-#: info/models.py:70 info/models.py:71 info/templates/info/shipping.html:10
+#: info/models.py:82 info/models.py:83 info/templates/info/shipping.html:10
 msgid "Shipping page"
 msgstr "Доставка"
 
-#: info/models.py:80
+#: info/models.py:92
 msgid "Refund page text"
 msgstr "Текст сторінки повернеь"
 
-#: info/models.py:84 info/models.py:85 info/templates/info/refund.html:10
+#: info/models.py:96 info/models.py:97 info/templates/info/refund.html:10
 msgid "Refund page"
 msgstr "Повернення"
 
-#: info/models.py:94 info/templates/info/terms.html:15
+#: info/models.py:106 info/templates/info/terms.html:15
 msgid "Terms of use"
 msgstr "Угода користувача"
 
-#: info/models.py:95 info/templates/info/terms.html:11
+#: info/models.py:107 info/templates/info/terms.html:11
 msgid "Privacy policy"
 msgstr "Політика конфіденційності"
 
-#: info/models.py:98 info/models.py:99
+#: info/models.py:110 info/models.py:111
 msgid "Terms page"
 msgstr "Узгодження"
 
@@ -219,7 +229,7 @@ msgstr "Прізвище"
 msgid "phone"
 msgstr "Телефон"
 
-#: orders/models.py:16 orders/models.py:97
+#: orders/models.py:16 orders/models.py:98
 msgid "comment"
 msgstr "Коментар"
 
@@ -259,72 +269,72 @@ msgstr "LiqPay очикування підтвердження"
 msgid "WFP status"
 msgstr "WFP статус"
 
-#: orders/models.py:28 orders/models.py:83 orders/models.py:100
-#: orders/models.py:107 orders/models.py:112 showcase/models.py:58
+#: orders/models.py:28 orders/models.py:84 orders/models.py:101
+#: orders/models.py:108 orders/models.py:113 showcase/models.py:58
 #: showcase/models.py:114
 msgid "added"
 msgstr "Додано"
 
-#: orders/models.py:81 orders/models.py:96 showcase/models.py:133
+#: orders/models.py:82 orders/models.py:97 showcase/models.py:133
 msgid "amount"
 msgstr "Кількість"
 
-#: orders/models.py:82 showcase/models.py:49
+#: orders/models.py:83 showcase/models.py:49
 msgid "price"
 msgstr "Ціна"
 
-#: orders/models.py:87
+#: orders/models.py:88
 msgid "Order item"
 msgstr "Товар в замовленні"
 
-#: orders/models.py:88
+#: orders/models.py:89
 msgid "Order items"
 msgstr "Товари в замовленні"
 
-#: orders/models.py:98
+#: orders/models.py:99
 msgid "liqpay token"
 msgstr "liqpay token"
 
-#: orders/models.py:99
+#: orders/models.py:100
 msgid "liqpay sender phone"
 msgstr "liqpay телефон відправника"
 
-#: orders/models.py:104
+#: orders/models.py:105
 msgid "data"
 msgstr ""
 
-#: orders/models.py:105
+#: orders/models.py:106
 msgid "sign"
 msgstr ""
 
-#: orders/models.py:106
+#: orders/models.py:107
 msgid "data decoded"
 msgstr ""
 
-#: orders/models.py:111 showcase/models.py:16 showcase/models.py:43
+#: orders/models.py:112 showcase/models.py:16 showcase/models.py:43
 #: showcase/models.py:91
 msgid "name"
 msgstr "Назва"
 
-#: orders/models.py:116 templates/base.html:65
+#: orders/models.py:117 templates/base.html:65
 msgid "Cart"
 msgstr "Кошик"
 
-#: orders/models.py:117
+#: orders/models.py:118
 msgid "Carts"
 msgstr "Кишик"
 
-#: orders/models.py:163
+#: orders/models.py:164
 #, python-format
 msgid "Your discount is %s UAH."
 msgstr "Ваша зніжка %s Грн"
 
-#: orders/models.py:168
+#: orders/models.py:169
 #, python-format
 msgid "You have %(items)s discounted items for %(sum)s UAH."
 msgstr "У вас є %(items)s товарів зі знижкою на %(sum)s"
 
-#: orders/models.py:173
+#: orders/models.py:174
 msgid "You can add one more item and get a discount."
 msgstr "Ви можете додати ща один товар та отримати знижку"
 
@@ -431,152 +441,152 @@ msgstr "Введіть номер відділення"
 msgid "Payment type"
 msgstr "Спосіб оплати"
 
-#: orders/templates/orders/make_order.html:209
+#: orders/templates/orders/make_order.html:210
 msgid "Visa / Mastercard"
 msgstr "Visa / Mastercard"
 
-#: orders/templates/orders/make_order.html:213
+#: orders/templates/orders/make_order.html:215
 msgid "ApplePay"
 msgstr "ApplePay"
 
-#: orders/templates/orders/make_order.html:217
+#: orders/templates/orders/make_order.html:219
 msgid "GooglePay"
 msgstr "GooglePay"
 
-#: orders/templates/orders/make_order.html:221
+#: orders/templates/orders/make_order.html:223
 msgid "PayPal"
 msgstr "PayPal"
 
-#: orders/templates/orders/make_order.html:225
+#: orders/templates/orders/make_order.html:227
 msgid "Pay by card"
 msgstr "Оплата карткою"
 
-#: orders/templates/orders/make_order.html:229
+#: orders/templates/orders/make_order.html:231
 msgid "Cash on delivery"
 msgstr "Готівкою при отриманні"
 
-#: orders/templates/orders/make_order.html:239
+#: orders/templates/orders/make_order.html:241
 msgid "Checkout"
 msgstr "Зробіти замовлення"
 
-#: orders/views.py:128
+#: orders/views.py:126
 msgid "Print your name"
 msgstr "Введіть імʼя"
 
-#: orders/views.py:133
+#: orders/views.py:131
 msgid "Print your surname"
 msgstr "Введіть прізвище"
 
-#: orders/views.py:138
+#: orders/views.py:136
 msgid "Print your phone"
 msgstr "Введіть ваш телефон"
 
-#: orders/views.py:142
+#: orders/views.py:140
 msgid "Print correct email"
 msgstr "Введіть правильну пошту"
 
-#: orders/views.py:145
+#: orders/views.py:143
 msgid "Print your email"
 msgstr "Введіть вашу пошту"
 
-#: orders/views.py:151
+#: orders/views.py:149
 msgid "country "
 msgstr "країна "
 
-#: orders/views.py:155
+#: orders/views.py:153
 msgid "Print country to deliver"
 msgstr "Введіть країну"
 
-#: orders/views.py:158 orders/views.py:203 orders/views.py:227
-#: orders/views.py:272 orders/views.py:297 orders/views.py:342
+#: orders/views.py:156 orders/views.py:201 orders/views.py:225
+#: orders/views.py:270 orders/views.py:295 orders/views.py:341
 msgid "region "
 msgstr "регіон "
 
-#: orders/views.py:162 orders/views.py:207
+#: orders/views.py:160 orders/views.py:205
 msgid "Print region to deliver"
 msgstr "Введіть регіон"
 
-#: orders/views.py:165 orders/views.py:210 orders/views.py:234
-#: orders/views.py:280 orders/views.py:304 orders/views.py:349
+#: orders/views.py:163 orders/views.py:208 orders/views.py:232
+#: orders/views.py:278 orders/views.py:302 orders/views.py:348
 msgid "city "
 msgstr "місто "
 
-#: orders/views.py:169
+#: orders/views.py:167
 msgid "Print city to deliver"
 msgstr "Введіть місто"
 
-#: orders/views.py:172 orders/views.py:241 orders/views.py:311
+#: orders/views.py:170 orders/views.py:239 orders/views.py:309
 msgid "street "
 msgstr "вулиця "
 
-#: orders/views.py:176
+#: orders/views.py:174
 msgid "Print street to deliver"
 msgstr "Введіть вулицю"
 
-#: orders/views.py:179 orders/views.py:248 orders/views.py:255
-#: orders/views.py:318
+#: orders/views.py:177 orders/views.py:246 orders/views.py:253
+#: orders/views.py:316
 msgid "building "
 msgstr "номер будівлі "
 
-#: orders/views.py:183 orders/views.py:259 orders/views.py:322
+#: orders/views.py:181 orders/views.py:257 orders/views.py:320
 msgid "Print building number"
 msgstr "Введіть номер будівлі"
 
-#: orders/views.py:186 orders/views.py:262 orders/views.py:326
+#: orders/views.py:184 orders/views.py:260 orders/views.py:324
 msgid "apartment "
 msgstr "номер квартири / офісу "
 
-#: orders/views.py:190 orders/views.py:266 orders/views.py:329
+#: orders/views.py:188 orders/views.py:264 orders/views.py:327
 msgid "Print apartment number"
 msgstr "Ведіть номер квартири / офісу"
 
-#: orders/views.py:193 orders/views.py:332
+#: orders/views.py:191 orders/views.py:330
 msgid "zipcode "
 msgstr "поштовий индекс "
 
-#: orders/views.py:197 orders/views.py:336
+#: orders/views.py:195 orders/views.py:334
 msgid "Print zipcode"
 msgstr "Введіть поштовий индекс"
 
-#: orders/views.py:214 orders/views.py:238 orders/views.py:284
-#: orders/views.py:308
+#: orders/views.py:212 orders/views.py:236 orders/views.py:282
+#: orders/views.py:306
 msgid "Print city"
 msgstr "Введіть місто"
 
-#: orders/views.py:217 orders/views.py:287 orders/views.py:356
+#: orders/views.py:215 orders/views.py:285 orders/views.py:355
 msgid "office "
 msgstr "номер відділеня"
 
-#: orders/views.py:221 orders/views.py:291 orders/views.py:360
+#: orders/views.py:219 orders/views.py:289 orders/views.py:359
 msgid "Print office number"
 msgstr "Введіть номер відділення"
 
-#: orders/views.py:231 orders/views.py:276 orders/views.py:301
-#: orders/views.py:346 orders/views.py:353
+#: orders/views.py:229 orders/views.py:274 orders/views.py:299
+#: orders/views.py:345 orders/views.py:352
 msgid "Print region"
 msgstr "Введіть регіон"
 
-#: orders/views.py:245 orders/views.py:252 orders/views.py:315
+#: orders/views.py:243 orders/views.py:250 orders/views.py:313
 msgid "Print street"
 msgstr "Введіть вулицю"
 
-#: orders/views.py:362
+#: orders/views.py:361
 msgid "Choose delivery type"
 msgstr "Оберыть спосіб доставки"
 
-#: orders/views.py:384
+#: orders/views.py:383
 msgid "Chose payment type"
 msgstr "Оберіть спосіб оплати"
 
-#: orders/views.py:445 orders/views.py:459
+#: orders/views.py:444 orders/views.py:458
 msgid "Your order is accepted. Order number is "
 msgstr "Ваше замовлення прийнято. Номер замовлення "
 
-#: orders/views.py:446
+#: orders/views.py:445
 msgid "Cart number to pay is "
 msgstr "Номер картки для оплати "
 
-#: orders/views.py:460
+#: orders/views.py:459
 msgid "Our manager will contact you to clarify the details, if necessary"
 msgstr "Наш менеджер зв'яжеться з вами для уточнення деталей, якщо потрібно"
 
@@ -753,11 +763,11 @@ msgstr "ДОДАТИ У КОШИК"
 msgid "Go to"
 msgstr "Перейти до"
 
-#: showcase/views.py:23
+#: showcase/views.py:22
 msgid "main pae title_tag"
 msgstr ""
 
-#: showcase/views.py:24
+#: showcase/views.py:23
 msgid "main pae description_tag"
 msgstr ""
 
@@ -841,7 +851,4 @@ msgstr "Повернення"
 #~ msgstr "текст"
 
 #~ msgid "Info"
-#~ msgstr "Инфо"
-
-#~ msgid "Infos"
 #~ msgstr "Инфо"
